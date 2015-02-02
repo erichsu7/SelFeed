@@ -46,6 +46,7 @@ I'll need to add some join tables to link photos with likes and comments. On the
 
 ### Phase 5: User feed (~2 days)
 First, I'll need to add the ability to follow another user. Using the association of followed users, pictures will be pulled from the DB and sorted into a Backbone collection. This collection will be used to populate the feed view with picture views.
+
 [Details][phase-five]
 
 ### Bonus Features (TBD)
