@@ -25,12 +25,12 @@ Users can:
 ## Implementation Timeline
 
 ### Phase 1: User Authentication, Rails user profile page (~1 day)
-User authentication will be implemented server-side using lessons from the Rails curriculum. I will need to set up the DB and Rails models to handle account creation and sign in. Also, I'll create basic Rails views for these forms and the user profile page.
+User authentication will be implemented server-side using lessons from the Rails curriculum. I will need to set up the DB and Rails models to handle account creation and sign in. Also, I'll create basic Rails views for these forms and the user profile page. The user show page will be used for both viewing one's own and other users.
 
 [Details][phase-one]
 
 ### Phase 2: Photo upload (~2 days)
-This will probably be the most difficult part of my project. I'll use Filepicker for picture upload and Aviary for the photo editing. From my research, Aviary will integrate nicely with the JavaScript. In this phase, I'll need to add a Backbone view for editing and uploading a photo and create migrations for the database to handle photos with their captions.
+This will probably be the most difficult part of my project. I'll use Filepicker for picture upload and Aviary for the photo editing. From my research, Aviary will integrate nicely with the JavaScript. In this phase, I'll need to add a Backbone view for editing and uploading a photo and create migrations for the database to handle photos with their captions. I'll include this as a modal.
 
 [Details][phase-two]
 

@@ -9,7 +9,7 @@ password_digest | string    | not null
 session_token   | string    | not null, unique
 
 ## pictures
-column name     | data type | details
+column name     | data type | dwetails
 ----------------|-----------|-----------------------
 id              | integer   | not null, primary key
 url             | string    | not null

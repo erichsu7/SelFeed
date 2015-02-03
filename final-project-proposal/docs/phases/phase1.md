@@ -5,7 +5,7 @@
 * User
 
 ### Controllers
-* UsersController (create, new)
+* UsersController (create, new, show)
 * SessionsController (create, new, destroy)
 
 ### Views
@@ -21,3 +21,8 @@
 ### Views
 
 ## Gems/Libraries
+* annotate
+* better_errors
+* binding_of_caller
+* byebug
+* pry-rails
