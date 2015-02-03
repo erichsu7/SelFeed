@@ -34,8 +34,8 @@ This will probably be the most difficult part of my project. I'll use Filepicker
 
 [Details][phase-two]
 
-### Phase 3: JSON API and Backbone models and views (~1 day)
-I will add API routes to serve user and picture as JSON, then add Backbone models and collections that fetch data from those routes. I'll update the user profile page to display all of his uploaded photos using Backbone.
+### Phase 3: User show page with uploaded pictures (~1 day)
+I will add API routes to serve user and picture as JSON, then add Backbone models and collections that fetch data from those routes. I'll update the user profile page to display all of his uploaded photos using Backbone. I'd like to implement infinite scrolling for this.
 
 [Details][phase-three]
 

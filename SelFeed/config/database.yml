@@ -81,5 +81,5 @@ test:
 production:
   <<: *default
   database: SelFeed_production
-  username: SelFeed
+  username: erichsu
   password: <%= ENV['SELFEED_DATABASE_PASSWORD'] %>
