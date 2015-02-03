@@ -1,0 +1,49 @@
+.user-form {
+  width: 400px;
+  border: 1px solid #1c5380;
+  margin: auto;
+  position: relative;
+  border-radius: 5px;
+}
+
+.user-form-header {
+  font-family: 'Pacifico';
+  font-size: 24px;
+  text-align: center;
+  background-color: #517fa4;
+  color: #fff;
+}
+
+.input-field {
+  display: block;
+  height: 30px;
+  margin: 30px;
+}
+
+.input-field input {
+  float: right;
+  height: 25px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  width: 65%;
+}
+
+.input-field label {
+  position: relative;
+  float: left;
+  padding: 10px 0;
+  font-size: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.submit-button {
+  display: block;
+  border: 1px solid #3d8b5f;
+  background-image: -webkit-linear-gradient(top,#6bb38a,#3d8b5f);
+  color: #fff;
+  font-size: 14px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  margin: 20px auto;
+}
