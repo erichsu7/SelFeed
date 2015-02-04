@@ -3,17 +3,20 @@ SelFeed.Views.PictureForm = Backbone.View.extend({
 
   className: "picture-form-modal",
 
-  events: {},
+  events: {
+    "click #choose-picture": "activateFilepicker",
+    "click #save-picture": "createPicture"
+  },
 
   render: function () {
     var renderedContent = this.template();
     this.$el.html(renderedContent);
-    this.activateFilepicker();
 
     return this;
   },
 
-  activateFilepicker: function () {
+  activateFilepicker: function (event) {
+    event.preventDefault();
     var that = this;
     filepicker.setKey("AojhAa24OTZydfKzja6UAz");
     filepicker.pick({
@@ -23,12 +26,26 @@ SelFeed.Views.PictureForm = Backbone.View.extend({
       var $img = $("<img>");
       $img.addClass("picture-preview");
       $img.attr("src", Blob.url);
+      $("#choose-picture").remove();
       that.$(".filepicker-widget").append($img);
     });
-
-
-
-    // var $filepickerEl = this.$('#filepicker-input');
-    // filepicker.constructWidget($filepickerEl[0]);
   },
+
+  createPicture: function (event) {
+    event.preventDefault();
+    var that = this;
+    var params = this.$("form").serializeJSON();
+    // var currentUserId = $(".current-user-data").data("current-user-id");
+    // params.picture.author_id = currentUserId;
+    var picture = new SelFeed.Models.Picture(params);
+    picture.save({}, {
+      success: function () {
+        that.collection.add(picture, { merge: true });
+        Backbone.history.navigate("", { trigger: true });
+      },
+      error: function (model, response) {
+        debugger;
+      }
+    })
+  }
 })

@@ -26,10 +26,10 @@ module Api
       @picture.try(:destroy)
       render json: {}
     end
-  end
 
-  private
-    def picture_params
-      params.require(:picture).permit(:filepicker_url, :author_id, :caption)
-    end
+    private
+      def picture_params
+        params.require(:picture).permit(:filepicker_url, :author_id, :caption)
+      end
+  end
 end
