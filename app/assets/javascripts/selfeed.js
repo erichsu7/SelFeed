@@ -4,7 +4,8 @@ window.SelFeed = {
   Views: {},
   Routers: {},
   initialize: function() {
-    alert('Hello from Backbone!');
+    new SelFeed.Routers.Router({ $rootEl: $("main")});
+    Backbone.history.start();
   }
 };
 
