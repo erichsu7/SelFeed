@@ -21,3 +21,4 @@
 ## Gems/Libraries
 Filepicker
 Aviary
+Backbone
