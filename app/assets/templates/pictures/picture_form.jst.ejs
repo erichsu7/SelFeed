@@ -3,15 +3,11 @@
 <div class="modal-form">
   <form>
     <div class="filepicker-widget">
+      <button class="submit-button">Choose a picture</button>
       <input
-        id="filepicker-input"
-        type="filepicker"
-        data-fp-mimetype="image/*"
-        name="picture[filepicker_url]"
-        data-fp-button-text="Choose picture"
-        data-fp-button-class="submit-button"
-        data-fp-drag-text="Or drag picture here"
-        data-fp-multiple="false">
+        class="filepicker-url-input"
+        type="hidden"
+        name="picture[filepicker-url]">
     </div>
 
     <div class="input-field">

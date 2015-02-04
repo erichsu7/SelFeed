@@ -24,14 +24,11 @@ SelFeed.Views.RootHeader = Backbone.View.extend({
   },
 
   destroySession: function () {
-      $.ajax("/session", {
-        type: "DELETE",
-        success: function (response) {
-          window.location = "";
-        },
-        error: function (response) {
-          debugger;
-        }
-      })
+    $.ajax("/session", {
+      type: "DELETE",
+      success: function (response) {
+        window.location = "";
+      }
+    })
   }
 })
