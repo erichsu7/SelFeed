@@ -7,6 +7,10 @@ class User < ActiveRecord::Base
 
   after_initialize :ensure_session_token
 
+  has_many :authored_pictures,
+    class_name: "Picture",
+    foreign_key: :author_id
+
   def self.find_by_credentials(username, password)
     user = User.find_by_username(username)
     return nil unless user
