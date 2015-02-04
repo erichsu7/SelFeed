@@ -1,6 +1,6 @@
-SelFeed.Views.RootHeader = Backbone.View.extend({
-  template: JST["root_header"],
-  className: "root-header-nav clearfix",
+SelFeed.Views.PictureForm = Backbone.View.extend({
+  template: JST["pictures/picture_form"],
+  className: "picture-form-modal",
 
   render: function () {
     var renderedContent = this.template();

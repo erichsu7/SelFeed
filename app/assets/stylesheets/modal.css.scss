@@ -1,0 +1,38 @@
+.modal-screen {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.modal-form {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%) translateY(25px);
+  background-color: #fff;
+  border-radius: 5px;
+  border: 1px solid #517fa4;
+  z-index: 3;
+}
+
+.input-field textarea {
+  display: block;
+  position: relative;
+  width: 350px;
+  height: 100px;
+  margin: auto;
+  font-size: 14px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.filepicker-widget {
+  height: 350px;
+  width: 350px;
+  margin: auto;
+  margin-top: 30px;
+  background-color: #ccc;
+}
