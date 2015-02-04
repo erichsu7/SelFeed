@@ -2,7 +2,17 @@
 
 <div class="modal-form">
   <form>
-    <div class="filepicker-widget">Filepicker button goes here</div>
+    <div class="filepicker-widget">
+      <input
+        id="filepicker-input"
+        type="filepicker"
+        data-fp-mimetype="image/*"
+        name="picture[filepicker_url]"
+        data-fp-button-text="Choose picture"
+        data-fp-button-class="submit-button"
+        data-fp-drag-text="Or drag picture here"
+        data-fp-multiple="false">
+    </div>
 
     <div class="input-field">
       <textarea name="picture[caption]">Write a caption...</textarea>

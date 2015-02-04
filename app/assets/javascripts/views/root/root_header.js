@@ -15,6 +15,6 @@ SelFeed.Views.RootHeader = Backbone.View.extend({
 
   showPictureForm: function () {
     var pictureForm = new SelFeed.Views.PictureForm();
-    $("body").append(pictureForm.render().$el);
+    $("#main").append(pictureForm.render().$el);
   }
 })

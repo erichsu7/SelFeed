@@ -5,10 +5,14 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <script src='http://feather.aviary.com/js/feather.js'></script>
+  <script src='http://api.filepicker.io/v1/filepicker.js'></script>
 </head>
 <body>
 
-<%= yield %>
+<div id="main">
+  <%= yield %>
+</div>
 
 </body>
 </html>
