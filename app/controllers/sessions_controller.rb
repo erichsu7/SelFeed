@@ -19,5 +19,6 @@ class SessionsController < ApplicationController
 
   def destroy
     log_out!
+    render json: {}
   end
 end

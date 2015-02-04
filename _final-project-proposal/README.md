@@ -62,6 +62,7 @@ If I have time, I'd like to implement hashtagging photos and implementing search
 - [] User avatars
 - [] Profile page cover photo
 - [] Video upload
+- [] Explore all pictures
 
 [phase-one]: ./docs/phases/phase1.md
 [phase-two]: ./docs/phases/phase2.md
