@@ -37,3 +37,9 @@
    display: inline-block;
    clear: both;
  }
+
+ #main {
+   position: absolute;
+   display: block;
+   top: 50px;
+ }
