@@ -4,10 +4,10 @@
 SelFeed is clone of Instagram built on Rails and Backbone
 Users can:
 
-- [] Create accounts
-- [] Create sessions (log in)
-- [] Upload pictures
-- [] Caption pictures
+- [x] Create accounts
+- [x] Create sessions (log in)
+- [x] Upload pictures
+- [x] Caption pictures
 - [] Like pictures
 - [] Comment on pictures
 - [] View own profile page

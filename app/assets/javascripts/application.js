@@ -22,6 +22,7 @@
 //= require imagesloaded.pkgd
 //= require underscore
 //= require backbone
+//= require backbone.composite_view
 //= require selfeed
 //= require_tree ../templates
 //= require_tree ./models
