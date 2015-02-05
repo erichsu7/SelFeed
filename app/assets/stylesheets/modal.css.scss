@@ -30,12 +30,14 @@
 }
 
 .cloudinary-widget {
+  position: relative;
   height: 350px;
   width: 350px;
   border: 3px dashed #ccc;
   border-radius: 5px;
   margin: auto;
   margin-top: 30px;
+  overflow: hidden;
 }
 
 .picture-preview {
@@ -48,4 +50,33 @@
   margin: auto;
   top: 50%;
   transform: translateY(-50%);
+}
+
+.cloudinary_fileupload:after {
+  position: absolute;
+  content: "Choose a picture";
+  display: block;
+  border: 1px solid #3d8b5f;
+  background-image: -webkit-linear-gradient(top,#6bb38a,#3d8b5f);
+  color: #fff;
+  font-size: 14px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}
+
+.cloudinary_fileupload:hover:after {
+  cursor: pointer;
+}
+
+.cloudinary_fileupload:before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #fff;
 }
