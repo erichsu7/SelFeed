@@ -12,7 +12,7 @@ session_token   | string    | not null, unique
 column name     | data type | dwetails
 ----------------|-----------|-----------------------
 id              | integer   | not null, primary key
-filepicker_url  | string    | not null
+url  | string    | not null
 author_id       | integer   | not null, foreign key
 caption         | text      |
 

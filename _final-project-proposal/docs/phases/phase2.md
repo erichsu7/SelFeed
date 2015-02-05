@@ -19,6 +19,5 @@
 * PicturesForm
 
 ## Gems/Libraries
-Filepicker
-Aviary
+Cloudinary
 Backbone

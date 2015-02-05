@@ -30,7 +30,7 @@ User authentication will be implemented server-side using lessons from the Rails
 [Details][phase-one]
 
 ### Phase 2: Photo upload (~2 days)
-This will probably be the most difficult part of my project. I'll use Filepicker for picture upload and Aviary for the photo editing. From my research, Aviary will integrate nicely with the JavaScript. In this phase, I'll need to add a Backbone view for editing and uploading a photo and create migrations for the database to handle photos with their captions. I'll include this as a modal.
+This will probably be the most difficult part of my project. I'll use Cloudinary for picture upload and editing, because it handles both of these at once. In this phase, I'll need to add a Backbone view for editing and uploading a photo and create migrations for the database to handle photos with their captions. I'll include this as a modal.
 
 [Details][phase-two]
 

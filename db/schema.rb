@@ -17,15 +17,15 @@ ActiveRecord::Schema.define(version: 20150204012432) do
   enable_extension "plpgsql"
 
   create_table "pictures", force: :cascade do |t|
-    t.string   "filepicker_url", null: false
-    t.integer  "author_id",      null: false
+    t.string   "url",        null: false
+    t.integer  "author_id",  null: false
     t.text     "caption"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   add_index "pictures", ["author_id"], name: "index_pictures_on_author_id", using: :btree
-  add_index "pictures", ["filepicker_url"], name: "index_pictures_on_filepicker_url", unique: true, using: :btree
+  add_index "pictures", ["url"], name: "index_pictures_on_url", unique: true, using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "username",        null: false

@@ -1,6 +1,6 @@
 class Picture < ActiveRecord::Base
-    validates :filepicker_url, :author_id, presence: true
-    validates :filepicker_url, uniqueness: true
+    validates :url, :author_id, presence: true
+    validates :url, uniqueness: true
 
     belongs_to :author,
       class_name: "User",

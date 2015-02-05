@@ -28,27 +28,3 @@
   border-radius: 5px;
   border: 1px solid #ccc;
 }
-
-.filepicker-widget {
-  position: relative;
-  height: 350px;
-  width: 350px;
-  margin: auto;
-  margin-top: 30px;
-  background-color: #fff;
-  border: 3px dashed #ccc;
-  border-radius: 10px;
-}
-
-.filepicker-widget .submit-button {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translateY(-50%) translateX(-50%);
-  margin: auto;
-}
-
-.picture-preview {
-  height: 100%;
-  width: 100%;
-}
