@@ -13,11 +13,13 @@
   text-align: left;
   /* IE10 touch compatibility */
   -ms-touch-action: none;
+  position: relative;
 }
+
 /* Selection Border */
 .jcrop-vline,
 .jcrop-hline {
-  background: #ffffff url("Jcrop.gif");
+  background-image: url("Jcrop.gif");
   font-size: 0;
   position: absolute;
 }
