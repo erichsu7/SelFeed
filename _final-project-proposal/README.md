@@ -53,6 +53,7 @@ First, I'll need to add the ability to follow another user. Using the associatio
 If I have time, I'd like to implement hashtagging photos and implementing search functionality based on those hashtags. Also, I think a user avatar and profile cover photo would be nice touches. Other possible features are listed below.
 
 - [] Profile feed vs grid view
+- [] Picture filter on upload
 - [] Hashtag pictures
 - [] Search pictures by hashtag
 - [] Show most popular pictures

@@ -21,3 +21,4 @@
 ## Gems/Libraries
 Cloudinary
 Backbone
+Jcrop

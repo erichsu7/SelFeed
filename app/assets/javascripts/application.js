@@ -17,6 +17,8 @@
 //= require jquery.iframe-transport
 //= require jquery.fileupload
 //= require jquery.cloudinary
+//= require jquery.color
+//= require jquery.Jcrop
 //= require underscore
 //= require backbone
 //= require selfeed
