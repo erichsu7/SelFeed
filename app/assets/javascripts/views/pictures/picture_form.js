@@ -58,12 +58,8 @@ SelFeed.Views.PictureForm = Backbone.View.extend({
     var picture = new SelFeed.Models.Picture(params);
     picture.save({}, {
       success: function () {
-        debugger;
         that.collection.add(picture, { merge: true });
         window.location = "";
-      },
-      error: function (model, response) {
-        debugger;
       }
     })
   },
@@ -74,19 +70,24 @@ SelFeed.Views.PictureForm = Backbone.View.extend({
     // Scale selected region to size of actual image
     var scalarSquare = (this.scalarX > this.scalarY) ? this.scalarX : this.scalarY;
     var $img = $.cloudinary.image(this.pictureId, {
-      x: function () {
-        return Math.round(that.cropCoords.x * that.scalarX)
-      }(),
-      y: function () {
-        return Math.round(that.cropCoords.y * that.scalarY)
-      }(),
-      width: function () {
-        return Math.round(that.cropCoords.w * scalarSquare)
-      }(),
-      height: function () {
-        return Math.round(that.cropCoords.h * scalarSquare)
-      }(),
-      crop: "crop"
+      transformation: {
+        x: function () {
+          return Math.round(that.cropCoords.x * that.scalarX)
+        }(),
+        y: function () {
+          return Math.round(that.cropCoords.y * that.scalarY)
+        }(),
+        width: function () {
+          return Math.round(that.cropCoords.w * scalarSquare)
+        }(),
+        height: function () {
+          return Math.round(that.cropCoords.h * scalarSquare)
+        }(),
+        crop: "crop"
+      },
+      width: 350,
+      height: 350,
+      crop: 'fill'
     });
     $img.css({
       "width": "100%",
