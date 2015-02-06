@@ -4,10 +4,12 @@ SelFeed.Views.RootHeader = Backbone.CompositeView.extend({
 
   events: {
     "click .add-picture-link": "addPictureForm",
-    "click .log-out-link": "destroySession"
+    "click .log-out-link": "destroySession",
+    "click .user-link": "showUser"
   },
 
   initialize: function (options) {
+    this.user_id = options.user_id;
     this.username = options.username;
   },
 
@@ -30,5 +32,11 @@ SelFeed.Views.RootHeader = Backbone.CompositeView.extend({
         window.location = "";
       }
     })
+  },
+
+  showUser: function (event) {
+    event.preventDefault();
+    var url = "/users/" + this.user_id;
+    Backbone.history.navigate(url, { trigger: true });
   }
 })
