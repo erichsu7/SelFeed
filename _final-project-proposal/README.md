@@ -10,8 +10,8 @@ Users can:
 - [x] Caption pictures
 - [] Like pictures
 - [] Comment on pictures
-- [] View own profile page
-- [] View other users' pages
+- [x] View own profile page
+- [x] View other users' pages
 - [] Follow users
 - [] View a feed of followed users' pictures
 
@@ -53,6 +53,7 @@ First, I'll need to add the ability to follow another user. Using the associatio
 If I have time, I'd like to implement hashtagging photos and implementing search functionality based on those hashtags. Also, I think a user avatar and profile cover photo would be nice touches. Other possible features are listed below.
 
 - [] Profile feed vs grid view
+- [] Feed infinite scrolling
 - [] Picture filter on upload
 - [] Hashtag pictures
 - [] Search pictures by hashtag

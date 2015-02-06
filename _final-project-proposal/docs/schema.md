@@ -20,7 +20,7 @@ caption         | text      |
 column name     | data type | details
 ----------------|-----------|-----------------------
 id              | integer   | not null, primary key
-author_id       | integer   | not null, foreign key
+commenter_id    | integer   | not null, foreign key
 picture_id      | integer   | not null, foreign key
 body            | text      | not null
 
@@ -28,7 +28,7 @@ body            | text      | not null
 column name     | data type | details
 ----------------|-----------|-----------------------
 id              | integer   | not null, primary key
-author_id       | integer   | not null, foreign key
+liker_id        | integer   | not null, foreign key
 picture_id      | integer   | not null, foreign key
 
 ## follows
