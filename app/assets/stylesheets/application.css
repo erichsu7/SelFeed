@@ -39,4 +39,12 @@
  }
 
  #main {
+  position: absolute;
+  width: 100%;
+  top: 50px;
  }
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}

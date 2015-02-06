@@ -22,8 +22,8 @@ SelFeed.Views.PictureForm = Backbone.View.extend({
     this.$('.cloudinary-widget').html($.cloudinary.unsigned_upload_tag("fuywh6de",
       { cloud_name: 'selfeed' }));
     this.$(".cloudinary_fileupload").on("cloudinarydone", function(event, data) {
-      that.scalarX = data.result.width / 350;
-      that.scalarY = data.result.height / 350;
+      that.scalarX = data.result.width / 500;
+      that.scalarY = data.result.height / 500;
       that.pictureId = data.result.public_id;
       var $img = $.cloudinary.image(that.pictureId);
       $img.addClass("picture-preview");
@@ -85,8 +85,8 @@ SelFeed.Views.PictureForm = Backbone.View.extend({
         }(),
         crop: "crop"
       },
-      width: 350,
-      height: 350,
+      width: 500,
+      height: 500,
       crop: 'fill'
     });
     $img.css({
