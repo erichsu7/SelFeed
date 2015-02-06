@@ -1,11 +1,10 @@
 SelFeed.Views.PictureForm = Backbone.View.extend({
   template: JST["pictures/picture_form"],
 
-  className: "picture-form-modal",
-
   events: {
     "click #save-picture": "createPicture",
-    "click #crop-picture": "updatePicture"
+    "click #crop-picture": "updatePicture",
+    "click #cancel-picture": "cancelPicture"
   },
 
   render: function () {
@@ -22,8 +21,8 @@ SelFeed.Views.PictureForm = Backbone.View.extend({
     this.$('.cloudinary-widget').html($.cloudinary.unsigned_upload_tag("fuywh6de",
       { cloud_name: 'selfeed' }));
     this.$(".cloudinary_fileupload").on("cloudinarydone", function(event, data) {
-      that.scalarX = data.result.width / 500;
-      that.scalarY = data.result.height / 500;
+      that.scalarX = data.result.width / 400;
+      that.scalarY = data.result.height / 400;
       that.pictureId = data.result.public_id;
       var $img = $.cloudinary.image(that.pictureId);
       $img.addClass("picture-preview");
@@ -69,13 +68,14 @@ SelFeed.Views.PictureForm = Backbone.View.extend({
     var that = this;
     // Scale selected region to size of actual image
     var scalarSquare = (this.scalarX > this.scalarY) ? this.scalarX : this.scalarY;
+    debugger;
     var $img = $.cloudinary.image(this.pictureId, {
       transformation: {
         x: function () {
-          return Math.round(that.cropCoords.x * that.scalarX)
+          return Math.round(that.cropCoords.x * scalarSquare)
         }(),
         y: function () {
-          return Math.round(that.cropCoords.y * that.scalarY)
+          return Math.round(that.cropCoords.y * scalarSquare)
         }(),
         width: function () {
           return Math.round(that.cropCoords.w * scalarSquare)
@@ -90,11 +90,16 @@ SelFeed.Views.PictureForm = Backbone.View.extend({
       crop: 'fill'
     });
     $img.css({
-      "width": "100%",
-      "height": "auto"
+      "width": "400px",
+      "height": "400px"
     });
     this.$('.cloudinary-widget').html($img);
     this.$("#crop-picture").css("display", "none")
     this.pictureUrl = $img.attr("src");
+  },
+
+  cancelPicture: function (event) {
+    event.preventDefault();
+    this.remove();
   }
 })

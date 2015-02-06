@@ -11,7 +11,7 @@
 .modal-form {
   position: absolute;
   left: 50%;
-  transform: translateX(-50%) translateY(25px);
+  transform: translateX(-50%) translateY(-10px);
   background-color: #fff;
   border-radius: 5px;
   border: 1px solid #517fa4;
@@ -21,8 +21,8 @@
 .input-field textarea {
   display: block;
   position: relative;
-  width: 500px;
-  height: 100px;
+  width: 400px;
+  height: 60px;
   margin: auto;
   font-size: 14px;
   border-radius: 5px;
@@ -31,8 +31,8 @@
 
 .cloudinary-widget {
   position: relative;
-  height: 500px;
-  width: 500px;
+  height: 400px;
+  width: 400px;
   border: 3px dashed #ccc;
   border-radius: 5px;
   margin: auto;
@@ -86,9 +86,40 @@
   display: none;
   left: 50%;
   transform: translateX(-50%);
-  top: 300px;
+  top: 350px;
   background: -webkit-linear-gradient(top, #eee, #ccc);
   color: #000;
   border: 1px solid #aaa;
   z-index: 1000;
+}
+
+.modal-form-buttons {
+  position: relative;
+  width: 300px;
+  margin: auto;
+  margin-top: -30px;
+}
+
+
+#cancel-picture {
+  float: left;
+  top: 0;
+  background: -webkit-linear-gradient(top, #eee, #ccc);
+  border: 1px solid #aaa;
+  color: #000;
+}
+
+#cancel-picture:hover {
+  background: -webkit-linear-gradient(top, #ccc, #ccc);
+  cursor: pointer;
+}
+
+#save-picture {
+  float: right;
+  top: 0;
+}
+
+#save-picture:hover {
+  background-image: -webkit-linear-gradient(top,#3d8b5f,#3d8b5f);
+  cursor: pointer;
 }

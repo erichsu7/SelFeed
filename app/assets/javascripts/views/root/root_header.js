@@ -1,9 +1,9 @@
-SelFeed.Views.RootHeader = Backbone.View.extend({
+SelFeed.Views.RootHeader = Backbone.CompositeView.extend({
   template: JST["root/root_header"],
   className: "root-header-nav clearfix",
 
   events: {
-    "click .add-picture-link": "showPictureForm",
+    "click .add-picture-link": "addPictureForm",
     "click .log-out-link": "destroySession"
   },
 
@@ -18,9 +18,9 @@ SelFeed.Views.RootHeader = Backbone.View.extend({
     return this;
   },
 
-  showPictureForm: function () {
+  addPictureForm: function () {
     var pictureForm = new SelFeed.Views.PictureForm();
-    $("#main").append(pictureForm.render().$el);
+    this.addSubview(".picture-form-modal", pictureForm);
   },
 
   destroySession: function () {
