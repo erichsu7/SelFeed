@@ -22,3 +22,5 @@ pictures/show.json.jbuilder
 * UserShow (composite view containing PictureShow views)
 
 ## Gems/Libraries
+Moment
+Backbone.CompositeView

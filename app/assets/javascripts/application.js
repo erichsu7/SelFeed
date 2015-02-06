@@ -20,6 +20,7 @@
 //= require jquery.cloudinary
 //= require jquery.Jcrop
 //= require imagesloaded.pkgd
+//= require moment
 //= require underscore
 //= require backbone
 //= require backbone.composite_view

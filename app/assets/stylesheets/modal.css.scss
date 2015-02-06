@@ -93,7 +93,7 @@
   z-index: 1000;
 }
 
-.modal-form-buttons {
+.modal-form-links {
   position: relative;
   width: 300px;
   margin: auto;
@@ -109,9 +109,13 @@
   color: #000;
 }
 
-#cancel-picture:hover {
-  background: -webkit-linear-gradient(top, #ccc, #ccc);
+#cancel-picture:hover,
+  #save-picture:hover {
   cursor: pointer;
+}
+
+#cancel-picture:active {
+  background: -webkit-linear-gradient(top, #ccc, #ccc);
 }
 
 #save-picture {
@@ -119,7 +123,6 @@
   top: 0;
 }
 
-#save-picture:hover {
+#save-picture:active {
   background-image: -webkit-linear-gradient(top,#3d8b5f,#3d8b5f);
-  cursor: pointer;
 }
