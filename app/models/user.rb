@@ -11,6 +11,13 @@ class User < ActiveRecord::Base
     class_name: "Picture",
     foreign_key: :author_id
 
+  has_many :likes,
+    foreign_key: :liker_id
+
+  has_many :liked_pictures,
+    through: :likes,
+    source: :picture
+
   def self.find_by_credentials(username, password)
     user = User.find_by_username(username)
     return nil unless user
@@ -35,6 +42,10 @@ class User < ActiveRecord::Base
 
   def self.generate_session_token
     SecureRandom::urlsafe_base64
+  end
+
+  def likes?(picture)
+    self.liked_pictures.include?(picture)
   end
 
   private
