@@ -6,6 +6,6 @@ SelFeed.Collections.Pictures = Backbone.Collection.extend({
       this.author = response.author;
       delete response.author;
     }
-    return response;
+    return response.pictures;
   }
 })
