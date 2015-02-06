@@ -16,12 +16,34 @@
 }
 
 .picture-show-container {
+  position: relative;
   width: 500px;
   margin: auto;
   margin-bottom: 40px;
   background-color: #fff;
   border: 1px solid #bbb;
   border-radius: 3px;
+}
+
+.picture-details-container {
+  position: absolute;
+  right: calc(100% + 50px);
+}
+
+.picture-details-author-link {
+  float: right;
+  font-size: 14px;
+  color: #517fa4;
+}
+.picture-details-author-link:hover {
+  text-decoration: underline;
+}
+
+.picture-details-created-at {
+  float: right;
+  white-space: nowrap;
+  color: #aaa;
+  font-size: 14px;
 }
 
 .picture-show-picture {

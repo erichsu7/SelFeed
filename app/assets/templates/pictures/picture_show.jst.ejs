@@ -1,4 +1,7 @@
-
+<div class="picture-details-container">
+  <a class="picture-details-author-link" href="#"><%= picture.escape("author_username") %></a>
+  <span class="picture-details-created-at"><%= moment(picture.escape("created_at")).fromNow() %></span>
+</div>
 
 <img class="picture-show-picture" src="<%= picture.escape("url") %>">
 <div class="picture-like-container">

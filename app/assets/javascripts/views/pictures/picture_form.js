@@ -59,6 +59,7 @@ SelFeed.Views.PictureForm = Backbone.View.extend({
       success: function () {
         that.collection.add(picture, { merge: true });
         window.location = "";
+        that.remove();
       }
     })
   },
