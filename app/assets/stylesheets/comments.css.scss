@@ -27,20 +27,13 @@
 }
 
 .comments-form input {
-  font-family: "Raleway";
-  font-weight: 300;
   position: absolute;
   width: 100%;
-  font-size: 14px;
-  padding: 5px 10px;
-  box-sizing: border-box;
-  border-radius: 3px;
-  border: 1px solid #ddd;
   left: 50%;
   transform: translateX(-50%);
   color: #ccc;
 }
 
-.comments-form input:focus {
+input:focus {
   color: #333;
 }

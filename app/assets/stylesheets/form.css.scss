@@ -1,6 +1,8 @@
 .form-page-container {
-  height: 100%;
+  position: absolute;
+  top: 0;
   width: 100%;
+  height: 100%;
   background-color: #fafafa;
 }
 
@@ -8,6 +10,7 @@
   width: 400px;
   border: 1px solid #ccc;
   margin: auto;
+  margin-top: 100px;
   position: relative;
   border-radius: 5px;
   background-color: #fff;
@@ -17,8 +20,10 @@
   font-family: 'Rochester';
   font-size: 24px;
   text-align: center;
-  background-color: #517fa4;
+  background-image: -webkit-linear-gradient(top,#517fa4,#306088);
   color: #fff;
+  padding: 5px 0;
+  border-bottom: 1px solid #000;
 }
 
 .input-field {
@@ -30,9 +35,6 @@
 .input-field input {
   position: absolute;
   right: 0;
-  height: 25px;
-  border-radius: 5px;
-  border: 1px solid #ddd;
   width: 65%;
   top: 50%;
   transform: translateY(-50%);
@@ -48,6 +50,7 @@
 }
 
 .submit-button {
+  font-family: "Montserrat";
   display: block;
   border: 1px solid #3d8b5f;
   background-image: -webkit-linear-gradient(top,#6bb38a,#3d8b5f);
@@ -56,4 +59,27 @@
   padding: 5px 10px;
   border-radius: 5px;
   margin: 20px auto;
+}
+
+.user-redirect {
+  display: block;
+  text-align: center;
+  margin-top: 50px;
+}
+
+.user-redirect a {
+  display: block;
+  margin-top: 10px;
+  font-family: "Raleway";
+  font-weight: 500;
+}
+
+.new-user-page-header {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 32px;
+  font-family: "Montserrat";
+  top: 30px;
+  color: #333;
 }

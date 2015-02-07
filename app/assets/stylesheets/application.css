@@ -34,8 +34,11 @@
  }
 
  body {
-   height: 100%;
-   width: 100%;
+   position: absolute;
+   top: 0;
+   right: 0;
+   bottom: 0;
+   left: 0;
  }
 
  .clearfix:after {
@@ -53,4 +56,15 @@
 ul {
   list-style-type: none;
   padding: 0;
+}
+
+input {
+  font-family: "Raleway";
+  font-weight: 300;
+  font-size: 14px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  padding: 5px 10px;
+  box-sizing: border-box;
+  color: #333;
 }
