@@ -1,5 +1,6 @@
 SelFeed.Views.CommentsFeed = Backbone.CompositeView.extend({
   template: JST["comments/comments_feed"],
+  className: "picture-comments-view",
 
   initialize: function () {
     var that = this;
@@ -14,6 +15,7 @@ SelFeed.Views.CommentsFeed = Backbone.CompositeView.extend({
     var renderedContent = this.template();
     this.$el.html(renderedContent);
     this.attachSubviews();
+    this.addCommentForm();
 
     return this;
   },
@@ -32,5 +34,10 @@ SelFeed.Views.CommentsFeed = Backbone.CompositeView.extend({
         that.removeSubview(".picture-comments-list", showView);
       }
     })
+  },
+
+  addCommentForm: function () {
+    var formView = new SelFeed.Views.CommentForm({ collection: this.collection });
+    this.addSubview(".picture-comments-form-container", formView);
   }
 });

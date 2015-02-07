@@ -9,5 +9,8 @@ json.pictures @user.authored_pictures do |picture|
     json.like current_user.likes.find_by_picture_id(picture.id)
   end
   json.likes picture.likes
-  json.comments picture.comments
+  json.comments picture.comments do |comment|
+    json.extract! comment, :id, :commenter_id, :picture_id, :body
+    json.commenter_username comment.commenter.username
+  end
 end

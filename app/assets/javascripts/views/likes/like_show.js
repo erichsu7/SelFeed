@@ -1,5 +1,6 @@
 SelFeed.Views.LikeShow = Backbone.View.extend({
   template: JST["likes/like_show"],
+  className: "picture-likes-view",
 
   events: {
     "click .picture-likes-button": "toggleLike"

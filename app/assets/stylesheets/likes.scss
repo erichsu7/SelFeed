@@ -1,3 +1,39 @@
 // Place all the styles related to the Likes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.picture-likes-container {
+  position: relative;
+  display: block;
+  top: -5px;
+  height: 40px;
+  background-image: -webkit-linear-gradient(top, #fff, #eee);
+  border-bottom: 1px solid #ddd;
+}
+
+.picture-likes-button {
+  display: inline-block;
+  background-image: url("heart_sprite.png");
+  background-size: 40px 80px;
+  background-position: -1px 0;
+  font-size: 72px;
+  height: 40px;
+  width: 40px;
+  background-color: #eee;
+  border-right: 1px solid #ddd;
+}
+
+.picture-likes-button:hover,
+  .liked {
+  cursor: pointer;
+  background-position: -1px 40px
+}
+
+.picture-likes-count {
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  margin-left: 10px;
+  color: #777;
+  transform: translateY(-50%);
+}
