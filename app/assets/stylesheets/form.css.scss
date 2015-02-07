@@ -1,9 +1,16 @@
+.form-page-container {
+  height: 100%;
+  width: 100%;
+  background-color: #fafafa;
+}
+
 .user-form {
   width: 400px;
-  border: 1px solid #1c5380;
+  border: 1px solid #ccc;
   margin: auto;
   position: relative;
   border-radius: 5px;
+  background-color: #fff;
 }
 
 .user-form-header {
@@ -15,20 +22,24 @@
 }
 
 .input-field {
+  position: relative;
   display: block;
   margin: 30px;
 }
 
 .input-field input {
-  float: right;
+  position: absolute;
+  right: 0;
   height: 25px;
   border-radius: 5px;
-  border: 1px solid #ccc;
+  border: 1px solid #ddd;
   width: 65%;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .input-field label {
-  position: relative;
+  position: absolute;
   float: left;
   padding: 10px 0;
   font-size: 14px;

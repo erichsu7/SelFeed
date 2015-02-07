@@ -1,1 +1,2 @@
-<a class="author-link comment-author-link" href="#"><%= comment.escape("commenter_username") %></a> <%= comment.escape("body") %>
+<a class="author-link comment-author-link" href="#"><%= comment.escape("commenter_username") %></a> <p class="text"><%= comment.escape("body") %></p>
+<span class="comment-details-created-at"><%= moment(comment.escape("created_at")).fromNow() %></span>

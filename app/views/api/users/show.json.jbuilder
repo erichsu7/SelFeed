@@ -10,7 +10,7 @@ json.pictures @user.authored_pictures do |picture|
   end
   json.likes picture.likes
   json.comments picture.comments do |comment|
-    json.extract! comment, :id, :commenter_id, :picture_id, :body
+    json.extract! comment, :id, :commenter_id, :picture_id, :body, :created_at, :updated_at
     json.commenter_username comment.commenter.username
   end
 end

@@ -1,10 +1,12 @@
 SelFeed.Views.CommentForm = Backbone.View.extend({
   template: JST["comments/comment_form"],
   tagName: "form",
-  className: "comments-form",
+  className: "comments-form clearfix",
 
   events: {
-    "submit": "createComment"
+    "submit": "createComment",
+    "focus .comment-body": "clearField",
+    "blur .comment-body": "resetField"
   },
 
   initialize: function (options) {
@@ -26,10 +28,22 @@ SelFeed.Views.CommentForm = Backbone.View.extend({
     params.comment.picture_id = this.picture.id;
     params.comment.commenter_username = currentUserUsername;
     var comment = new SelFeed.Models.Comment(params.comment);
-    comment.save({}, {
-      success: function () {
-        that.collection.add(comment, {merge: true});
-      }
-    })
+    comment.save();
+    this.$(".comment-body").val("");
+    this.collection.add(comment, {merge: true});
+  },
+
+  clearField: function (event) {
+    var $target = $(event.currentTarget);
+    if ($target.val() === "Write a comment...") {
+      $target.val("");
+    }
+  },
+
+  resetField: function (event) {
+    var $target = $(event.currentTarget);
+    if ($target.val() === "") {
+      $target.val("Write a comment...");
+    }
   }
 })

@@ -3,5 +3,44 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .picture-comments-container {
+  padding: 0 20px;
+}
+
+.picture-comment-show-view {
+  display: block;
+  clear: both;
+  color: #333;
+  margin: 10px auto;
+}
+
+.comment-details-created-at {
+  float: right;
+  font-size: 10px;
+}
+
+.comments-form {
+  position: relative;
+  width: 100%;
+  height: auto;
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+
+.comments-form input {
+  font-family: "Raleway";
+  font-weight: 300;
+  position: absolute;
+  width: 100%;
+  font-size: 14px;
   padding: 5px 10px;
+  box-sizing: border-box;
+  border-radius: 3px;
+  border: 1px solid #ddd;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #ccc;
+}
+
+.comments-form input:focus {
+  color: #333;
 }

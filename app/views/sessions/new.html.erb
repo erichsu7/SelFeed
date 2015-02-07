@@ -1,18 +1,21 @@
-<div class="user-form">
-  <header class="user-form-header">SelFeed</header>
-  <form action='<%= session_url %>' method="post">
-    <%= include_form_auth_token %>
+<div class="form-page-container">
+  <div class="user-form">
+    <header class="user-form-header">SelFeed</header>
+    <form action='<%= session_url %>' method="post">
+      <%= include_form_auth_token %>
 
-    <div class="input-field clearfix">
-      <label for="user_username">Username:</label>
-      <input type="text" name="user[username]" id="user_username" value="">
-    </div>
+      <div class="input-field clearfix">
+        <label for="user_username">Username:</label>
+        <input type="text" name="user[username]" id="user_username" value="">
+      </div>
 
-    <div class="input-field clearfix">
-      <label for="user_password">Password:</label>
-      <input type="password" name="user[password]" id="user_password">
-    </div>
+      <div class="input-field clearfix">
+        <label for="user_password">Password:</label>
+        <input type="password" name="user[password]" id="user_password">
+      </div>
 
-    <input type="submit" class="submit-button" value="Log in">
-  </form>
+      <input type="submit" class="submit-button" value="Log in">
+    </form>
+  </div>
+
 </div>
