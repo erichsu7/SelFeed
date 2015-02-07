@@ -18,7 +18,7 @@ SelFeed.Views.PictureShow = Backbone.CompositeView.extend({
   },
 
   renderCommentsFeed: function () {
-    var feedView = new SelFeed.Views.CommentsFeed({ collection: this.model.comments() });
+    var feedView = new SelFeed.Views.CommentsFeed({ collection: this.model.comments(), picture: this.model });
     this.addSubview(".picture-comments-container", feedView);
   }
 })
