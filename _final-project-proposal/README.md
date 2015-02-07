@@ -9,7 +9,7 @@ Users can:
 - [x] Upload pictures
 - [x] Caption pictures
 - [x] Like pictures
-- [] Comment on pictures
+- [x] Comment on pictures
 - [x] View own profile page
 - [x] View other users' pages
 - [] Follow users
@@ -53,18 +53,18 @@ First, I'll need to add the ability to follow another user. Using the associatio
 If I have time, I'd like to implement hashtagging photos and implementing search functionality based on those hashtags. Also, I think a user avatar and profile cover photo would be nice touches. Other possible features are listed below.
 
 - [] Profile feed vs grid view
+- [] User avatars
+- [] Profile page cover photo
 - [] Feed infinite scrolling
 - [] Picture filter on upload
+- [] Splash page (Bootstrap)
 - [] Hashtag pictures
 - [] Search pictures by hashtag
 - [] Show most popular pictures
 - [] Geographic display of pictures
 - [] Activity history for pictures (e.g. likes, comments, tags)
 - [] Activity history for followed users
-- [] User avatars
-- [] Profile page cover photo
 - [] Video upload
-- [] Explore all pictures
 
 [phase-one]: ./docs/phases/phase1.md
 [phase-two]: ./docs/phases/phase2.md

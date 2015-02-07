@@ -10,7 +10,7 @@ SelFeed.Views.LikeShow = Backbone.View.extend({
     this.picture = options.picture;
     this.model = this.picture.like();
     this.likeCount = this.picture.get("likes").length;
-    this.listenTo(this.model, "sync change remove", this.render);
+    this.listenTo(this.model, "change", this.render);
   },
 
   render: function () {
@@ -27,13 +27,12 @@ SelFeed.Views.LikeShow = Backbone.View.extend({
   toggleLike: function (event) {
     event.preventDefault();
     if (this.model.isNew()) {
-      this.model.save();
       this.likeCount++;
+      this.model.save();
     } else {
+      this.likeCount--;
       this.model.destroy();
       this.model.set("id", null);
-      this.likeCount--;
-      this.renderLikeCount(this.likeCount);
     }
   },
 
