@@ -8,8 +8,7 @@
 <div class="picture-likes-container"></div>
 
 <div class="picture-caption-container">
-  <p>
-    <%= picture.escape("caption") %>
+  <p><a class="picture-details-author-link" id="caption-author-link" href="#"><%= picture.escape("author_username")%></a> <%= picture.escape("caption") %>
   </p>
 </div>
 <div class="picture-comments-container">

@@ -11,7 +11,7 @@
   width: 580px;
   height: 100%;
   padding-top: 40px;
-  border: 1px solid #bbb;
+  border: 1px solid #ccc;
   border-top: none;
 }
 
@@ -21,8 +21,9 @@
   margin: auto;
   margin-bottom: 40px;
   background-color: #fff;
-  border: 1px solid #bbb;
+  border: 1px solid #ddd;
   border-radius: 3px;
+  font-size: 14px;
 }
 
 .picture-details-container {
@@ -32,7 +33,6 @@
 
 .picture-details-author-link {
   float: right;
-  font-size: 14px;
   color: #517fa4;
 }
 .picture-details-author-link:hover {
@@ -43,7 +43,6 @@
   float: right;
   white-space: nowrap;
   color: #aaa;
-  font-size: 14px;
 }
 
 .picture-show-picture {
@@ -55,7 +54,7 @@
   top: -5px;
   height: 40px;
   background-image: -webkit-linear-gradient(top, #fff, #eee);
-  border-bottom: 1px solid #ccc
+  border-bottom: 1px solid #ddd;
 }
 
 .picture-likes-button {
@@ -67,11 +66,12 @@
   height: 40px;
   width: 40px;
   background-color: #eee;
-  border-right: 1px solid #ccc;
+  border-right: 1px solid #ddd;
 }
 
 .picture-likes-button:hover,
   .liked {
+  cursor: pointer;
   background-position: -1px 40px
 }
 
@@ -80,7 +80,15 @@
   position: absolute;
   top: 50%;
   margin-left: 10px;
-  font-size: 14px;
   color: #777;
   transform: translateY(-50%);
+}
+
+.picture-caption-container {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+#caption-author-link {
+  float: none;
 }
