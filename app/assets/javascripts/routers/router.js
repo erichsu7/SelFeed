@@ -9,10 +9,10 @@ SelFeed.Routers.Router = Backbone.Router.extend({
   },
 
   userShow: function (id) {
-    this.pictures = new SelFeed.Collections.Pictures();
-    var url = "api/users/" + id;
-    this.pictures.fetch({ url: url });
-    var showView = new SelFeed.Views.PicturesFeed({ collection: this.pictures });
+    var user = new SelFeed.Models.User({ id: id });
+    user.fetch();
+    debugger;
+    var showView = new SelFeed.Views.PicturesFeed({ collection: user.pictures() });
     this._swapView(showView);
   },
 
