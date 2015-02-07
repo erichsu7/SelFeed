@@ -12,7 +12,7 @@ SelFeed.Views.PictureShow = Backbone.CompositeView.extend({
   },
 
   renderLikeShow: function () {
-    var showView = new SelFeed.Views.LikeShow({ model: this.model });
+    var showView = new SelFeed.Views.LikeShow({ picture: this.model });
     this.addSubview(".picture-likes-container", showView);
   }
 })
