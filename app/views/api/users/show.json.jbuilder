@@ -1,5 +1,8 @@
 json.author do
   json.extract! @user, :id, :username
+  if current_user.follows?(@user)
+    json.follow current_user.follows.find_by_followee_id(@user.id)
+  end
 end
 
 json.pictures @user.authored_pictures do |picture|

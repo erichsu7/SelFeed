@@ -21,6 +21,22 @@ class User < ActiveRecord::Base
   has_many :comments,
     foreign_key: :commenter_id
 
+  has_many :follows,
+    class_name: "Follow",
+    foreign_key: :follower_id
+
+  has_many :followings,
+    class_name: "Follow",
+    foreign_key: :followee_id
+
+  has_many :followed_users,
+    through: :follows,
+    source: :followee
+
+  has_many :followers,
+    through: :followings,
+    source: :follower
+
   def self.find_by_credentials(username, password)
     user = User.find_by_username(username)
     return nil unless user
@@ -49,6 +65,10 @@ class User < ActiveRecord::Base
 
   def likes?(picture)
     self.liked_pictures.include?(picture)
+  end
+
+  def follows?(user)
+    self.followed_users.include?(user)
   end
 
   private

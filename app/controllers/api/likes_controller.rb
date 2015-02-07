@@ -1,8 +1,7 @@
 module Api
   class LikesController < ApiController
     def create
-      @like = Like.new(like_params)
-      @like.liker_id = current_user.id
+      @like = current_user.likes.new(like_params)
 
       if @like.save
         render json: @like
