@@ -6,6 +6,11 @@ SelFeed.Models.Picture = Backbone.Model.extend({
     return this._like;
   },
 
+  comments: function () {
+    this._comments = this._comments || new SelFeed.Collections.Comments();
+    return this._comments;
+  },
+
   parse: function (response) {
     if (response.like) {
       this.like().set(response.like);
@@ -14,10 +19,10 @@ SelFeed.Models.Picture = Backbone.Model.extend({
       this.like().set("picture_id", response.id);
     }
 
-    this.likes = response.likes;
+    this.set("likes", response.likes);
     delete response.likes
 
-    this.comments = response.comments
+    this.comments().set(response.comments);
     delete response.comments
 
     return response;

@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   before_action :redirect_if_logged_in, only: [:new, :create]
 
   def show
-    @user = User.find(params[:id])
+    @user = User.includes(authored_pictures: [:likes, :comments]).find(params[:id])
 
     render :show
   end

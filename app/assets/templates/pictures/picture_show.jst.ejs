@@ -1,5 +1,5 @@
 <div class="picture-details-container">
-  <a class="picture-details-author-link" href="#"><%= picture.escape("author_username") %></a>
+  <a class="author-link" href="#"><%= picture.escape("author_username") %></a>
   <span class="picture-details-created-at"><%= moment(picture.escape("created_at")).fromNow() %></span>
 </div>
 
@@ -8,13 +8,7 @@
 <div class="picture-likes-container"></div>
 
 <div class="picture-caption-container">
-  <p><a class="picture-details-author-link" id="caption-author-link" href="#"><%= picture.escape("author_username")%></a> <%= picture.escape("caption") %>
+  <p><a class="author-link" id="caption-author-link" href="#"><%= picture.escape("author_username")%></a> <%= picture.escape("caption") %>
   </p>
 </div>
-<div class="picture-comments-container">
-  <ul class="picture-comments-list">
-    <li>awesome!</li>
-    <li>lmao roflcopter</li>
-    <li>best pic ever</li>
-  </ul>
-</div>
+<div class="picture-comments-container"></div>
