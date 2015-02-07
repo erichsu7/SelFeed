@@ -13,9 +13,12 @@ SelFeed.Models.Picture = Backbone.Model.extend({
     } else {
       this.like().set("picture_id", response.id);
     }
-    
+
     this.likes = response.likes;
     delete response.likes
+
+    this.comments = response.comments
+    delete response.comments
 
     return response;
   }

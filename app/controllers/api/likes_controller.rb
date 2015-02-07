@@ -7,13 +7,14 @@ module Api
       if @like.save
         render json: @like
       else
-        render json: {}
+        render json: @like.errors.full_messages, status: :unprocessable_entity
       end
     end
 
     def destroy
-      @like = Like.find(params[:id])
-      @like.destroy
+      @like = current_user.likes.find(params[:id])
+
+      @like.destroy if @like
       render json: {}
     end
 

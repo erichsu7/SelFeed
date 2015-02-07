@@ -1,5 +1,5 @@
 class Comment < ActiveRecord::Base
-  validates :commenter_id, :picture_id, presence: true
+  validates :commenter_id, :picture_id, :body, presence: true
 
   belongs_to :picture
 
