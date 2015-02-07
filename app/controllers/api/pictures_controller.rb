@@ -29,7 +29,7 @@ module Api
 
     private
       def picture_params
-        params.require(:picture).permit(:url, :author_id, :caption)
+        params.require(:picture).permit(:url, :caption)
       end
   end
 end

@@ -8,7 +8,7 @@ Users can:
 - [x] Create sessions (log in)
 - [x] Upload pictures
 - [x] Caption pictures
-- [] Like pictures
+- [x] Like pictures
 - [] Comment on pictures
 - [x] View own profile page
 - [x] View other users' pages

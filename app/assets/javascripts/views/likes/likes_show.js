@@ -23,9 +23,7 @@ SelFeed.Views.LikeShow = Backbone.View.extend({
 
   toggleLike: function (event) {
     event.preventDefault();
-    var currentUserId = $(".current-user-data").data("current-user-id");
     if (this.model.like().isNew()) {
-      this.model.like().set("liker_id", currentUserId);
       this.model.like().save();
       this.likeCount++;
     } else {

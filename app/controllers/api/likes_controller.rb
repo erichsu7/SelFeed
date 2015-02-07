@@ -1,7 +1,8 @@
 module Api
-  class LikesController < ApplicationController
+  class LikesController < ApiController
     def create
       @like = Like.new(like_params)
+      @like.liker_id = current_user.id
 
       if @like.save
         render json: @like
@@ -18,7 +19,7 @@ module Api
 
     private
       def like_params
-        params.require(:like).permit(:liker_id, :picture_id)
+        params.require(:like).permit(:picture_id)
       end
   end
 end

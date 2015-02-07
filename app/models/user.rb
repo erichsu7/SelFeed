@@ -18,6 +18,9 @@ class User < ActiveRecord::Base
     through: :likes,
     source: :picture
 
+  has_many :comments,
+    foreign_key: :commenter_id
+
   def self.find_by_credentials(username, password)
     user = User.find_by_username(username)
     return nil unless user
