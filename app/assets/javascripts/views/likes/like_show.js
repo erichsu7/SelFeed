@@ -14,7 +14,6 @@ SelFeed.Views.LikeShow = Backbone.View.extend({
   },
 
   render: function () {
-    console.log("render likeShow");
     var renderedContent = this.template();
 
     this.$el.html($(renderedContent));
