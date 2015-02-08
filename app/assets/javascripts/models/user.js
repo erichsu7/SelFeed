@@ -15,6 +15,8 @@ SelFeed.Models.User = Backbone.Model.extend({
     if (response.follow) {
       this.follow().set(response.follow, { parse: true });
       delete response.follow;
+    } else {
+      this.follow().set("followee_id", response.id);
     }
 
     if (response.authored_pictures) {

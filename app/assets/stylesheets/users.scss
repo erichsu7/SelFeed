@@ -15,4 +15,11 @@
 
 #follow-user {
   display: inline;
+  border: 1px solid #234562;
+  background-image: -webkit-linear-gradient(top,#517fa4,#306088);
+}
+
+.followed#follow-user {
+  border: 1px solid #3d8b5f;
+  background-image: -webkit-linear-gradient(top,#6bb38a,#3d8b5f);
 }

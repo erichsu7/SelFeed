@@ -36,8 +36,8 @@ SelFeed.Views.LikeShow = Backbone.View.extend({
     }
   },
 
-  renderLikeButton: function (picture) {
-    if (picture.like().isNew()) {
+  renderLikeButton: function () {
+    if (this.model.isNew()) {
       this.$(".picture-likes-button").removeClass("liked");
     } else {
       this.$(".picture-likes-button").addClass("liked");
