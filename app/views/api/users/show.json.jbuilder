@@ -3,7 +3,7 @@ if current_user.follows?(@user)
   json.follow current_user.follows.find_by_followee_id(@user.id)
 end
 
-json.authored_pictures @user.authored_pictures do |picture|
+json.pictures @user.authored_pictures do |picture|
   json.extract! picture, :id, :url, :author_id, :caption, :created_at, :updated_at
   json.author_username @user.username
   if current_user.likes?(picture)

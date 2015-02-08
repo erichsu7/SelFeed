@@ -1,0 +1,76 @@
+// Place all the styles related to the Users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.user-show-view {
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.user-header-container {
+  width: 100%;
+}
+
+.user-header-view {
+}
+
+.user-header-collage {
+  position: relative;
+  background-color: #222;
+}
+
+.user-header-collage-pictures {
+  margin: auto;
+  width: 1000px;
+  height: 400px;
+  border: 1px solid #fff;
+}
+
+.user-header-details {
+  position: relative;
+  width: 1000px;
+  height: 100px;
+  margin: auto;
+  background-color: #fff;
+  border-right: 1px solid #eee;
+  border-left: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+}
+
+.user-header-avatar-container {
+  position: absolute;
+  background-color: #fff;
+  bottom: 20px;
+  left: 30px;
+  border: 1px solid #ddd;
+  box-shadow: 0 0 2px #ddd;
+  width: 110px;
+  border-radius: 5px;
+}
+
+.user-header-avatar {
+  position: relative;
+  background-color: #aaa;
+  height: 100px;
+  width: 100px;
+  margin-left: 5px;
+  margin-top: 5px;
+  border-radius: 5px;
+}
+
+#follow-user {
+  display: block;
+  border: 1px solid #234562;
+  background-image: -webkit-linear-gradient(top,#517fa4,#306088);
+  width: 100px;
+  text-align: center;
+  margin: auto;
+  margin-bottom: 5px;
+  font-size: 12px;
+}
+
+.followed#follow-user {
+  border: 1px solid #3d8b5f;
+  background-image: -webkit-linear-gradient(top,#6bb38a,#3d8b5f);
+}

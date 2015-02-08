@@ -1,4 +1,4 @@
-json.pictures @pictures do |picture|
+json.array! @pictures do |picture|
   json.extract! picture, :id, :url, :author_id, :caption, :created_at, :updated_at
   json.author_username picture.author.username
   if current_user.likes?(picture)
