@@ -3,7 +3,11 @@ module Api
 
     def index
       @pictures = current_user.authored_pictures
-      render json: @pictures
+      current_user.followed_users.each do |followed_user|
+        @pictures += followed_user.authored_pictures
+      end
+
+      render "index"
     end
 
     def show

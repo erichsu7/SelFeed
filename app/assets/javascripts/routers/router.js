@@ -1,11 +1,24 @@
 SelFeed.Routers.Router = Backbone.Router.extend({
   routes: {
+    "": "feedShow",
     "users/:id": "userShow"
   },
 
   initialize: function (options) {
     this.$rootEl = options.$rootEl;
     this.renderHeader();
+  },
+
+  feedShow: function () {
+    var that = this;
+    var pictures = new SelFeed.Collections.Pictures();
+    pictures.fetch({
+      url: "api/pictures",
+      success: function () {
+        var picturesFeed = new SelFeed.Views.PicturesFeed({ collection: pictures });
+        that._swapView(picturesFeed);
+      }
+    });
   },
 
   userShow: function (id) {
