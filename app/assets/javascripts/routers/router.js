@@ -11,8 +11,7 @@ SelFeed.Routers.Router = Backbone.Router.extend({
   userShow: function (id) {
     var user = new SelFeed.Models.User({ id: id });
     user.fetch();
-    debugger;
-    var showView = new SelFeed.Views.PicturesFeed({ collection: user.pictures() });
+    var showView = new SelFeed.Views.UserShow({ model: user });
     this._swapView(showView);
   },
 

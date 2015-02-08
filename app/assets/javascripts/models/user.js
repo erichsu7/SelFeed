@@ -13,15 +13,14 @@ SelFeed.Models.User = Backbone.Model.extend({
 
   parse: function (response) {
     if (response.follow) {
-      this.follow().set(response.follow);
+      this.follow().set(response.follow, { parse: true });
       delete response.follow;
     }
 
     if (response.authored_pictures) {
-      this.pictures().set(response.authored_pictures);
+      this.pictures().set(response.authored_pictures, { parse: true });
       delete response.pictures;
     }
-
     return response;
   }
 });

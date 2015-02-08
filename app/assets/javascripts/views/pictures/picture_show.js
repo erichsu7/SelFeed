@@ -3,21 +3,25 @@ SelFeed.Views.PictureShow = Backbone.CompositeView.extend({
   tagName: "li",
   className: "picture-show-container",
 
+  initialize: function () {
+    this.addLikeShow();
+    this.addCommentsFeed();
+  },
+
   render: function () {
     var renderedContent = this.template({ picture: this.model });
     this.$el.html(renderedContent);
-    this.renderLikeShow();
-    this.renderCommentsFeed();
+    this.attachSubviews();
 
     return this;
   },
 
-  renderLikeShow: function () {
+  addLikeShow: function () {
     var showView = new SelFeed.Views.LikeShow({ picture: this.model });
     this.addSubview(".picture-likes-container", showView);
   },
 
-  renderCommentsFeed: function () {
+  addCommentsFeed: function () {
     var feedView = new SelFeed.Views.CommentsFeed({ collection: this.model.comments(), picture: this.model });
     this.addSubview(".picture-comments-container", feedView);
   }

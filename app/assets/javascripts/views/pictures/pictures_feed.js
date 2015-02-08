@@ -12,10 +12,11 @@ SelFeed.Views.PicturesFeed = Backbone.CompositeView.extend({
     });
   },
 
-  render: function () {
+  render: function (event) {
     var renderedContent = this.template();
     this.$el.html(renderedContent);
     this.attachSubviews();
+
     return this;
   },
 
