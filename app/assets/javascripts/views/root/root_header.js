@@ -1,6 +1,7 @@
 SelFeed.Views.RootHeader = Backbone.CompositeView.extend({
   template: JST["root/root_header"],
   className: "root-header-nav clearfix",
+  tagName: "ul",
 
   events: {
     "click .add-picture-link": "addPictureForm",

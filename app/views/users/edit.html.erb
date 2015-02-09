@@ -1,5 +1,34 @@
 <div class="user-form">
   <header class="user-form-header">SelFeed</header>
+  <form action="<%= user_url(@user) %>" method="post">
+    <%= include_form_auth_token %>
+    <input type="hidden" name="_method" value="patch">
 
-  <%= render "form", user: @user %>
+    <div class="input-field clearfix">
+      <label for="user_username">Username:</label>
+      <input type="text" name="user[username]" value="<%= @user.username %>">
+    </div>
+
+    <div class="input-field clearfix">
+      <label for="user_display_name">Display name:</label>
+      <input type="text" name="user[display_name]" value="<%= @user.display_name %>">
+    </div>
+
+    <div class="input-field">
+      <label for="user_bio">Bio:</label>
+      <textarea id="user_bio" name="user[bio]"><%= @user.bio %></textarea>
+    </div>
+
+    <div class="input-field clearfix">
+      <label for="user_avatar">Avatar:</label>
+      <input type="text" name="user[avatar]" value="">
+    </div>
+
+    <div class="input-field clearfix">
+      <label for="user_password">Password:</label>
+      <input type="password" name="user[password]" value="">
+    </div>
+
+    <input type="submit" class="submit-button" value="Confirm changes">
+  </form>
 </div>

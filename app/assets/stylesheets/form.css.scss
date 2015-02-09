@@ -30,6 +30,7 @@
   position: relative;
   display: block;
   margin: 30px;
+  height: auto;
 }
 
 .input-field input {
@@ -38,6 +39,18 @@
   width: 65%;
   top: 50%;
   transform: translateY(-50%);
+}
+
+.input-field textarea {
+  margin-left: 35%;
+  margin-bottom: 0px;
+  width: 215px;
+  height: 100px;
+  max-width: 215px;
+  max-height: 100px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  overflow: auto;
 }
 
 .input-field label {

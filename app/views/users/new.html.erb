@@ -3,7 +3,22 @@
 <div class="user-form">
   <header class="user-form-header">SelFeed</header>
 
-  <%= render "form", user: @user %>
+  <form action="<%= users_url %>" method="post">
+    <%= include_form_auth_token %>
+
+    <div class="input-field clearfix">
+      <label for="user_username">Username:</label>
+      <input type="text" name="user[username]" value="<%= @user.username %>">
+    </div>
+
+    <div class="input-field clearfix">
+      <label for="user_password">Password:</label>
+      <input type="password" name="user[password]" value="">
+    </div>
+
+    <input type="submit" class="submit-button" value="Confirm user">
+  </form>
+
 </div>
 
 <div class="user-redirect">

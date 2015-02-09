@@ -9,46 +9,51 @@
 }
 
 .root-header-nav {
+  position: relative;
   max-width: 1000px;
+  height: 100%;
   margin: auto;
   color: #fff;
 }
 
-.logo-link {
+
+.home-container,
+  .add-picture-container {
+    position: relative;
+    height: 50px;
+    width: 50px;
+    float: left;
+    display: block;
+    font-size: 32px;
+    border-left: 1px solid #777;
+  }
+
+.add-picture-container {
+  border-right: 1px solid #777;
+}
+
+.home-container > a,
+  .add-picture-container > a {
+    position: absolute;
+    display: block;
+    padding: 9px;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+  }
+
+.user-container {
+  float: right;
+  display: block;
+}
+
+.logo-container {
   position: absolute;
   left: 50%;
   top: 50%;
   transform: translateX(-50%) translateY(-50%);
   font-family: "Rochester";
   font-size: 24px;
-  color: #eee;
-  text-shadow: 0 0 5px #333;
-}
-
-.home-link,
-  .add-picture-link {
-  display: block;
-  float: left;
-  font-size: 32px;
-  width: 50px;
-  height: 49px;
-  text-align: center;
-  padding-top: 5px;
-  border-left: 1px solid #5f8cb0;
-}
-
-.home-link {
-  margin-left: 1px;
-}
-
-.add-picture-link {
-  border-right: 1px solid #5f8cb0;
-}
-
-.user-link {
-  float: right;
-}
-
-.log-out-link {
-  float: right;
+  color: #fafafa;
+  text-shadow: 0 0 3px #333;
 }
