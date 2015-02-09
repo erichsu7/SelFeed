@@ -35,6 +35,10 @@
   border: 1px solid #ccc;
 }
 
+.pictures-grid-item-container > img:hover {
+  cursor: pointer;
+}
+
 .grid-item-picture-details {
   display: block;
   position: absolute;

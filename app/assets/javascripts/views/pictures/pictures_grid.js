@@ -22,7 +22,7 @@ SelFeed.Views.PicturesGrid = Backbone.CompositeView.extend({
 
   addPicture: function (picture) {
     var gridItem = new SelFeed.Views.PicturesGridItem({ model: picture });
-    this.addSubview(".pictures-grid-list", gridItem);
+    this.prependSubview(".pictures-grid-list", gridItem);
   },
 
   removePicture: function (picture) {
