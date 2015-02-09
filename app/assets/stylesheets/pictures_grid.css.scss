@@ -34,10 +34,16 @@
   width: 160px;
   height: 160px;
   border: 1px solid #ccc;
+  transition: all 100ms ease;
 }
 
 .grid-item-picture-details {
   box-sizing: content-box;
   padding: 5px;
   background-color: #fff;
+}
+
+.pictures-grid-item-container > img:hover {
+  padding: 10px;
+  transition: all 100ms ease;
 }

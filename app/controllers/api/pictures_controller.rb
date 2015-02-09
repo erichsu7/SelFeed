@@ -7,8 +7,6 @@ module Api
         @pictures += followed_user.authored_pictures
       end
 
-      @pictures = @pictures.to_a.sort { |picture| picture.id }
-
       render "index"
     end
 

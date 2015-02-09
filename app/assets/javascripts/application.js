@@ -19,6 +19,7 @@
 //= require jquery.fileupload
 //= require jquery.cloudinary
 //= require jquery.Jcrop
+//= require bootstrap-sprockets
 //= require imagesloaded.pkgd
 //= require moment
 //= require underscore
