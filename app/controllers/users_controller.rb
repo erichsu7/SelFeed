@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :redirect_if_logged_in, only: [:new, :create]
-
+  before_action :redirect_if_not_editing_own_account, only: [:edit, :update]
   def show
     @user = User.includes(authored_pictures: [:likes, comments: [:commenter]]).find(params[:id])
 
@@ -35,7 +35,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
 
     if @user.update(user_params)
-      redirect_to user_url(@user)
+      redirect_to root_url
     else
       flash.now[:errors] = @user.errors.full_messages
       render :edit
@@ -46,6 +46,13 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @user.destroy
     redirect_to root_url
+  end
+
+  def redirect_if_not_editing_own_account()
+    user = User.find(params[:id])
+    if (current_user != user)
+      redirect_to root_url
+    end
   end
 
   private
