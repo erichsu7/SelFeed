@@ -1,6 +1,6 @@
 <div class="picture-details-container">
   <a class="author-link" href="#"><%= picture.escape("author_username") %></a>
-  <span class="picture-details-created-at"><%= moment(picture.escape("created_at")).fromNow() %></span>
+  <span class="picture-show-created-at"><%= moment(picture.escape("created_at")).fromNow() %></span>
 </div>
 
 <img class="picture-show-picture" src="<%= picture.escape("url") %>">
