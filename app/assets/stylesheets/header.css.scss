@@ -20,16 +20,16 @@
 .home-container,
   .add-picture-container {
     position: relative;
-    height: 50px;
+    height: 49px;
     width: 50px;
     float: left;
     display: block;
     font-size: 32px;
-    border-left: 1px solid #777;
+    border-left: 1px solid #6892b4;
   }
 
 .add-picture-container {
-  border-right: 1px solid #777;
+  border-right: 1px solid #6892b4;
 }
 
 .home-container > a,
@@ -43,9 +43,72 @@
   }
 
 .user-container {
-  float: right;
   display: block;
+  position: absolute;
+  height: 49px;
+  width: 100px;
+  border-right: 1px solid #6892b4;
+  border-left: 1px solid #6892b4;
+  right: 0;
 }
+
+.user-link {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}
+
+li:hover .user-options-list {
+  visibility: visible;
+  display: block;
+  opacity: 1;
+  transition: opacity 500ms;
+}
+
+.user-options-list {
+  position: relative;
+  width: 100%;
+  top: 50px;
+  color: #000;
+  border-left: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+  overflow: hidden;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 500ms, visibility 500ms;
+}
+
+.user-options-list > li:hover {
+  background-color: #eaeaea;
+  cursor: pointer;
+}
+
+.user-options-list:last-child {
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.user-options-list > li {
+  position: relative;
+  font-size: 14px;
+  height: 30px;
+  width: 100%;
+  color: #517fa4;
+  background-color: #fff;
+  border-bottom: 1px solid #ddd;
+}
+
+.edit-user-link,
+  .log-out-link {
+  position: absolute;
+  top: 50%;
+  left: 5px;
+  transform: translateY(-50%);
+  white-space: nowrap;
+  padding: 5px;
+  }
+
 
 .logo-container {
   position: absolute;
