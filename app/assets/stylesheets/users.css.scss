@@ -21,11 +21,31 @@
 }
 
 .user-header-collage-pictures {
+  position: relative;
   margin: auto;
   width: 1000px;
   height: 400px;
   border: 1px solid #fff;
 }
+
+.collage-picture {
+  float: left;
+  box-sizing: border-box;
+  width: 200px;
+  height: 200px;
+}
+
+.collage-picture#picture-2 {
+  width: 400px;
+  height: 400px;
+}
+
+.collage-picture#picture-1 {
+  position: absolute;
+  left: 0px;
+  top: 200px;
+}
+
 
 .user-header-details {
   position: relative;
@@ -36,6 +56,13 @@
   border-right: 1px solid #eee;
   border-left: 1px solid #eee;
   border-bottom: 1px solid #eee;
+}
+
+.user-header-username {
+  position: absolute;
+  left: 160px;
+  top: 10px;
+  font-size: 20px;
 }
 
 .user-header-avatar-container {
