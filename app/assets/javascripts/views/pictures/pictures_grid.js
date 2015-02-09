@@ -1,5 +1,6 @@
 SelFeed.Views.PicturesGrid = Backbone.CompositeView.extend({
   template: JST["pictures/pictures_grid"],
+  className: "pictures-grid-view",
 
   initialize: function () {
     var that = this;

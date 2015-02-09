@@ -12,8 +12,8 @@ Users can:
 - [x] Comment on pictures
 - [x] View own profile page
 - [x] View other users' pages
-- [] Follow users
-- [] View a feed of followed users' pictures
+- [x] Follow users
+- [x] View a feed of followed users' pictures
 
 ## Design Docs
 * [View Wireframes][views]
@@ -52,9 +52,10 @@ First, I'll need to add the ability to follow another user. Using the associatio
 ### Bonus Features (TBD)
 If I have time, I'd like to implement hashtagging photos and implementing search functionality based on those hashtags. Also, I think a user avatar and profile cover photo would be nice touches. Other possible features are listed below.
 
-- [] Profile feed vs grid view
+- [x] Profile feed vs grid view
 - [] User avatars
-- [] Profile page cover photo
+- [x] Profile page cover photo
+- [] Transitioning cover photo collage
 - [] Feed infinite scrolling
 - [] Picture filter on upload
 - [] Splash page (Bootstrap)

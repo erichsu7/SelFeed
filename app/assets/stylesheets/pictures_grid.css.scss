@@ -1,0 +1,43 @@
+.pictures-grid-container {
+  display: block;
+  position: relative;
+  width: 1000px;
+  margin: auto;
+  top: -16px;
+  background-color: #eee;
+}
+
+.pictures-grid-view {
+  display: block;
+  position: relative;
+}
+
+.pictures-grid-list {
+  display: block;
+  position: relative;
+}
+
+.pictures-grid-item-container {
+  display: inline-block;
+  position: relative;
+  width: 200px;
+  height: 260px;
+  box-sizing: border-box;
+}
+
+.pictures-grid-item-container > img,
+  .grid-item-picture-details {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  width: 160px;
+  height: 160px;
+  border: 1px solid #ccc;
+}
+
+.grid-item-picture-details {
+  box-sizing: content-box;
+  padding: 5px;
+  background-color: #fff;
+}
