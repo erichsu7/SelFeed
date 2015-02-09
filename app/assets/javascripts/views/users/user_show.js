@@ -4,7 +4,7 @@ SelFeed.Views.UserShow = Backbone.CompositeView.extend({
 
   initialize: function () {
     this.addUserHeader();
-    this.addPicturesFeed();
+    this.addPicturesGrid();
   },
 
   render: function () {
@@ -20,9 +20,9 @@ SelFeed.Views.UserShow = Backbone.CompositeView.extend({
     this.addSubview(".user-header-container", userHeader);
   },
 
-  addPicturesFeed: function () {
-    var picturesFeed =
-      new SelFeed.Views.PicturesFeed({ collection: this.model.pictures() });
-    this.addSubview(".pictures-feed-container", picturesFeed);
+  addPicturesGrid: function () {
+    var picturesGrid =
+      new SelFeed.Views.PicturesGrid({ collection: this.model.pictures() });
+    this.addSubview(".pictures-grid-container", picturesGrid);
   }
 });
