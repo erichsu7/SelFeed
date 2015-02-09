@@ -21,5 +21,4 @@
 * PicturesGridItem
 
 ## Gems/Libraries
-* Bootstrap-sass
-* Sass-rails
+* FontAwesome

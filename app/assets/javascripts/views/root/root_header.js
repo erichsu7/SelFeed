@@ -20,7 +20,8 @@ SelFeed.Views.RootHeader = Backbone.CompositeView.extend({
     return this;
   },
 
-  addPictureForm: function () {
+  addPictureForm: function (event) {
+    event.preventDefault();
     var pictureForm = new SelFeed.Views.PictureForm();
     this.addSubview(".picture-form-modal", pictureForm);
   },

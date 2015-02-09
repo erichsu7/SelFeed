@@ -12,21 +12,23 @@
 }
 
 .picture-likes-button {
-  display: inline-block;
-  background-image: url("heart_sprite.png");
-  background-size: 40px 80px;
-  background-position: -1px 0;
-  font-size: 72px;
-  height: 40px;
+  display: block;
+  float: left;
+  text-align: center;
+  font-size: 32px;
   width: 40px;
-  background-color: #eee;
+  height: 40px;
   border-right: 1px solid #ddd;
+  color: #bbb;
 }
 
-.picture-likes-button:hover,
-  .liked {
+.picture-likes-button:hover {
   cursor: pointer;
-  background-position: -1px 40px
+  color: #dd7070;
+}
+
+.picture-likes-button.liked {
+  color: #d14141;
 }
 
 .picture-likes-count {
