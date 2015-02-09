@@ -6,16 +6,20 @@ SelFeed.Views.RootHeader = Backbone.CompositeView.extend({
   events: {
     "click .add-picture-link": "addPictureForm",
     "click .log-out-link": "destroySession",
-    "click .user-link": "showUser"
+    "click .user-link": "showUser",
+    "click .edit-user-link": "editUser",
+    "click .edit-avatar-link": "addAvatarForm"
   },
 
   initialize: function (options) {
     this.user_id = options.user_id;
-    this.username = options.username;
+    this.model = new SelFeed.Models.User({ id: this.user_id });
+    this.model.fetch();
+    this.listenTo(this.model, "sync", this.render);
   },
 
   render: function () {
-    var renderedContent = this.template({ username: this.username });
+    var renderedContent = this.template({ username: this.model.escape("username") });
     this.$el.html(renderedContent);
 
     return this;
@@ -40,5 +44,15 @@ SelFeed.Views.RootHeader = Backbone.CompositeView.extend({
     event.preventDefault();
     var url = "/users/" + this.user_id;
     Backbone.history.navigate(url, { trigger: true });
+  },
+
+  editUser: function (event) {
+    event.preventDefault();
+    window.location = "users/" + this.user_id + "/edit";
+  },
+
+  addAvatarForm: function (event) {
+    event.preventDefault();
+    var avatarForm = new SelFeed.Views.AvatarForm({})
   }
 })

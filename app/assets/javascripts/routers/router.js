@@ -30,8 +30,7 @@ SelFeed.Routers.Router = Backbone.Router.extend({
 
   renderHeader: function () {
     this.currentUserId= $(".current-user-data").data("current-user-id");
-    this.currentUserUsername= $(".current-user-data").data("current-user-username");
-    var headerView = new SelFeed.Views.RootHeader({ user_id: this.currentUserId, username: this.currentUserUsername });
+    var headerView = new SelFeed.Views.RootHeader({ user_id: this.currentUserId });
     $(".root-header").html(headerView.render().$el);
   },
 

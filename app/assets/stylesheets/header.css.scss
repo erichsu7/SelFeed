@@ -16,6 +16,9 @@
   color: #fff;
 }
 
+.root-header-nav > li {
+  cursor: pointer;
+}
 
 .home-container,
   .add-picture-container {
@@ -52,7 +55,7 @@
   right: 0;
 }
 
-.user-link {
+.header-username {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -99,8 +102,7 @@ li:hover .user-options-list {
   border-bottom: 1px solid #ddd;
 }
 
-.edit-user-link,
-  .log-out-link {
+.user-options-list a {
   position: absolute;
   top: 50%;
   left: 5px;
