@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150209194325) do
+ActiveRecord::Schema.define(version: 20150210214037) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -47,11 +47,12 @@ ActiveRecord::Schema.define(version: 20150209194325) do
   add_index "likes", ["picture_id"], name: "index_likes_on_picture_id", using: :btree
 
   create_table "pictures", force: :cascade do |t|
-    t.string   "url",        null: false
-    t.integer  "author_id",  null: false
+    t.string   "url",                         null: false
+    t.integer  "author_id",                   null: false
     t.text     "caption"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+    t.string   "filter",     default: "none"
   end
 
   add_index "pictures", ["author_id"], name: "index_pictures_on_author_id", using: :btree

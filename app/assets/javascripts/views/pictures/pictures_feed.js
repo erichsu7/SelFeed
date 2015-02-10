@@ -7,6 +7,7 @@ SelFeed.Views.PicturesFeed = Backbone.CompositeView.extend({
     this.listenTo(this.collection, "sync", this.render);
     this.listenTo(this.collection, "add", this.addPicture);
     this.listenTo(this.collection, "remove", this.removePicture);
+    this.listenTo(SelFeed.Events.event_bus, "savePicture", this.addPicture);
     this.collection.each( function (picture) {
       that.addPicture(picture);
     });

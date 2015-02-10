@@ -11,15 +11,16 @@ module Api
     end
 
     def show
-      @picture = Picture.find(params[:id])
-      render json: @picture
+      @picture = Picture.includes(:author, :likes, comments: [:commenter]).find(params[:id])
+
+      render "show"
     end
 
     def create
       @picture = current_user.authored_pictures.new(picture_params)
 
       if @picture.save
-        render json: @picture
+        render "show"
       else
         render json: @picture.errors.full_messages, status: :unprocessable_entity
       end
@@ -33,7 +34,7 @@ module Api
 
     private
       def picture_params
-        params.require(:picture).permit(:url, :caption)
+        params.require(:picture).permit(:url, :caption, :filter)
       end
   end
 end

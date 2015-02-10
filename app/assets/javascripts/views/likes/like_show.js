@@ -9,7 +9,7 @@ SelFeed.Views.LikeShow = Backbone.View.extend({
   initialize: function (options) {
     this.picture = options.picture;
     this.model = this.picture.like();
-    this.likeCount = this.picture.get("likes").length;
+    this.likeCount = this.picture.likes().length;
     this.listenTo(this.model, "sync change", this.render);
   },
 

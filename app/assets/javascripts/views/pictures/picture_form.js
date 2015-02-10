@@ -57,15 +57,19 @@ SelFeed.Views.PictureForm = Backbone.CompositeView.extend({
     event.preventDefault();
     var that = this;
     var params = this.$("form").serializeJSON();
+    if (params.picture.caption === "Write a caption...") {
+      params.picture.caption = "";
+    }
     params.picture.url = this.pictureUrl;
+    params.picture.filter = this.currentFilter;
     var picture = new SelFeed.Models.Picture(params);
     picture.save({}, {
-      success: function () {
-        that.collection.add(picture, { merge: true });
+      success: function (model, response) {
+        SelFeed.Events.event_bus.trigger("savePicture", picture);
         that.remove();
-        window.location = "";
       }
-    })
+    });
+
   },
 
   updatePicture: function (event) {
@@ -118,5 +122,6 @@ SelFeed.Views.PictureForm = Backbone.CompositeView.extend({
     var $target = $(event.target);
     var filter = $target.data("filter");
     this.$(".cloudinary-widget > img").attr("data-filter", filter);
+    this.currentFilter = filter;
   }
 })

@@ -2,7 +2,7 @@
 <div class="grid-item-picture-details">
   <span class="picture-details-created-at"><%= moment(picture.escape("created_at")).format("D MMMM YYYY")%></span>
   <span class="picture-details-likes-comments">
-    <i class="fa fa-heart fa-fw"></i> <%= picture.get("likes").length %>
+    <i class="fa fa-heart fa-fw"></i> <%= picture.likes().length %>
     <i class="fa fa-comment fa-fw"></i> <%= picture.comments().length %>
   </span>
 </div>
