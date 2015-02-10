@@ -7,6 +7,10 @@ SelFeed.Views.PictureForm = Backbone.CompositeView.extend({
     "click #cancel-picture": "cancelPicture"
   },
 
+  initialize: function () {
+    this.listenTo(SelFeed.Events.event_bus, "filterApply", this.applyFilter);
+  },
+
   render: function () {
     var renderedContent = this.template();
     this.$el.html(renderedContent);
@@ -93,6 +97,8 @@ SelFeed.Views.PictureForm = Backbone.CompositeView.extend({
       "width": "400px",
       "height": "400px"
     });
+    this.currentFilter = "none",
+    $img.data("filter", this.currentFilter);
     this.$('.cloudinary-widget').html($img);
     this.$("#crop-picture").css("display", "none")
     this.pictureUrl = $img.attr("src");
@@ -106,5 +112,11 @@ SelFeed.Views.PictureForm = Backbone.CompositeView.extend({
   addPictureFilterPalette: function () {
     var pictureFilterPalette = new SelFeed.Views.PictureFilterPalette();
     this.addSubview(".picture-filter-palette-container", pictureFilterPalette);
+  },
+
+  applyFilter: function (event) {
+    var $target = $(event.target);
+    var filter = $target.attr("id");
+    this.$(".cloudinary-widget > img").attr("data-filter", filter);
   }
 })
