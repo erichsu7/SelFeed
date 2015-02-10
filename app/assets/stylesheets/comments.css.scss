@@ -7,11 +7,22 @@
 }
 
 .picture-comment-show-view {
+  position: relative;
   display: block;
   clear: both;
   color: #333;
-  margin: 10px auto;
+  margin: 15px auto;
   padding-left: 30px;
+}
+
+.comment-show-avatar {
+  position: absolute;
+  max-width: 24px;
+  max-height: 24px;
+  border: 1px solid #ddd;
+  left: -8px;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .comment-details-created-at {
