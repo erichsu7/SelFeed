@@ -129,3 +129,37 @@ textarea.caption-input {
 #save-picture:active {
   background-image: -webkit-linear-gradient(top,#3d8b5f,#3d8b5f);
 }
+
+.picture-filter-palette-container {
+  position: absolute;
+  z-index: 4;
+  top: 32px;
+  font-size: 10px;
+  height: 400px;
+  overflow: auto;
+  width: 90px;
+  right: -70px;
+  box-shadow: 0 0 10px 1px #aaa;
+}
+
+.filters-list > li {
+  height: 50px;
+  width: 50px;
+  border: 1px solid #333;
+  border-radius: 3px;
+  margin-bottom: 10px;
+}
+
+.filters-list > li:hover {
+  cursor: pointer;
+}
+
+.filters-list > li:last-child {
+  margin-bottom: 0;
+}
+
+.filters-list {
+  padding: 10px;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, .5);
+}

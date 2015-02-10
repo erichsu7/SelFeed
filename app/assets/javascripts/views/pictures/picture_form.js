@@ -1,4 +1,4 @@
-SelFeed.Views.PictureForm = Backbone.View.extend({
+SelFeed.Views.PictureForm = Backbone.CompositeView.extend({
   template: JST["pictures/picture_form"],
 
   events: {
@@ -11,6 +11,7 @@ SelFeed.Views.PictureForm = Backbone.View.extend({
     var renderedContent = this.template();
     this.$el.html(renderedContent);
     this.activateCloudinary();
+    this.addPictureFilterPalette();
 
     return this;
   },
@@ -100,5 +101,10 @@ SelFeed.Views.PictureForm = Backbone.View.extend({
   cancelPicture: function (event) {
     event.preventDefault();
     this.remove();
+  },
+
+  addPictureFilterPalette: function () {
+    var pictureFilterPalette = new SelFeed.Views.PictureFilterPalette();
+    this.addSubview(".picture-filter-palette-container", pictureFilterPalette);
   }
 })
