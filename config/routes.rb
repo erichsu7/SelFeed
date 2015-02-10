@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
   namespace :api, defaults: { format: :json } do
     resources :pictures, only: [:show, :index, :create, :destroy ]
-    resources :users, only: [:show]
+    resources :users, only: [:show, :update]
     resources :likes, only: [:create, :destroy]
     resources :comments, only: [:create, :destroy]
     resources :follows, only: [:create, :destroy]

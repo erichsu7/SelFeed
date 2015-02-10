@@ -53,6 +53,7 @@ SelFeed.Views.RootHeader = Backbone.CompositeView.extend({
 
   addAvatarForm: function (event) {
     event.preventDefault();
-    var avatarForm = new SelFeed.Views.AvatarForm({})
+    var avatarForm = new SelFeed.Views.AvatarForm({ model: this.model });
+    this.addSubview(".picture-form-modal", avatarForm);
   }
 })

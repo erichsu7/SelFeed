@@ -1,8 +1,8 @@
-SelFeed.Views.PictureForm = Backbone.View.extend({
-  template: JST["pictures/picture_form"],
+SelFeed.Views.AvatarForm = Backbone.View.extend({
+  template: JST["pictures/avatar_form"],
 
   events: {
-    "click #save-picture": "createPicture",
+    "click #save-picture": "saveAvatar",
     "click #crop-picture": "updatePicture",
     "click #cancel-picture": "cancelPicture"
   },
@@ -48,17 +48,13 @@ SelFeed.Views.PictureForm = Backbone.View.extend({
     });
   },
 
-  createPicture: function (event) {
+  saveAvatar: function (event) {
     event.preventDefault();
     var that = this;
-    var params = this.$("form").serializeJSON();
-    params.picture.url = this.pictureUrl;
-    var picture = new SelFeed.Models.Picture(params);
-    picture.save({}, {
+    this.model.set("avatar_url", this.pictureUrl);
+    this.model.save({}, {
       success: function () {
-        that.collection.add(picture, { merge: true });
         that.remove();
-        window.location = "";
       }
     })
   },

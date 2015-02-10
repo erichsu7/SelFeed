@@ -331,7 +331,8 @@
         position: 'relative',
         backgroundColor: options.bgColor,
         top: "50%",
-        transform: "translateY(-50%)"
+        transform: "translateY(-50%)",
+        margin: "auto"
       }).insertAfter($origimg).append($img);
 
     if (options.addClass) {
@@ -1653,7 +1654,7 @@
     // Styling Options
     baseClass: 'jcrop',
     addClass: null,
-    bgColor: 'black',
+    bgColor: 'white',
     bgOpacity: 0.6,
     bgFade: false,
     borderOpacity: 0.4,
