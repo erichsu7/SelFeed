@@ -15,7 +15,6 @@ SelFeed.Views.PictureForm = Backbone.CompositeView.extend({
     var renderedContent = this.template();
     this.$el.html(renderedContent);
     this.activateCloudinary();
-    this.addPictureFilterPalette();
 
     return this;
   },
@@ -55,6 +54,10 @@ SelFeed.Views.PictureForm = Backbone.CompositeView.extend({
 
   createPicture: function (event) {
     event.preventDefault();
+    var $target = $(event.target);
+    if ($target.attr("disabled") === "true") {
+      return
+    }
     var that = this;
     var params = this.$("form").serializeJSON();
     if (params.picture.caption === "Write a caption...") {
@@ -106,6 +109,8 @@ SelFeed.Views.PictureForm = Backbone.CompositeView.extend({
     this.$('.cloudinary-widget').html($img);
     this.$("#crop-picture").css("display", "none")
     this.pictureUrl = $img.attr("src");
+    this.addPictureFilterPalette();
+    this.$("#save-picture").attr("disabled", false);
   },
 
   cancelPicture: function (event) {
@@ -116,6 +121,7 @@ SelFeed.Views.PictureForm = Backbone.CompositeView.extend({
   addPictureFilterPalette: function () {
     var pictureFilterPalette = new SelFeed.Views.PictureFilterPalette();
     this.addSubview(".picture-filter-palette-container", pictureFilterPalette);
+    this.$(".picture-filter-palette-container").css("display", "block");
   },
 
   applyFilter: function (event) {

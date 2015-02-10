@@ -96,6 +96,10 @@ textarea.caption-input {
   z-index: 1000;
 }
 
+#crop-picture:hover {
+  cursor: pointer;
+}
+
 .modal-form-links {
   position: relative;
   width: 300px;
@@ -130,58 +134,20 @@ textarea.caption-input {
   background-image: -webkit-linear-gradient(top,#3d8b5f,#3d8b5f);
 }
 
-.picture-filter-palette-container {
-  position: absolute;
-  z-index: 4;
-  top: 32px;
-  font-size: 10px;
-  height: 400px;
-  overflow: auto;
-  width: 90px;
-  right: -70px;
-  box-shadow: 0 0 10px 1px #000;
-  border-radius: 5px;
+[disabled~="true"] {
+  background: none;
+  background-color: #ccc;
+  border: 1px solid #aaa;
+  color: #eee;
 }
 
-.filters-list {
-  padding: 10px;
-  background-color: #306088;
+#save-picture[disabled~="true"]:hover {
+  cursor: default;
 }
 
-.picture-filter-icon-container {
-  position: relative;
-  margin-bottom: 10px;
-}
-
-.picture-filter-icon-container:hover {
-  cursor: pointer;
-}
-
-.picture-filter-icon-container:last-child {
-  margin-bottom: 0;
-}
-
-.picture-filter-icon {
-  position: relative;
-  margin: auto;
-  height: 50px;
-  width: 50px;
-  box-shadow: 0 0 3px 1px #222;
-  border-radius: 3px;
-  background-image: url("filter_previews/none.jpg");
-  background-size: 50px 50px;
-}
-
-.filter-name {
-  -webkit-filter: none;
-  filter: none;
-  position: absolute;
-  bottom: 1px;
-  color: #fff;
-  left: 50%;
-  transform: translateX(-50%);
-  white-space: nowrap;
-  text-shadow: 0 0 1px #000;
-  font-family: "Raleway";
-  font-weight: 500;
+#save-picture[disabled~="true"]:active{
+  background: none;
+  background-color: #ccc;
+  border: 1px solid #aaa;
+  color: #eee;
 }
