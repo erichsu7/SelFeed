@@ -80,13 +80,17 @@ SelFeed.Views.AvatarForm = Backbone.View.extend({
         }(),
         crop: "crop"
       },
-      width: 500,
-      height: 500,
+      width: 100,
+      height: 100,
       crop: 'fill'
     });
     $img.css({
-      "width": "400px",
-      "height": "400px"
+      "width": "100px",
+      "height": "100px",
+      "position": "absolute",
+      "top": "50%",
+      "left": "50%",
+      "transform": "translateX(-50%) translateY(-50%)"
     });
     this.$('.cloudinary-widget').html($img);
     this.$("#crop-picture").css("display", "none")
