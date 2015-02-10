@@ -89,11 +89,27 @@
   border-bottom: 1px solid #eee;
 }
 
-.user-header-username {
+.user-header-user-details-container {
   position: absolute;
   left: 160px;
   top: 10px;
+  width: 540px;
+}
+
+.user-header-username {
   font-size: 20px;
+  padding-bottom: 5px;
+}
+
+.user-header-display-name {
+  font-size: 14px;
+  color: #444;
+}
+
+.user-header-bio {
+  font-family: "Raleway";
+  font-weight: 300;
+  font-size: 14px;
 }
 
 .user-header-avatar-container {
@@ -115,6 +131,7 @@
   margin-left: 5px;
   margin-top: 5px;
   border-radius: 5px;
+
 }
 
 #follow-user {

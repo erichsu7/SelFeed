@@ -49,17 +49,31 @@
   display: block;
   position: absolute;
   height: 49px;
-  width: 100px;
   border-right: 1px solid #6892b4;
   border-left: 1px solid #6892b4;
   right: 0;
 }
 
-.header-username {
-  position: absolute;
+.header-user-details-container {
+  box-sizing: content-box;
+  position: relative;
   top: 50%;
-  left: 50%;
-  transform: translateX(-50%) translateY(-50%);
+  transform: translateY(-50%);
+  margin: 0 10px;
+}
+
+.header-username {
+  position: relative;
+  font-size: 12px;
+  margin-left: 5px;
+  vertical-align: top;
+  top: 9px;
+}
+
+.header-avatar {
+  height: 30px;
+  width: 30px;
+  border-radius: 3px;
 }
 
 li:hover .user-options-list {
@@ -71,11 +85,13 @@ li:hover .user-options-list {
 
 .user-options-list {
   position: relative;
+  left: -1px;
   width: 100%;
-  top: 50px;
+  top: 16px;
   color: #000;
   border-left: 1px solid #ddd;
   border-right: 1px solid #ddd;
+  background-color: #fff;
   overflow: hidden;
   visibility: hidden;
   opacity: 0;
@@ -94,7 +110,8 @@ li:hover .user-options-list {
 
 .user-options-list > li {
   position: relative;
-  font-size: 14px;
+  box-sizing: border-box;
+  font-size: 12px;
   height: 30px;
   width: 100%;
   color: #517fa4;

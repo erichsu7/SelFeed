@@ -19,7 +19,7 @@ SelFeed.Views.RootHeader = Backbone.CompositeView.extend({
   },
 
   render: function () {
-    var renderedContent = this.template({ username: this.model.escape("username") });
+    var renderedContent = this.template({ user: this.model });
     this.$el.html(renderedContent);
 
     return this;

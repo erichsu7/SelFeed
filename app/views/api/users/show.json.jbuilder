@@ -1,4 +1,4 @@
-json.extract! @user, :id, :username, :created_at, :updated_at
+json.extract! @user, :id, :username, :avatar_url, :display_name, :bio, :created_at, :updated_at
 if current_user.follows?(@user)
   json.follow current_user.follows.find_by_followee_id(@user.id)
 end

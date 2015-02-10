@@ -3,8 +3,12 @@
 </div>
 <div class="user-header-details">
   <div class="user-header-avatar-container">
-    <img class="user-header-avatar">
+    <img class="user-header-avatar" src="<%= user.escape("avatar_url") %>">
     <a href="#" class="submit-button" id="follow-user"></a>
   </div>
-  <span class="user-header-username"><%= user.escape("username") %></span>
+  <div class="user-header-user-details-container">
+    <p class="user-header-username"><%= user.escape("username") %></p>
+    <span class="user-header-display-name"><%= user.escape("display_name") %></span>
+    <span class="user-header-bio"><%= user.escape("bio") %></span>
+  </div>
 </div>
