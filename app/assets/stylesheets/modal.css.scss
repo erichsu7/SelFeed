@@ -11,16 +11,17 @@
 .modal-form {
   position: absolute;
   left: 50%;
-  transform: translateX(-50%) translateY(-10px);
+  transform: translateX(-50%) translateY(10px);
   background-color: #fff;
   border-radius: 5px;
   border: 1px solid #517fa4;
   z-index: 3;
 }
 
-.caption-input {
+textarea.caption-input {
   display: block;
   position: relative;
+  resize: none;
   width: 400px;
   height: 60px;
   margin: auto;
@@ -35,8 +36,7 @@
   width: 400px;
   border: 3px dashed #ccc;
   border-radius: 5px;
-  margin: auto;
-  margin-top: 30px;
+  margin: 30px;
   overflow: hidden;
 }
 
@@ -66,6 +66,7 @@
   top: 50%;
   left: 50%;
   transform: translateX(-50%) translateY(-50%);
+  font-family: "Montserrat"
 }
 
 .cloudinary_fileupload:hover:after {
