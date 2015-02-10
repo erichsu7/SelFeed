@@ -85,7 +85,7 @@ li:hover .user-options-list {
 
 .user-options-list {
   position: relative;
-  left: -1px;
+  margin-left: -1px;
   width: 100%;
   top: 16px;
   color: #000;
@@ -110,10 +110,9 @@ li:hover .user-options-list {
 
 .user-options-list > li {
   position: relative;
-  box-sizing: border-box;
+  display: block;
   font-size: 12px;
   height: 30px;
-  width: 100%;
   color: #517fa4;
   background-color: #fff;
   border-bottom: 1px solid #ddd;

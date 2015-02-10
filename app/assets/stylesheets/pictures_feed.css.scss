@@ -18,7 +18,7 @@ p.text {
   width: 580px;
   height: 100%;
   padding-top: 40px;
-  border: 1px solid #ccc;
+  border: 2px solid #cacaca;
   border-top: none;
 }
 
@@ -28,21 +28,36 @@ p.text {
   margin: auto;
   margin-bottom: 40px;
   background-color: #fff;
-  border: 1px solid #ddd;
+  border: 1px solid #ccc;
   border-radius: 3px;
+  overflow: hidden;
   font-size: 14px;
+  box-shadow: 0 0 10px 1px #ccc;
 }
 
 .picture-details-container {
   position: absolute;
-  right: calc(100% + 50px);
+  min-width: 300px;
+  right: 550px;
+}
+
+.picture-show-avatar {
+  max-height: 40px;
+  max-width: 40px;
+  margin-left: 10px;
+  float: right;
+  border: 1px solid #ddd;
+}
+
+.picture-author-details-container {
+  float: right;
 }
 
 .author-link {
   float: right;
   color: #517fa4;
 }
-.picture-details-author-link:hover {
+.author-link:hover {
   text-decoration: underline;
 }
 
@@ -56,8 +71,21 @@ p.text {
 }
 
 .picture-caption-container {
-  padding: 10px 20px;
+  position: relative;
+  margin-top: -5px;
+  padding: 15px 20px;
+  padding-left: 50px;
   border-bottom: 1px solid #ddd;
+}
+
+.picture-caption-avatar {
+  position: absolute;
+  max-width: 24px;
+  max-height: 24px;
+  border: 1px solid #ddd;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .caption-author-link,

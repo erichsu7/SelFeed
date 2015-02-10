@@ -1,6 +1,7 @@
 json.array! @pictures do |picture|
   json.extract! picture, :id, :url, :author_id, :caption, :created_at, :updated_at
   json.author_username picture.author.username
+  json.author_avatar_url picture.author.avatar_url
   if current_user.likes?(picture)
     json.like current_user.likes.find_by_picture_id(picture.id)
   end
