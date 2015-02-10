@@ -1,11 +1,6 @@
 class UsersController < ApplicationController
   before_action :redirect_if_logged_in, only: [:new, :create]
   before_action :redirect_if_not_editing_own_account, only: [:edit, :update]
-  def show
-    @user = User.includes(authored_pictures: [:likes, comments: [:commenter]]).find(params[:id])
-
-    render :show
-  end
 
   def new
     @user = User.new

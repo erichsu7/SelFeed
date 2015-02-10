@@ -9,5 +9,6 @@ json.array! @pictures do |picture|
   json.comments picture.comments do |comment|
     json.extract! comment, :id, :commenter_id, :picture_id, :body, :created_at, :updated_at
     json.commenter_username comment.commenter.username
+    json.commenter_avatar_url comment.commenter.avatar_url
   end
 end

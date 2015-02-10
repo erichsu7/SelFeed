@@ -1,6 +1,6 @@
 json.extract! @user, :id, :username, :avatar_url, :display_name, :bio, :created_at, :updated_at
 if current_user.follows?(@user)
-  json.follow current_user.follows.find_by_followee_id(@user.id)
+  json.follow @user.followings.find_by_follower_id(current_user.id)
 end
 
 json.pictures @user.authored_pictures do |picture|

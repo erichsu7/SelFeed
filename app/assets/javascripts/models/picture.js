@@ -22,7 +22,7 @@ SelFeed.Models.Picture = Backbone.Model.extend({
     this.set("likes", response.likes);
     delete response.likes
 
-    this.comments().set(response.comments);
+    this.comments().set(response.comments, { parse: true });
     delete response.comments
 
     return response;
