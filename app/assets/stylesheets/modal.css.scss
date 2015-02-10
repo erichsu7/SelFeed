@@ -139,27 +139,49 @@ textarea.caption-input {
   overflow: auto;
   width: 90px;
   right: -70px;
-  box-shadow: 0 0 10px 1px #aaa;
-}
-
-.filters-list > li {
-  height: 50px;
-  width: 50px;
-  border: 1px solid #333;
-  border-radius: 3px;
-  margin-bottom: 10px;
-}
-
-.filters-list > li:hover {
-  cursor: pointer;
-}
-
-.filters-list > li:last-child {
-  margin-bottom: 0;
+  box-shadow: 0 0 10px 1px #000;
+  border-radius: 5px;
 }
 
 .filters-list {
   padding: 10px;
-  border-radius: 5px;
-  background-color: rgba(255, 255, 255, .5);
+  background-color: #306088;
+}
+
+.picture-filter-icon-container {
+  position: relative;
+  margin-bottom: 10px;
+}
+
+.picture-filter-icon-container:hover {
+  cursor: pointer;
+}
+
+.picture-filter-icon-container:last-child {
+  margin-bottom: 0;
+}
+
+.picture-filter-icon {
+  position: relative;
+  margin: auto;
+  height: 50px;
+  width: 50px;
+  box-shadow: 0 0 3px 1px #222;
+  border-radius: 3px;
+  background-image: url("filter_previews/none.jpg");
+  background-size: 50px 50px;
+}
+
+.filter-name {
+  -webkit-filter: none;
+  filter: none;
+  position: absolute;
+  bottom: 1px;
+  color: #fff;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  text-shadow: 0 0 1px #000;
+  font-family: "Raleway";
+  font-weight: 500;
 }
