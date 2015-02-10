@@ -116,7 +116,7 @@ SelFeed.Views.PictureForm = Backbone.CompositeView.extend({
 
   applyFilter: function (event) {
     var $target = $(event.target);
-    var filter = $target.attr("id");
+    var filter = $target.data("filter");
     this.$(".cloudinary-widget > img").attr("data-filter", filter);
   }
 })
