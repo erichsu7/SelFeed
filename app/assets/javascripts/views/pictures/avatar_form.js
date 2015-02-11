@@ -20,6 +20,12 @@ SelFeed.Views.AvatarForm = Backbone.View.extend({
     var that = this;
     this.$('.cloudinary-widget').html($.cloudinary.unsigned_upload_tag("fuywh6de",
       { cloud_name: 'selfeed' }));
+
+    this.$(".cloudinary_fileupload").addClass("enable-upload");
+    this.$(".cloudinary_fileupload").on("fileuploadstart", function (event, data) {
+      that.$(".cloudinary_fileupload").removeClass("enable-upload");
+      that.$(".cloudinary-widget").append($("<i class=\"fa fa-spinner fa-spin\" id=\"upload-progress-tracker\"></i>"));
+    });
     this.$(".cloudinary_fileupload").on("cloudinarydone", function(event, data) {
       that.scalarX = data.result.width / 400;
       that.scalarY = data.result.height / 400;
@@ -50,6 +56,15 @@ SelFeed.Views.AvatarForm = Backbone.View.extend({
 
   saveAvatar: function (event) {
     event.preventDefault();
+
+    var $target = $(event.target);
+    if ($target.attr("data-disabled") === "true") {
+      return;
+    }
+    
+    this.$("#save-picture").attr("data-disabled", "true");
+    this.$(".modal-form-links").append($("<i class=\"fa fa-spinner fa-spin\" id=\"save-progress-tracker\"></i>"));
+
     var that = this;
     this.model.set("avatar_url", this.pictureUrl);
     this.model.save({}, {
