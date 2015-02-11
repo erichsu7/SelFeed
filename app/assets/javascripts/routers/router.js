@@ -36,8 +36,13 @@ SelFeed.Routers.Router = Backbone.Router.extend({
   },
 
   mapShow: function () {
-    var picturesMap = new SelFeed.Views.PicturesMap();
+    var pictures = new SelFeed.Collections.Pictures();
+    var picturesMap = new SelFeed.Views.PicturesMap({
+      collection: pictures
+    });
     this._swapView(picturesMap);
+
+    pictures.fetch({data: {all_pictures: true}});
   },
 
   _swapView: function (view) {

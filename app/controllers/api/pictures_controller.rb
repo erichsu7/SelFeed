@@ -2,9 +2,13 @@ module Api
   class PicturesController < ApiController
 
     def index
-      @pictures = current_user.authored_pictures
-      current_user.followed_users.each do |followed_user|
-        @pictures += followed_user.authored_pictures
+      if(params[:all_pictures])
+        @pictures = Picture.last(100)
+      else
+        @pictures = current_user.authored_pictures
+        current_user.followed_users.each do |followed_user|
+          @pictures += followed_user.authored_pictures
+        end
       end
 
       render "index"
