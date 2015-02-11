@@ -118,7 +118,7 @@
   bottom: 20px;
   left: 30px;
   border: 1px solid #ddd;
-  box-shadow: 0 0 2px #ddd;
+  box-shadow: 0 0 3px 1px #ddd;
   width: 110px;
   border-radius: 5px;
 }
@@ -128,10 +128,10 @@
   background-color: #aaa;
   height: 100px;
   width: 100px;
-  margin-left: 5px;
-  margin-top: 5px;
-  border-radius: 5px;
-
+  margin-left: 4px;
+  margin-top: 4px;
+  border-radius: 3px;
+  border: 1px solid #ccc;
 }
 
 #follow-user {

@@ -60,13 +60,14 @@ SelFeed.Views.PictureForm = Backbone.CompositeView.extend({
 
   createPicture: function (event) {
     event.preventDefault();
-    this.$("#save-picture").attr("disabled", "true");
-    this.$(".modal-form-links").append($("<i class=\"fa fa-spinner fa-spin\" id=\"save-progress-tracker\"></i>"));
 
     var $target = $(event.target);
-    if ($target.attr("disabled") === "true") {
-      return
+    if ($target.attr("data-disabled") === "true") {
+      return;
     }
+
+    this.$("#save-picture").attr("data-disabled", "true");
+    this.$(".modal-form-links").append($("<i class=\"fa fa-spinner fa-spin\" id=\"save-progress-tracker\"></i>"));
     var that = this;
     var params = this.$("form").serializeJSON();
     if (params.picture.caption === "Write a caption...") {
@@ -119,7 +120,7 @@ SelFeed.Views.PictureForm = Backbone.CompositeView.extend({
     this.$("#crop-picture").css("display", "none")
     this.pictureUrl = $img.attr("src");
     this.addPictureFilterPalette();
-    this.$("#save-picture").attr("disabled", "false");
+    this.$("#save-picture").attr("data-disabled", "false");
   },
 
   cancelPicture: function (event) {

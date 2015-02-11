@@ -57,7 +57,7 @@ If I have time, I'd like to implement hashtagging photos and implementing search
 - [x] Profile page cover photo
 - [] Transitioning cover photo collage
 - [] Feed infinite scrolling
-- [] Picture filter on upload
+- [x] Picture filter on upload
 - [] Splash page (Bootstrap)
 - [] Hashtag pictures
 - [] Search pictures by hashtag

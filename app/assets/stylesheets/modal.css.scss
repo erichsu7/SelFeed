@@ -143,18 +143,19 @@ textarea.caption-input {
   background-image: -webkit-linear-gradient(top,#3d8b5f,#3d8b5f);
 }
 
-[disabled~="true"] {
+[data-disabled~="true"] {
   background: none;
   background-color: #ccc;
   border: 1px solid #aaa;
   color: #eee;
 }
 
-#save-picture[disabled~="true"]:hover {
+#save-picture[data-disabled~="true"]:hover,
+  #save-picture[data-disabled~="true"]:hover {
   cursor: default;
 }
 
-#save-picture[disabled~="true"]:active{
+#save-picture[data-disabled~="true"]:active{
   background: none;
   background-color: #ccc;
   border: 1px solid #aaa;

@@ -9,6 +9,7 @@ SelFeed.Views.UserHeader = Backbone.CompositeView.extend({
   initialize: function () {
     this.listenTo(this.model, "sync", this.render);
     this.listenTo(this.model.follow(), "change", this.render);
+    // this.setInterval(this.changeImages.bind(this), 4000);
   },
 
   render: function () {
@@ -59,5 +60,12 @@ SelFeed.Views.UserHeader = Backbone.CompositeView.extend({
       html += "<li id=\"picture-" + i + "\"><a class=\"inner-shadow\"></a><img class=\"collage-picture\" src=\"" + url + "\"></li>\n";
     }
     this.$(".user-header-collage-pictures").html(html);
+  },
+
+  changeImages: function () {
+    // this.nextPicIndex = 8;
+    // 0-6
+    // this.$('.picture' + the0-6 index).html();
+    // this.nextPicIndex = (this.nextPicIndex + 1 ) % 18
   }
 })
