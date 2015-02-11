@@ -2,6 +2,10 @@ SelFeed.Views.UserShow = Backbone.CompositeView.extend({
   template: JST["users/user_show"],
   className: "user-show-view",
 
+  events: {
+    "click .pictures-grid-item-container img": "showPicture"
+  },
+
   initialize: function () {
     this.addUserHeader();
     this.addPicturesGrid();
@@ -24,5 +28,9 @@ SelFeed.Views.UserShow = Backbone.CompositeView.extend({
     var picturesGrid =
       new SelFeed.Views.PicturesGrid({ collection: this.model.pictures() });
     this.addSubview(".pictures-grid-container", picturesGrid);
+  },
+
+  showPicture: function (event) {
+    debugger;
   }
 });

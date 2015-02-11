@@ -22,8 +22,8 @@ SelFeed.Views.PicturesFeed = Backbone.CompositeView.extend({
   },
 
   addPicture: function (picture) {
-    var showView = new SelFeed.Views.PictureShow({ model: picture });
-    this.prependSubview(".pictures-list", showView);
+    var feedItem = new SelFeed.Views.PicturesFeedItem({ model: picture });
+    this.prependSubview(".pictures-list", feedItem);
   },
 
   removePicture: function (picture) {

@@ -1,5 +1,5 @@
-SelFeed.Views.PictureShow = Backbone.CompositeView.extend({
-  template: JST["pictures/picture_show"],
+SelFeed.Views.PicturesFeedItem = Backbone.CompositeView.extend({
+  template: JST["pictures/pictures_feed_item"],
   tagName: "li",
   className: "picture-show-container",
 
