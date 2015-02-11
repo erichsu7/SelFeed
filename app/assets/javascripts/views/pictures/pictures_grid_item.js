@@ -3,6 +3,10 @@ SelFeed.Views.PicturesGridItem = Backbone.View.extend({
   tagName: "li",
   className: "pictures-grid-item-container",
 
+  events: {
+    "click img": "triggerShow"
+  },
+
   render: function () {
     var that = this;
     var renderedContent = this.template({ picture: this.model });
@@ -25,5 +29,10 @@ SelFeed.Views.PicturesGridItem = Backbone.View.extend({
       var $div = $(event.delegateTarget).find(".grid-item-picture-details");
       $div.removeClass("hover-details");
     });
+  },
+
+  triggerShow: function (event) {
+    event.preventDefault();
+    SelFeed.Events.event_bus.trigger("showPictureModal", this.model);
   }
 })

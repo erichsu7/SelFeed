@@ -1,7 +1,7 @@
 SelFeed.Views.PicturesFeedItem = Backbone.CompositeView.extend({
   template: JST["pictures/pictures_feed_item"],
   tagName: "li",
-  className: "picture-show-container",
+  className: "pictures-feed-item-container",
 
   events: {
     "click .author-link": "showUser"
