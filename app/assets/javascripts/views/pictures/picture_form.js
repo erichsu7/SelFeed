@@ -13,7 +13,6 @@ SelFeed.Views.PictureForm = Backbone.CompositeView.extend({
   },
 
   storeCoords: function (position) {
-    debugger;
     this.latitude = position.coords.latitude;
     this.longitude = position.coords.longitude;
   },
@@ -84,9 +83,7 @@ SelFeed.Views.PictureForm = Backbone.CompositeView.extend({
     params.picture.filter = this.currentFilter;
     params.picture.latitude = this.latitude;
     params.picture.longitude = this.longitude;
-    debugger;
     var picture = new SelFeed.Models.Picture(params.picture);
-    debugger;
     picture.save({}, {
       success: function (model, response) {
         SelFeed.Events.event_bus.trigger("savePicture", picture);
