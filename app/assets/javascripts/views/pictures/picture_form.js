@@ -20,10 +20,16 @@ SelFeed.Views.PictureForm = Backbone.CompositeView.extend({
   },
 
   activateCloudinary: function () {
+    var that = this;
     $.cloudinary.config({cloud_name: "selfeed", api_key: "949363288817392"});
     var that = this;
     this.$('.cloudinary-widget').html($.cloudinary.unsigned_upload_tag("fuywh6de",
       { cloud_name: 'selfeed' }));
+    this.$(".cloudinary_fileupload").addClass("enable-upload");
+    this.$(".cloudinary_fileupload").on("fileuploadstart", function (event, data) {
+      that.$(".cloudinary_fileupload").removeClass("enable-upload");
+      that.$(".cloudinary-widget").append($("<i class=\"fa fa-spinner fa-spin\" id=\"upload-progress-tracker\"></i>"));
+    });
     this.$(".cloudinary_fileupload").on("cloudinarydone", function(event, data) {
       that.scalarX = data.result.width / 400;
       that.scalarY = data.result.height / 400;
@@ -54,6 +60,9 @@ SelFeed.Views.PictureForm = Backbone.CompositeView.extend({
 
   createPicture: function (event) {
     event.preventDefault();
+    this.$("#save-picture").attr("disabled", "true");
+    this.$(".modal-form-links").append($("<i class=\"fa fa-spinner fa-spin\" id=\"save-progress-tracker\"></i>"));
+
     var $target = $(event.target);
     if ($target.attr("disabled") === "true") {
       return
@@ -110,7 +119,7 @@ SelFeed.Views.PictureForm = Backbone.CompositeView.extend({
     this.$("#crop-picture").css("display", "none")
     this.pictureUrl = $img.attr("src");
     this.addPictureFilterPalette();
-    this.$("#save-picture").attr("disabled", false);
+    this.$("#save-picture").attr("disabled", "false");
   },
 
   cancelPicture: function (event) {

@@ -54,7 +54,7 @@ textarea.caption-input {
   transform: translateY(-50%) translateX(-50%);
 }
 
-.cloudinary_fileupload:after {
+.cloudinary_fileupload.enable-upload:after {
   position: absolute;
   content: "Choose a picture";
   display: block;
@@ -68,6 +68,15 @@ textarea.caption-input {
   left: 50%;
   transform: translateX(-50%) translateY(-50%);
   font-family: "Montserrat"
+}
+
+#upload-progress-tracker {
+  color: #306088;
+  position: absolute;
+  left: calc(50% - 60px);
+  top: calc(50% - 60px);
+  font-size: 120px;
+  text-shadow: 0 0 10px #333;
 }
 
 .cloudinary_fileupload:hover:after {
@@ -150,4 +159,12 @@ textarea.caption-input {
   background-color: #ccc;
   border: 1px solid #aaa;
   color: #eee;
+}
+
+#save-progress-tracker {
+  color: #517fa4;
+  position: absolute;
+  right: -32px;
+  top: 22px;
+  font-size: 24px;
 }
