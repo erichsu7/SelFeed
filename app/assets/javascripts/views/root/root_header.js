@@ -4,7 +4,9 @@ SelFeed.Views.RootHeader = Backbone.CompositeView.extend({
   tagName: "ul",
 
   events: {
-    "click .add-picture-link": "addPictureForm",
+    "click #home-container": "showRoot",
+    "click #explore-container": "showPicturesMap",
+    "click #add-picture-container": "addPictureForm",
     "click .log-out-link": "destroySession",
     "click .user-link": "showUser",
     "click .edit-user-link": "editUser",
@@ -62,5 +64,15 @@ SelFeed.Views.RootHeader = Backbone.CompositeView.extend({
 
   removeForm: function (formView) {
     this.removeSubview(".picture-form-modal", formView);
+  },
+
+  showPicturesMap: function (event) {
+    event.preventDefault();
+    Backbone.history.navigate("explore", { trigger: true });
+  },
+
+  showRoot: function (event) {
+    event.preventDefault();
+    Backbone.history.navigate("", { trigger: true });
   }
 })
