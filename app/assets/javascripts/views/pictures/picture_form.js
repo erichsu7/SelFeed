@@ -79,10 +79,11 @@ SelFeed.Views.PictureForm = Backbone.CompositeView.extend({
     picture.save({}, {
       success: function (model, response) {
         SelFeed.Events.event_bus.trigger("savePicture", picture);
-        that.remove();
+        $(".picture-form-modal").hide("fade", 500, function () {
+          SelFeed.Events.event_bus.trigger("cancelForm", that);
+        });
       }
     });
-
   },
 
   updatePicture: function (event) {
@@ -125,7 +126,10 @@ SelFeed.Views.PictureForm = Backbone.CompositeView.extend({
 
   cancelPicture: function (event) {
     event.preventDefault();
-    this.remove();
+    var that = this;
+    $(".picture-form-modal").hide("fade", 500, function () {
+      SelFeed.Events.event_bus.trigger("cancelForm", that);
+    })
   },
 
   addPictureFilterPalette: function () {

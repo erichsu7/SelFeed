@@ -16,6 +16,7 @@ SelFeed.Views.RootHeader = Backbone.CompositeView.extend({
     this.model = new SelFeed.Models.User({ id: this.user_id });
     this.model.fetch();
     this.listenTo(this.model, "sync", this.render);
+    this.listenTo(SelFeed.Events.event_bus, "cancelForm", this.removeForm);
   },
 
   render: function () {
@@ -29,6 +30,7 @@ SelFeed.Views.RootHeader = Backbone.CompositeView.extend({
     event.preventDefault();
     var pictureForm = new SelFeed.Views.PictureForm();
     this.addSubview(".picture-form-modal", pictureForm);
+    $(".picture-form-modal").show("fade", 500);
   },
 
   destroySession: function () {
@@ -55,5 +57,10 @@ SelFeed.Views.RootHeader = Backbone.CompositeView.extend({
     event.preventDefault();
     var avatarForm = new SelFeed.Views.AvatarForm({ model: this.model });
     this.addSubview(".picture-form-modal", avatarForm);
+    $(".picture-form-modal").show("fade", 500);
+  },
+
+  removeForm: function (formView) {
+    this.removeSubview(".picture-form-modal", formView);
   }
 })

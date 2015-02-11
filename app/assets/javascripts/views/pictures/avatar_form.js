@@ -61,7 +61,7 @@ SelFeed.Views.AvatarForm = Backbone.View.extend({
     if ($target.attr("data-disabled") === "true") {
       return;
     }
-    
+
     this.$("#save-picture").attr("data-disabled", "true");
     this.$(".modal-form-links").append($("<i class=\"fa fa-spinner fa-spin\" id=\"save-progress-tracker\"></i>"));
 
@@ -69,7 +69,9 @@ SelFeed.Views.AvatarForm = Backbone.View.extend({
     this.model.set("avatar_url", this.pictureUrl);
     this.model.save({}, {
       success: function () {
-        that.remove();
+        $(".picture-form-modal").hide("fade", 500, function () {
+          SelFeed.Events.event_bus.trigger("cancelForm", that);
+        });
       }
     })
   },
@@ -110,10 +112,14 @@ SelFeed.Views.AvatarForm = Backbone.View.extend({
     this.$('.cloudinary-widget').html($img);
     this.$("#crop-picture").css("display", "none")
     this.pictureUrl = $img.attr("src");
+    this.$("#save-picture").attr("data-disabled", "false");
   },
 
   cancelPicture: function (event) {
     event.preventDefault();
-    this.remove();
+    var that = this;
+    $(".picture-form-modal").hide("fade", 500, function () {
+      SelFeed.Events.event_bus.trigger("cancelForm", that);
+    });
   }
 })
