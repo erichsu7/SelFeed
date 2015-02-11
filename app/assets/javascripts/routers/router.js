@@ -1,7 +1,8 @@
 SelFeed.Routers.Router = Backbone.Router.extend({
   routes: {
     "": "feedShow",
-    "users/:id": "userShow"
+    "users/:id": "userShow",
+    "explore": "mapShow"
   },
 
   initialize: function (options) {
@@ -34,9 +35,15 @@ SelFeed.Routers.Router = Backbone.Router.extend({
     $(".root-header").html(headerView.render().$el);
   },
 
+  mapShow: function () {
+    var picturesMap = new SelFeed.Views.PicturesMap();
+    this._swapView(picturesMap);
+  },
+
   _swapView: function (view) {
     this._currentView && this._currentView.remove();
     this._currentView = view;
-    this.$rootEl.html(view.render().$el);
+    this.$rootEl.html(view.$el);
+    view.render();
   }
 })

@@ -19,6 +19,7 @@ SelFeed.Views.UserHeader = Backbone.CompositeView.extend({
     this.$el.html(renderedContent);
     this.renderFollowButton();
     this.renderCollage();
+    this.renderHeaderStats();
 
     return this;
   },
@@ -87,5 +88,8 @@ SelFeed.Views.UserHeader = Backbone.CompositeView.extend({
   editUser: function (event) {
     event.preventDefault();
     window.location = "users/" + this.model.id + "/edit";
+  },
+
+  renderHeaderStats: function () {
   }
 })

@@ -8,5 +8,14 @@
 </head>
 <body>
 <%= yield %>
+
+<% if Rails.env.production? %>
+  <% api_key = "key=AIzaSyCJp3aPRnwIsO7ezub_SKkX847Cbpphjs4" %>
+<% else %>
+  <% api_key = '' %>
+<% end %>
+
+<script type="text/javascript"
+        src="https://maps.googleapis.com/maps/api/js?<%= api_key %>"></script>
 </body>
 </html>
