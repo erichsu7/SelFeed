@@ -3,17 +3,19 @@ SelFeed.Views.UserHeader = Backbone.CompositeView.extend({
   className: "user-header-view",
 
   events: {
-    "click #follow-user": "toggleFollow"
+    "click #follow-user": "toggleFollow",
+    "click #edit-user": "editUser"
   },
 
   initialize: function () {
     this.listenTo(this.model, "sync", this.render);
     this.listenTo(this.model.follow(), "change", this.render);
     setInterval(this.swapPicture.bind(this), 3000);
+    this.currentUserId = $(".current-user-data").data("current-user-id");
   },
 
   render: function () {
-    var renderedContent = this.template({ user: this.model });
+    var renderedContent = this.template({ user: this.model, currentUserId: this.currentUserId });
     this.$el.html(renderedContent);
     this.renderFollowButton();
     this.renderCollage();
@@ -80,5 +82,10 @@ SelFeed.Views.UserHeader = Backbone.CompositeView.extend({
     })
 
     this.nextPicIndex = (this.nextPicIndex + 1) % this.collagePictures.length;
+  },
+
+  editUser: function (event) {
+    event.preventDefault();
+    window.location = "users/" + this.model.id + "/edit";
   }
 })

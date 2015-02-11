@@ -55,7 +55,7 @@ If I have time, I'd like to implement hashtagging photos and implementing search
 - [x] Profile feed vs grid view
 - [x] User avatars
 - [x] Profile page cover photo
-- [] Transitioning cover photo collage
+- [x] Transitioning cover photo collage
 - [] Feed infinite scrolling
 - [x] Picture filter on upload
 - [] Splash page (Bootstrap)

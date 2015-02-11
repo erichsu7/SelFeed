@@ -4,7 +4,11 @@
 <div class="user-header-details">
   <div class="user-header-avatar-container">
     <img class="user-header-avatar" src="<%= user.escape("avatar_url") %>">
-    <a href="#" class="submit-button" id="follow-user"></a>
+    <% if (user.id === currentUserId) { %>
+      <a href="#" class="submit-button" id="edit-user">Edit profile</a>
+    <% } else { %>
+      <a href="#" class="submit-button" id="follow-user"></a>
+    <% } %>
   </div>
   <div class="user-header-user-details-container">
     <p class="user-header-username"><%= user.escape("username") %></p>
