@@ -9,6 +9,13 @@ SelFeed.Views.PictureForm = Backbone.CompositeView.extend({
 
   initialize: function () {
     this.listenTo(SelFeed.Events.event_bus, "filterApply", this.applyFilter);
+    navigator.geolocation.getCurrentPosition(this.storeCoords.bind(this));
+  },
+
+  storeCoords: function (position) {
+    debugger;
+    this.latitude = position.coords.latitude;
+    this.longitude = position.coords.longitude;
   },
 
   render: function () {
@@ -72,10 +79,14 @@ SelFeed.Views.PictureForm = Backbone.CompositeView.extend({
     var params = this.$("form").serializeJSON();
     if (params.picture.caption === "Write a caption...") {
       params.picture.caption = "";
-    }
+    };
     params.picture.url = this.pictureUrl;
     params.picture.filter = this.currentFilter;
-    var picture = new SelFeed.Models.Picture(params);
+    params.picture.latitude = this.latitude;
+    params.picture.longitude = this.longitude;
+    debugger;
+    var picture = new SelFeed.Models.Picture(params.picture);
+    debugger;
     picture.save({}, {
       success: function (model, response) {
         SelFeed.Events.event_bus.trigger("savePicture", picture);

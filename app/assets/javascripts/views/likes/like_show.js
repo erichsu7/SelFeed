@@ -26,6 +26,8 @@ SelFeed.Views.LikeShow = Backbone.View.extend({
 
   toggleLike: function (event) {
     event.preventDefault();
+
+    $(event.target).effect({ effect: "highlight", duration: "1000"});
     if (this.model.isNew()) {
       this.likeCount++;
       this.model.save();

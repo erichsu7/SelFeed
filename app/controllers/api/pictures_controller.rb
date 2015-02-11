@@ -34,7 +34,7 @@ module Api
 
     private
       def picture_params
-        params.require(:picture).permit(:url, :caption, :filter)
+        params.require(:picture).permit(:url, :caption, :filter, :latitude, :longitude)
       end
   end
 end
