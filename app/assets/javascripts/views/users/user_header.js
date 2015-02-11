@@ -9,7 +9,7 @@ SelFeed.Views.UserHeader = Backbone.CompositeView.extend({
   initialize: function () {
     this.listenTo(this.model, "sync", this.render);
     this.listenTo(this.model.follow(), "change", this.render);
-    // this.setInterval(this.changeImages.bind(this), 4000);
+    setInterval(this.swapPicture.bind(this), 3000);
   },
 
   render: function () {
@@ -44,28 +44,41 @@ SelFeed.Views.UserHeader = Backbone.CompositeView.extend({
 
   renderCollage: function () {
     var user = this.model;
-    var collagePictures = [];
+    var html = "";
+    var that = this;
+    this.collagePictures = [];
     if (user.pictures().length > 0) {
-      while (collagePictures.length < 7) {
+      while (this.collagePictures.length < 15) {
         for (var i = 0; i < user.pictures().length; i++) {
-        collagePictures.push(user.pictures().models[i]);
+        this.collagePictures.push(user.pictures().models[i]);
         }
         i = 0;
       }
-    }
 
-    var html = "";
-    for (i = 0; i < collagePictures.length - 1; i++) {
-      var url = collagePictures[i].escape("url");
-      html += "<li id=\"picture-" + i + "\"><a class=\"inner-shadow\"></a><img class=\"collage-picture\" src=\"" + url + "\"></li>\n";
+      for (i = 0; i < 7; i++) {
+        var url = this.collagePictures[i].escape("url");
+        html += "<li id=\"picture-" + i + "\"><a class=\"inner-shadow\"></a><img class=\"collage-picture\" src=\"" + url + "\"></li>\n";
+      }
+      that.nextPicIndex = i;
+      this.$(".user-header-collage-pictures").html(html);
     }
-    this.$(".user-header-collage-pictures").html(html);
   },
 
-  changeImages: function () {
-    // this.nextPicIndex = 8;
-    // 0-6
-    // this.$('.picture' + the0-6 index).html();
-    // this.nextPicIndex = (this.nextPicIndex + 1 ) % 18
+  swapPicture: function () {
+    if (this.collagePictures.length < 1) {
+      return;
+    }
+    var randomIndex = Math.floor(Math.random() * 7);
+    var nextPicUrl = this.collagePictures[this.nextPicIndex].escape("url");
+    var $li = this.$("#picture-" + randomIndex);
+    var $topPicture = this.$("#picture-" + randomIndex + " img");
+    var $bottomPicture = $("<img class=\"collage-picture bottom\" src=\"" + nextPicUrl + "\">");
+    $li.append($bottomPicture);
+    $bottomPicture.removeClass("bottom", 500, "swing");
+    $topPicture.addClass("bottom", 500, "swing", function () {
+      $topPicture.remove();
+    })
+
+    this.nextPicIndex = (this.nextPicIndex + 1) % this.collagePictures.length;
   }
 })

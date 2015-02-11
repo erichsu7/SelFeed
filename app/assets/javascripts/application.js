@@ -14,7 +14,7 @@
 //= require jquery_ujs
 //= require jquery.serializeJSON
 //= require jquery.color
-//= require jquery.ui.widget
+//= require jquery.ui
 //= require jquery.iframe-transport
 //= require jquery.fileupload
 //= require jquery.cloudinary

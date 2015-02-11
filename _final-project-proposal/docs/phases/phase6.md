@@ -22,3 +22,4 @@
 
 ## Gems/Libraries
 * FontAwesome
+* jQuery UI
