@@ -1,0 +1,137 @@
+.root-header {
+  position: fixed;
+  background-image: -webkit-linear-gradient(top,#517fa4,#306088);
+  width: 100%;
+  height: 50px;
+  border-bottom: 1px solid #000;
+  z-index: 2;
+  box-sizing: border-box;
+}
+
+.root-header-nav {
+  position: relative;
+  max-width: 1000px;
+  height: 100%;
+  margin: auto;
+  color: #fff;
+}
+
+.root-header-nav-link {
+  position: relative;
+  height: 49px;
+  width: 50px;
+  float: left;
+  display: block;
+  font-size: 32px;
+  border-left: 1px solid #6892b4;
+}
+
+#explore-container {
+  border-right: 1px solid #6892b4;
+}
+
+.root-header-nav-link:hover {
+  cursor: pointer;
+  background-color: #517fa4;
+}
+
+.root-header-nav-link > i {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.user-container {
+  display: block;
+  position: absolute;
+  height: 49px;
+  border-right: 1px solid #6892b4;
+  border-left: 1px solid #6892b4;
+  right: 0;
+}
+
+.header-user-details-container {
+  box-sizing: content-box;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  margin: 0 10px;
+}
+
+.header-username {
+  position: relative;
+  font-size: 12px;
+  margin-left: 5px;
+  vertical-align: top;
+  top: 9px;
+}
+
+.header-avatar {
+  height: 30px;
+  width: 30px;
+  border-radius: 3px;
+}
+
+li:hover .user-options-list {
+  visibility: visible;
+  display: block;
+  opacity: 1;
+  transition: opacity 500ms;
+}
+
+.user-options-list {
+  position: relative;
+  margin-left: -1px;
+  width: 100%;
+  top: 16px;
+  color: #000;
+  border-left: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+  background-color: #fff;
+  overflow: hidden;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 500ms, visibility 500ms;
+}
+
+.user-options-list > li:hover {
+  background-color: #eaeaea;
+  cursor: pointer;
+}
+
+.user-options-list:last-child {
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.user-options-list > li {
+  position: relative;
+  display: block;
+  font-size: 12px;
+  height: 30px;
+  color: #517fa4;
+  background-color: #fff;
+  border-bottom: 1px solid #ddd;
+}
+
+.user-options-list a {
+  position: absolute;
+  top: 50%;
+  left: 5px;
+  transform: translateY(-50%);
+  white-space: nowrap;
+  padding: 5px;
+  }
+
+
+.logo-container {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  font-family: "Rochester";
+  font-size: 24px;
+  color: #fafafa;
+  text-shadow: 0 0 3px #333;
+}

@@ -1,0 +1,50 @@
+.picture-show-modal {
+  display: none;
+}
+
+.modal-picture-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 800px;
+  height: 500px;
+  font-size: 14px;
+}
+
+.modal-picture-container .picture-show-picture {
+  border-radius: 0;
+}
+
+.picture-show-details-container {
+  box-sizing: border-box;
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 160px;
+  width: 300px;
+  border: 1px solid black;
+}
+
+.picture-show-likes-container {
+  box-sizing: border-box;
+  position: absolute;
+  left: 500px;
+  top: 160px;
+  width: 300px;
+}
+
+.picture-show-comments-container {
+  box-sizing: border-box;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  height: 300px;
+  width: 300px;
+  font-size: 12px;
+}
+
+// .picture-comments-form-container {
+//   position: absolute;
+//   bottom: 0;
+// }

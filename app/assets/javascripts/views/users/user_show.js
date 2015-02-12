@@ -36,6 +36,7 @@ SelFeed.Views.UserShow = Backbone.CompositeView.extend({
       model: picture
     })
     this.addSubview(".picture-show-modal", showView);
+    $(".picture-show-modal").show("fade", 500);
   },
 
   closePictureModal: function (subview) {
