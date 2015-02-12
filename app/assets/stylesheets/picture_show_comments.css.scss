@@ -1,3 +1,47 @@
+.picture-show-comments-container {
+  box-sizing: border-box;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  height: 300px;
+  width: 300px;
+  font-size: 12px;
+}
+
+
 .picture-show-comments-container .picture-comments-view {
+  position: relative;
   height: 100%;
+  width: 100%;
+  top: -15px
+}
+
+.picture-show-comments-container .picture-comments-list {
+  box-sizing: border-box;
+  padding: 10px 0;
+  height: 250px;
+  overflow: auto;
+}
+
+.picture-show-comments-container .picture-comment-show-view {
+  padding-left: 50px;
+}
+
+.picture-show-comments-container .picture-comments-form-container {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+.picture-show-comments-container .comments-form {
+  margin-bottom: 20px;
+  margin-top: 10px;
+}
+
+.picture-show-comments-container .comment-body {
+  width: 280px;
+}
+
+.picture-show-comments-container .comment-show-avatar {
+  left: 12px;
 }
