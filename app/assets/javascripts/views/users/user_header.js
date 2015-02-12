@@ -95,5 +95,7 @@ SelFeed.Views.UserHeader = Backbone.CompositeView.extend({
   },
 
   renderHeaderStats: function () {
+    var headerStats = new SelFeed.Views.UserHeaderStats({ model: this.model });
+    this.$(".user-header-stats-container").html(headerStats.render().$el);
   }
 })

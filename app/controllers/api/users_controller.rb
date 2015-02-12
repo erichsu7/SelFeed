@@ -1,7 +1,7 @@
 module Api
   class UsersController < ApiController
     def show
-      @user = User.includes(:followers, authored_pictures: [:likes, comments: [:commenter]]).find(params[:id])
+      @user = User.includes(:followers, :followed_users, authored_pictures: [:likes, comments: [:commenter]]).find(params[:id])
 
       render "show"
     end

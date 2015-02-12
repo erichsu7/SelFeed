@@ -1,12 +1,12 @@
 <li class="stat-container">
   <span class="stat-count"><%= user.pictures().length %></span>
-  <span class="stat-name">Posts</span>
+  <span class="stat-name">posts</span>
 </li>
 <li class="stat-container">
-  <span class="stat-count"><%= user.pictures().length %></span>
-  <span class="stat-name">Posts</span>
+  <span class="stat-count"><%= user.escape("followers_count") %></span>
+  <span class="stat-name">followers</span>
 </li>
 <li class="stat-container">
-  <span class="stat-count"><%= user.pictures().length %></span>
-  <span class="stat-name">Posts</span>
+  <span class="stat-count"><%= user.escape("followed_users_count") %></span>
+  <span class="stat-name">following</span>
 </li>
