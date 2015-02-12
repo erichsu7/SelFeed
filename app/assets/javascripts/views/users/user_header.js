@@ -12,6 +12,7 @@ SelFeed.Views.UserHeader = Backbone.CompositeView.extend({
     this.listenTo(this.model.follow(), "change", this.render);
     setInterval(this.swapPicture.bind(this), 3000);
     this.currentUserId = $(".current-user-data").data("current-user-id");
+    this.followersCount = this.model.escape("followers_count");
   },
 
   render: function () {
@@ -29,10 +30,14 @@ SelFeed.Views.UserHeader = Backbone.CompositeView.extend({
 
     if (this.model.follow().isNew()) {
       this.model.follow().save();
+      this.followersCount++;
     } else {
       this.model.follow().destroy();
       this.model.follow().set("id", null);
+      this.followersCount = this.followersCount - 1;
     }
+
+    this.model.set("followers_count", this.followersCount);
   },
 
   renderFollowButton: function () {
