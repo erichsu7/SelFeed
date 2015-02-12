@@ -19,7 +19,7 @@
 /* Selection Border */
 .jcrop-vline,
 .jcrop-hline {
-  background-image: url("Jcrop.gif");
+  background-image: url("images/Jcrop.gif");
   font-size: 0;
   position: absolute;
 }
