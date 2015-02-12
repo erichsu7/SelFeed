@@ -1,50 +1,48 @@
 .picture-show-comments-container {
   box-sizing: border-box;
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  height: 300px;
-  width: 300px;
+  padding: 0 10px;
+  width: 298px;
   font-size: 12px;
-  border-left: 1px solid #aaa;
-}
-
-
-.picture-show-comments-container .picture-comments-view {
-  position: relative;
-  height: 100%;
-  width: 100%;
-  top: -15px
-}
-
-.picture-show-comments-container .picture-comments-list {
-  box-sizing: border-box;
-  height: 250px;
   overflow: auto;
-  max-height: none;
+  padding-top: -10px;
 }
-
-.picture-show-comments-container .picture-comment-show-view {
-  padding-left: 50px;
-  padding-right: 12px;
+//
+//
+// .picture-show-comments-container .picture-comments-view {
+//   position: relative;
+//   height: 100%;
+//   width: 100%;
+//   top: -15px
+// }
+//
+.picture-show-comments-container .picture-comments-list {
+  position: relative;
+  margin: 0;
 }
-
-
+//
+// .picture-show-comments-container .picture-comment-show-view {
+//   padding-left: 50px;
+//   padding-right: 12px;
+// }
+//
+//
 .picture-show-comments-container .picture-comments-form-container {
   position: absolute;
   bottom: 0;
-  width: 100%;
+  width: calc(100% - 20px);
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .picture-show-comments-container .comments-form {
-  margin-bottom: 20px;
+  margin-bottom: 25px;
   margin-top: 10px;
 }
-
-.picture-show-comments-container .comment-body {
-  width: 280px;
-}
-
-.picture-show-comments-container .comment-show-avatar {
-  left: 12px;
-}
+//
+// .picture-show-comments-container .comment-body {
+//   width: 280px;
+// }
+//
+// .picture-show-comments-container .comment-show-avatar {
+//   left: 12px;
+// }

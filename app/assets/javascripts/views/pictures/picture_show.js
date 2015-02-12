@@ -2,6 +2,10 @@ SelFeed.Views.PictureShow = Backbone.CompositeView.extend({
   template: JST["pictures/picture_show"],
   className: "picture-show-view",
 
+  events: {
+    "click #close-picture-button": "triggerClose"
+  },
+
   initialize: function () {
     this.addLikeShow();
     this.addCommentsFeed();
@@ -23,5 +27,9 @@ SelFeed.Views.PictureShow = Backbone.CompositeView.extend({
   addCommentsFeed: function () {
     var feedView = new SelFeed.Views.CommentsFeed({ collection: this.model.comments(), picture: this.model });
     this.addSubview(".picture-show-comments-container", feedView);
+  },
+
+  triggerClose: function () {
+    SelFeed.Events.event_bus.trigger("closePictureModal", this);
   }
 });

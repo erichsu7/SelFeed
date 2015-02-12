@@ -12,31 +12,84 @@
   font-size: 14px;
 }
 
+#close-picture-button {
+  position: fixed;
+  text-shadow: 0 0 5px #fff;
+  color: #000;
+  right: 10px;
+  top: 10px;
+  font-size: 24px;
+  transition: all 250ms;
+}
+
+#close-picture-button:hover {
+  cursor: pointer;
+  color: #fff;
+  text-shadow: none;
+  transition: all 250ms;
+}
+
+#close-picture-button:active {
+  color: #555;
+}
+
 .modal-picture-container .picture-show-picture {
   border-radius: 0;
 }
 
-.picture-show-details-container {
+.picture-show-sidebar-container {
   box-sizing: border-box;
   position: absolute;
-  top: 0;
   right: 0;
-  height: 160px;
+  top: 0;
+  height: 100%;
   width: 300px;
   border-left: 1px solid #aaa;
-  border-bottom: 1px solid #ddd;
+}
+
+.picture-show-details-container {
+  box-sizing: border-box;
+  position: relative;
+  width: 300px;
+}
+
+.picture-show-details-avatar {
+  display: inline-block;
+  max-height: 40px;
+  max-width: 40px;
+  margin-top: 20px;
+  margin-left: 10px;
+  vertical-align: top;
+}
+
+.picture-show-details-user-details {
+  display: inline-block;
+  box-sizing: border-box;
+  margin-left: 10px;
+  margin-top: 16px;
+  margin-bottom: 20px;
+  max-width: 230px;
+  max-height: 200px;
+  overflow: auto;
+}
+
+#picture-show-details-author-link {
+  float: none;
+  display: block;
+  font-size: 20px;
+}
+
+.picture-show-details-created-at {
+  display: block;
+  color: #777;
+  font-size: 12px;
+  padding: 2px 0;
+}
+
+.picture-show-details-container .text {
+  color: #333;
 }
 
 .picture-show-likes-container {
-  box-sizing: border-box;
-  position: absolute;
-  left: 500px;
-  top: 160px;
-  width: 300px;
-  border-left: 1px solid #aaa;
+  border-top: 1px solid #ddd;
 }
-
-// .picture-comments-form-container {
-//   position: absolute;
-//   bottom: 0;
-// }

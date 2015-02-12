@@ -6,6 +6,7 @@ end
 json.pictures @user.authored_pictures do |picture|
   json.extract! picture, :id, :url, :author_id, :caption, :filter, :created_at, :updated_at
   json.author_username @user.username
+  json.author_avatar_url @user.avatar_url
   if current_user.likes?(picture)
     json.like current_user.likes.find_by_picture_id(picture.id)
   end
