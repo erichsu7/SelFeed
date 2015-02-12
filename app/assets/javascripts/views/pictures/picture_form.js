@@ -4,7 +4,7 @@ SelFeed.Views.PictureForm = Backbone.CompositeView.extend({
   events: {
     "click #save-picture": "createPicture",
     "click #crop-picture": "updatePicture",
-    "click #cancel-picture": "cancelPicture"
+    "click #cancel-picture": "triggerCancel"
   },
 
   initialize: function () {
@@ -132,12 +132,9 @@ SelFeed.Views.PictureForm = Backbone.CompositeView.extend({
     this.$("#save-picture").attr("data-disabled", "false");
   },
 
-  cancelPicture: function (event) {
+  triggerCancel: function (event) {
     event.preventDefault();
-    var that = this;
-    $(".picture-form-modal").hide("fade", 500, function () {
-      SelFeed.Events.event_bus.trigger("cancelForm", that);
-    })
+    SelFeed.Events.event_bus.trigger("cancelForm", this);
   },
 
   addPictureFilterPalette: function () {

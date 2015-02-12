@@ -41,7 +41,10 @@ SelFeed.Views.UserShow = Backbone.CompositeView.extend({
   },
 
   closePictureModal: function (subview) {
-    this.removeSubview(".picture-show-modal", subview);
+    var that = this;
+    $(".picture-show-modal").hide("fade", 500, function () {
+      that.removeSubview(".picture-show-modal", subview);
+    })
   },
 
   resizeCommentsFeed: function () {
@@ -51,7 +54,9 @@ SelFeed.Views.UserShow = Backbone.CompositeView.extend({
       this.$(".picture-show-comments-container .picture-comments-form-container").height();
     this.$(".picture-show-comments-container").height(500 - otherHeight);
     var maxHeightString = (500 - otherHeight) + "px";
-    this.$(".picture-show-comments-container").css("max-height", maxHeightString);
+    this.$(".picture-show-comments-container").css({
+      "max-height": maxHeightString
+    });
   }
 
 });

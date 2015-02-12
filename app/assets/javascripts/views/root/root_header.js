@@ -63,7 +63,10 @@ SelFeed.Views.RootHeader = Backbone.CompositeView.extend({
   },
 
   removeForm: function (formView) {
-    this.removeSubview(".picture-form-modal", formView);
+    var that = this;
+    $(".picture-form-modal").hide("fade", 500, function () {
+      that.removeSubview(".picture-form-modal", formView);
+    });
   },
 
   showPicturesMap: function (event) {
