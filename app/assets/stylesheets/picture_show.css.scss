@@ -23,7 +23,8 @@
   right: 0;
   height: 160px;
   width: 300px;
-  border: 1px solid black;
+  border-left: 1px solid #aaa;
+  border-bottom: 1px solid #ddd;
 }
 
 .picture-show-likes-container {
@@ -32,16 +33,7 @@
   left: 500px;
   top: 160px;
   width: 300px;
-}
-
-.picture-show-comments-container {
-  box-sizing: border-box;
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  height: 300px;
-  width: 300px;
-  font-size: 12px;
+  border-left: 1px solid #aaa;
 }
 
 // .picture-comments-form-container {
