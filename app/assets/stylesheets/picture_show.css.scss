@@ -12,25 +12,47 @@
   font-size: 14px;
 }
 
-#close-picture-button {
+#close-picture-button,
+  #carousel-left,
+  #carousel-right {
   position: fixed;
   text-shadow: 0 0 5px #fff;
   color: #000;
-  right: 10px;
-  top: 10px;
   font-size: 24px;
   transition: all 250ms;
+  padding: 10px;
 }
 
-#close-picture-button:hover {
+#close-picture-button:hover,
+  #carousel-left:hover,
+  #carousel-right:hover {
   cursor: pointer;
   color: #fff;
   text-shadow: none;
   transition: all 250ms;
 }
 
-#close-picture-button:active {
+#close-picture-button:active,
+  #carousel-left:active,
+  #carousel-right:active {
   color: #555;
+}
+
+#close-picture-button {
+  right: 0;
+  top: 0;
+}
+
+#carousel-left {
+  top: 50%;
+  transform: translateY(-50%);
+  left: -80px;
+}
+
+#carousel-right {
+  top: 50%;
+  transform: translateY(-50%);
+  right: -80px;
 }
 
 .modal-picture-container .picture-show-picture {

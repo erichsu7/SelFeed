@@ -3,10 +3,12 @@
 </div>
 
 <div class="modal-picture-container">
+  <i class="fa fa-chevron-left" id="carousel-left"></i>
+  <i class="fa fa-chevron-right" id="carousel-right"></i>
   <img class="picture-show-picture" data-filter="<%= picture.escape("filter") %>" src="<%= picture.escape("url") %>">
 
   <div class="picture-show-sidebar-container">
-  
+
     <div class="picture-show-details-container">
       <img class="picture-show-details-avatar" src="<%= picture.escape("author_avatar_url") %>">
       <div class="picture-show-details-user-details">
