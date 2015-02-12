@@ -1,4 +1,16 @@
-<h1 class="new-user-page-header">Sign up for SelFeed</h1>
+<% if flash[:errors] %>
+  <ul class="flash-errors-list">
+    <% flash[:errors].each do |error_message| %>
+    <% error_message = error_message.flatten %>
+      <li class="flash-errors-item">
+        <span class="error-type"><%= error_message[0].capitalize %> </span>
+        <span class="error-description"><%= error_message[1] %></span>
+      </li>
+    <% end %>
+  </ul>
+<% else %>
+  <h1 class="new-user-page-header">Sign up for SelFeed</h1>
+<% end %>
 
 <div class="user-form">
   <header class="user-form-header">SelFeed</header>

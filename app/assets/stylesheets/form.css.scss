@@ -1,9 +1,31 @@
+.flash-errors-list {
+  color: #a94442;
+  background-color: #f2dede;
+  border-color: #ebccd1;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 10px;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+
+.error-type {
+  font-family: "Raleway";
+  font-weight: 500;
+}
+
+.error-description {
+  font-family: "Raleway";
+  font-weight: 300;
+}
+
 .form-page-container {
   position: absolute;
   top: 0;
   width: 100%;
   height: 100%;
-  background-color: #fafafa;
+  background-color: #fefefe;
 }
 
 .user-form {
