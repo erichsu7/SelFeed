@@ -18,13 +18,14 @@
 
 .picture-show-comments-container .picture-comments-list {
   box-sizing: border-box;
-  padding: 10px 0;
   height: 250px;
   overflow: auto;
+  max-height: none;
 }
 
 .picture-show-comments-container .picture-comment-show-view {
   padding-left: 50px;
+  padding-right: 12px;
 }
 
 .picture-show-comments-container .picture-comments-form-container {

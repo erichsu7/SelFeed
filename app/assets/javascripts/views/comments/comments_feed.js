@@ -23,7 +23,7 @@ SelFeed.Views.CommentsFeed = Backbone.CompositeView.extend({
 
   addComment: function (comment) {
     var showView = new SelFeed.Views.CommentShow({ model: comment });
-    this.addSubview(".picture-comments-list", showView);
+    this.prependSubview(".picture-comments-list", showView);
   },
 
   removeComment: function (comment) {
