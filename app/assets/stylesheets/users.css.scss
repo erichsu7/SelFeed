@@ -158,3 +158,37 @@
   border: 1px solid #3d8b5f;
   background-image: -webkit-linear-gradient(top,#6bb38a,#3d8b5f);
 }
+
+.user-header-stats-container {
+  display: block;
+  list-style: none;
+  position: absolute;
+  right: 25px;
+  top: 50%;
+  transform: translateY(-50%);
+  background-image: -webkit-linear-gradient(top, #fefefe, #efefef);
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.stat-container {
+  display: inline-block;
+  width: 80px;
+  text-align: center;
+  margin: 5px 0;
+}
+
+.stat-container:nth-child(2) {
+  border-left: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+}
+
+.stat-count {
+  display: block;
+  color: #333;
+}
+
+.stat-name {
+  font-size: 12px;
+  color: #999;
+}
