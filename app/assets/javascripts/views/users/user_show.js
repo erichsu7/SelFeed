@@ -32,19 +32,24 @@ SelFeed.Views.UserShow = Backbone.CompositeView.extend({
     this.addSubview(".pictures-grid-container", picturesGrid);
   },
 
-  showPictureModal: function (picture) {
+  showPictureModal: function (picture, time) {
     var showView = new SelFeed.Views.PictureShow({
       model: picture
     })
+    time = time ? time : 500;
     this.addSubview(".picture-show-modal", showView);
-    $(".picture-show-modal").show("fade", 500);
+    $(".picture-show-modal").show("fade", time);
     this.resizeCommentsFeed();
   },
 
-  closePictureModal: function (subview) {
+  closePictureModal: function (subview, time,  callback) {
     var that = this;
-    $(".picture-show-modal").hide("fade", 500, function () {
+    time = time ? time : 500;
+    $(".picture-show-modal").hide("fade", time, function () {
       that.removeSubview(".picture-show-modal", subview);
+      if (callback) {
+        callback();
+      };
     })
   },
 
@@ -58,8 +63,8 @@ SelFeed.Views.UserShow = Backbone.CompositeView.extend({
         return that.model.pictures().at(currentPictureIndex - 1);
       }
     })();
-    this.closePictureModal(options.view);
-    this.showPictureModal(nextPicture);
+
+    this.closePictureModal(options.view, 250, this.showPictureModal.bind(this, nextPicture, 250));
   },
 
   resizeCommentsFeed: function () {
