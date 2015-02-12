@@ -34,7 +34,8 @@ SelFeed.Views.UserShow = Backbone.CompositeView.extend({
 
   showPictureModal: function (picture, time) {
     var showView = new SelFeed.Views.PictureShow({
-      model: picture
+      model: picture,
+      collection: this.model.pictures()
     })
     time = time ? time : 500;
     this.addSubview(".picture-show-modal", showView);

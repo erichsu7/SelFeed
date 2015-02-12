@@ -17,6 +17,7 @@ SelFeed.Views.PictureShow = Backbone.CompositeView.extend({
     var renderedContent = this.template({ picture: this.model });
     this.$el.html(renderedContent);
     this.attachSubviews();
+    this.renderArrows();
 
     return this;
   },
@@ -43,5 +44,14 @@ SelFeed.Views.PictureShow = Backbone.CompositeView.extend({
   triggerCarouselRight: function () {
     var options = { view: this, picture: this.model, direction: "right" };
     SelFeed.Events.event_bus.trigger("switchPictureModal", options);
+  },
+
+  renderArrows: function () {
+    var pictureIndex = this.collection.indexOf(this.model);
+    if (pictureIndex === 0) {
+      this.$("#carousel-left").css("display", "none");
+    } else if (pictureIndex === this.collection.length - 1) {
+      this.$("#carousel-right").css("display", "none")
+    }
   }
 });

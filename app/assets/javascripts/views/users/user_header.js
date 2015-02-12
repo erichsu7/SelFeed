@@ -60,7 +60,11 @@ SelFeed.Views.UserHeader = Backbone.CompositeView.extend({
 
       for (i = 0; i < 7; i++) {
         var url = this.collagePictures[i].escape("url");
-        html += "<li id=\"picture-" + i + "\"><a class=\"inner-shadow\"></a><img class=\"collage-picture\" src=\"" + url + "\"></li>\n";
+        var filter = this.collagePictures[i].escape("filter");
+        html += "<li id=\"picture-" + i + "\">";
+        html += "<a class=\"inner-shadow\"></a>";
+        html += "<img class=\"collage-picture\" data-filter=\"" + filter + "\" src=\"" + url + "\">";
+        html += "</li>\n";
       }
       that.nextPicIndex = i;
       this.$(".user-header-collage-pictures").html(html);
