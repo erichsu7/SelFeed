@@ -7,7 +7,7 @@ SelFeed.Views.PicturesGrid = Backbone.CompositeView.extend({
     this.listenTo(this.collection, "sync", this.render);
     this.listenTo(this.collection, "add", this.addPicture);
     this.listenTo(this.collection, "remove", this.removePicture);
-    this.listenTo(SelFeed.Events.event_bus, "savePicture", this.addPicture);
+    this.listenTo(SelFeed.Events.event_bus, "savePicture", this.prependPicture);
     this.collection.each(function (picture) {
       that.addPicture(picture);
     });
@@ -22,6 +22,11 @@ SelFeed.Views.PicturesGrid = Backbone.CompositeView.extend({
   },
 
   addPicture: function (picture) {
+    var gridItem = new SelFeed.Views.PicturesGridItem({ model: picture });
+    this.addSubview(".pictures-grid-list", gridItem);
+  },
+
+  prependPicture: function (picture) {
     var gridItem = new SelFeed.Views.PicturesGridItem({ model: picture });
     this.prependSubview(".pictures-grid-list", gridItem);
   },

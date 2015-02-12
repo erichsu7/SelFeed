@@ -3,7 +3,9 @@ SelFeed.Views.PictureShow = Backbone.CompositeView.extend({
   className: "picture-show-view",
 
   events: {
-    "click #close-picture-button": "triggerClose"
+    "click #close-picture-button": "triggerClose",
+    "click #carousel-left": "triggerCarouselLeft",
+    "click #carousel-right": "triggerCarouselRight"
   },
 
   initialize: function () {
@@ -31,5 +33,15 @@ SelFeed.Views.PictureShow = Backbone.CompositeView.extend({
 
   triggerClose: function () {
     SelFeed.Events.event_bus.trigger("closePictureModal", this);
+  },
+
+  triggerCarouselLeft: function () {
+    var options = { view: this, picture: this.model, direction: "left" };
+    SelFeed.Events.event_bus.trigger("switchPictureModal", options);
+  },
+
+  triggerCarouselRight: function () {
+    var options = { view: this, picture: this.model, direction: "right" };
+    SelFeed.Events.event_bus.trigger("switchPictureModal", options);
   }
 });

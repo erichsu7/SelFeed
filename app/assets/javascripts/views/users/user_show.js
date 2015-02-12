@@ -7,6 +7,7 @@ SelFeed.Views.UserShow = Backbone.CompositeView.extend({
     this.addPicturesGrid();
     this.listenTo(SelFeed.Events.event_bus, "showPictureModal", this.showPictureModal);
     this.listenTo(SelFeed.Events.event_bus, "closePictureModal", this.closePictureModal);
+    this.listenTo(SelFeed.Events.event_bus, "switchPictureModal", this.switchPictureModal);
   },
 
   render: function () {
@@ -45,6 +46,22 @@ SelFeed.Views.UserShow = Backbone.CompositeView.extend({
     $(".picture-show-modal").hide("fade", 500, function () {
       that.removeSubview(".picture-show-modal", subview);
     })
+  },
+
+  switchPictureModal: function (options) {
+    var that = this;
+    var currentPictureIndex = this.model.pictures().indexOf(options.picture);
+    var nextPicture = (function () {
+      if (options.direction === "right") {
+        debugger;
+        return that.model.pictures().at(currentPictureIndex + 1);
+      } else {
+        return that.model.pictures().at(currentPictureIndex - 1);
+      }
+    })();
+    debugger;
+    this.closePictureModal(options.view);
+    this.showPictureModal(nextPicture);
   },
 
   resizeCommentsFeed: function () {

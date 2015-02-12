@@ -8,8 +8,10 @@ class User < ActiveRecord::Base
   after_initialize :ensure_session_token
 
   has_many :authored_pictures,
+  -> { order "created_at DESC" },
     class_name: "Picture",
     foreign_key: :author_id
+
 
   has_many :likes,
     foreign_key: :liker_id
