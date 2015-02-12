@@ -53,13 +53,11 @@ SelFeed.Views.UserShow = Backbone.CompositeView.extend({
     var currentPictureIndex = this.model.pictures().indexOf(options.picture);
     var nextPicture = (function () {
       if (options.direction === "right") {
-        debugger;
         return that.model.pictures().at(currentPictureIndex + 1);
       } else {
         return that.model.pictures().at(currentPictureIndex - 1);
       }
     })();
-    debugger;
     this.closePictureModal(options.view);
     this.showPictureModal(nextPicture);
   },
