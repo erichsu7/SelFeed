@@ -80,13 +80,22 @@ SelFeed.Views.UserHeader = Backbone.CompositeView.extend({
     if (this.collagePictures.length < 1) {
       return;
     }
+
     var randomIndex = Math.floor(Math.random() * 7);
     var nextPicUrl = this.collagePictures[this.nextPicIndex].escape("url");
-    var $li = this.$("#picture-" + randomIndex);
     var $topPicture = this.$("#picture-" + randomIndex + " img");
+
+    while ($topPicture.attr("src") === nextPicUrl) {
+      randomIndex = Math.floor(Math.random() * 7);
+      nextPicUrl = this.collagePictures[this.nextPicIndex].escape("url");
+    }
+
+    var nextPicFilter = this.collagePictures[this.nextPicIndex].escape("filter");
+    var $li = this.$("#picture-" + randomIndex);
     var $bottomPicture = $("<img class=\"collage-picture bottom\" src=\"" + nextPicUrl + "\">");
     $li.append($bottomPicture);
     $bottomPicture.removeClass("bottom", 500, "swing");
+    $bottomPicture.attr("data-filter", nextPicFilter);
     $topPicture.addClass("bottom", 500, "swing", function () {
       $topPicture.remove();
     })

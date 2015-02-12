@@ -47,7 +47,8 @@ SelFeed.Views.PicturesMap = Backbone.CompositeView.extend({
       author_id: picture.escape("author_id"),
       author_username: picture.escape("author_username"),
       picture_url: picture.escape("url"),
-      picture_created_at: picture.escape("created_at")
+      picture_created_at: picture.escape("created_at"),
+      picture_filter: picture.escape("filter")
     });
 
     google.maps.event.addListener(marker, "click", function (event) {
@@ -65,7 +66,7 @@ SelFeed.Views.PicturesMap = Backbone.CompositeView.extend({
 
   showPicturePreview: function (event, marker) {
     var userUrl = "#/users/" + marker.author_id;
-    var imgTag = "<img height=\"100\" width=\"100\" src=\"" + marker.picture_url + "\">";
+    var imgTag = "<img height=\"100\" width=\"100\" data-filter=\"" + marker.picture_filter + "\"src=\"" + marker.picture_url + "\">";
     var aTag = "<a href=\"" + userUrl + "\">" + imgTag + "</a>";
     var createdAt = moment(marker.picture_created_at).fromNow();
     var infoWindow = new google.maps.InfoWindow({
