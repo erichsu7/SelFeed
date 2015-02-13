@@ -1,10 +1,17 @@
 <header class="splash-header">
-  <div class="splash-header-content"><i class="fa fa-camera-retro"></i></div>
+  <div class="splash-header-content">
+    <i class="fa fa-camera-retro" id="logo-camera"></i>
+    <i id="logo-script">SelFeed</i>
+  </div>
 </header>
+
+<div class="splash-background-container">
+  <img src="<%= asset_url("splash_bg.jpg")%> ">
+</div>
 
 <div class="splash-body">
   <div class="splash-body-content">
-    <h1 class="splash-body-content-header">Welcome to SelFeed</h1>
+    <h1 class="splash-body-content-header">Welcome to SelFeed.</h1>
     <p class="splash-body-content-description">Share pictures of yourself desperately in search of validation from random people across the world.</p>
   </div>
   <div class="splash-body-forms">
@@ -25,25 +32,27 @@
 
     <form class="splash-form-new-user" action="<%= users_url %>" method="post">
       <%= include_form_auth_token %>
-      <form class="splash-form-new-user">
-        <%= include_form_auth_token %>
-        <input class="splash-form-input"
-          id="splash-form-new-user-username"
-          type="text"
-          name="user[username]">
-        </input>
-        <input class="splash-form-input"
-          id="splash-form-new-user-display-name"
-          type="text"
-          name="user[display_name]">
-        </input>
-        <input class="splash-form-input"
-          id="splash-form-new-user-password"
-          type="password"
-          name="user[password]">
-        </input>
-        <input type="submit" class="submit-button" value="Sign up for SelFeed"></input>
-      </form>
+      <h1 class="new-user-form-header">
+        <span class="new-user-form-header-bold">New to SelFeed?</span>
+        <span class="new-user-form-header-plain">Sign up</span>
+      </h1>
+      <div class="new-user-form-divider"></div>
+      <input class="splash-form-input"
+        id="splash-form-new-user-username"
+        type="text"
+        name="user[username]">
+      </input>
+      <input class="splash-form-input"
+        id="splash-form-new-user-display-name"
+        type="text"
+        name="user[display_name]">
+      </input>
+      <input class="splash-form-input"
+        id="splash-form-new-user-password"
+        type="password"
+        name="user[password]">
+      </input>
+      <input type="submit" class="submit-button" value="Sign up for SelFeed"></input>
     </form>
   </div>
 </div>

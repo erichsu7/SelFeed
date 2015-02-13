@@ -72,3 +72,7 @@ input, textarea {
   box-sizing: border-box;
   color: #333;
 }
+
+button:focus, .submit-button {
+  outline:0 !important;
+}
