@@ -4,9 +4,7 @@ SelFeed.Views.CommentForm = Backbone.View.extend({
   className: "comments-form clearfix",
 
   events: {
-    "submit": "createComment",
-    "focus .comment-body": "clearField",
-    "blur .comment-body": "resetField"
+    "submit": "createComment"
   },
 
   initialize: function (options) {
@@ -34,19 +32,5 @@ SelFeed.Views.CommentForm = Backbone.View.extend({
     comment.set("commenter_avatar_url", currentUserAvatarUrl);
     debugger;
     this.collection.add(comment, {merge: true});
-  },
-
-  clearField: function (event) {
-    var $target = $(event.currentTarget);
-    if ($target.val() === "Write a comment...") {
-      $target.val("");
-    }
-  },
-
-  resetField: function (event) {
-    var $target = $(event.currentTarget);
-    if ($target.val() === "") {
-      $target.val("Write a comment...");
-    }
   }
 })

@@ -25,13 +25,13 @@
         id="splash-form-log-in-username"
         type="text"
         name="user[username]"
-        value="Username">
+        placeholder="Username">
       </input>
       <input class="splash-form-input password"
         id="splash-form-log-in-password"
-        type="text"
+        type="password"
         name="user[password]"
-        value="Password">
+        placeholder="Password">
       </input>
       <input type="submit" class="hidden-submit"></input>
       <a href="" class="submit-button" id="splash-log-in-button">Log in</a>
@@ -48,19 +48,19 @@
         id="splash-form-new-user-username"
         type="text"
         name="user[username]"
-        value="Username">
+        placeholder="Username">
       </input>
       <input class="splash-form-input display-name"
         id="splash-form-new-user-display-name"
         type="text"
         name="user[display_name]"
-        value="Display name">
+        placeholder="Display name">
       </input>
       <input class="splash-form-input password"
         id="splash-form-new-user-password"
-        type="text"
+        type="password"
         name="user[password]"
-        value="Password">
+        placeholder="Password">
       </input>
       <input type="submit" class="hidden-submit"></input>
       <a href="" class="submit-button" id="splash-sign-up-button">Sign up for SelFeed</a>
@@ -71,81 +71,11 @@
 <script>
 $("#splash-log-in-button").on("click", function (event) {
   event.preventDefault();
-  var $form = $(".splash-form-log-in");
-  var username = $form.find("#splash-form-log-in-username").val();
-  var password = $form.find("#splash-form-log-in-password").val();
-
-  if (username === "Username") {
-    $form.find("#splash-form-log-in-username").val("");
-  }
-  if (password === "Password") {
-    $form.find("#splash-form-log-in-password").val("");
-  }
-  debugger;
   $(".splash-form-log-in").submit();
 });
 
 $("#splash-sign-up-button").on("click", function (event) {
   event.preventDefault();
-  var $form = $(".splash-form-new-user");
-  var username = $form.find("#splash-form-new-user-username").val();
-  var displayName = $form.find("#splash-form-new-user-display-name").val();
-  var password = $form.find("#splash-form-new-user-password").val();
-
-  if (username === "Username") {
-    $form.find("#splash-form-new-user-username").val("");
-  }
-  if (displayName === "Display name") {
-    $form.find("#splash-form-new-user-display-name").val("");
-  }
-  if (password === "Password") {
-    $form.find("#splash-form-new-user-password").val("");
-  }
-  debugger;
   $(".splash-form-new-user").submit();
-});
-
-$(".splash-form-input.username").on("focus", function (event) {
-  $target = $(event.target);
-  if ($target.val() === "Username") {
-    $target.val("");
-  }
-});
-
-$(".splash-form-input.username").on("blur", function (event) {
-  $target = $(event.target);
-  if ($target.val() === "") {
-    $target.val("Username");
-  }
-});
-
-$(".splash-form-input.password").on("focus", function (event) {
-  $target = $(event.target);
-  $target.attr("type", "password");
-  if ($target.val() === "Password") {
-    $target.val("");
-  }
-});
-
-$(".splash-form-input.password").on("blur", function (event) {
-  $target = $(event.target);
-  if ($target.val() === "") {
-    $target.val("Password");
-    $target.attr("type", "text");
-  }
-});
-
-$(".splash-form-input.display-name").on("focus", function (event) {
-  $target = $(event.target);
-  if ($target.val() === "Display name") {
-    $target.val("");
-  }
-});
-
-$(".splash-form-input.display-name").on("blur", function (event) {
-  $target = $(event.target);
-  if ($target.val() === "") {
-    $target.val("Display name");
-  }
 });
 </script>

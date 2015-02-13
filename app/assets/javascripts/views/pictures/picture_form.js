@@ -76,9 +76,7 @@ SelFeed.Views.PictureForm = Backbone.CompositeView.extend({
     this.$(".modal-form-links").append($("<i class=\"fa fa-spinner fa-spin\" id=\"save-progress-tracker\"></i>"));
     var that = this;
     var params = this.$("form").serializeJSON();
-    if (params.picture.caption === "Write a caption...") {
-      params.picture.caption = "";
-    };
+    
     params.picture.url = this.pictureUrl;
     params.picture.filter = this.currentFilter;
     params.picture.latitude = this.latitude;
