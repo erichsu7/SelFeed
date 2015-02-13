@@ -39,6 +39,11 @@
   transition: all 250ms;
 }
 
+.root-header-nav-link:active {
+  text-shadow: 0 0 10px #000;
+  transition: all 250ms;
+}
+
 .root-header-nav-link > i {
   position: absolute;
   top: 50%;
@@ -114,6 +119,12 @@ li:hover .user-options-list {
   transition: all 250ms;
 }
 
+.user-options-list > li:active {
+  background-color: #ddd;
+
+  transition: all 250ms;
+}
+
 .user-options-list:last-child {
   border-bottom-right-radius: 5px;
   border-bottom-left-radius: 5px;
@@ -157,4 +168,9 @@ li:hover .user-options-list {
 .logo-link:hover {
   text-shadow: 0 0 10px #517fa4;
   transition: all 500ms;
+}
+
+.logo-link:active {
+  text-shadow: 0 0 10px #8fafc8;
+  transition: all 250ms;
 }
