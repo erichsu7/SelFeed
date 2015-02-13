@@ -68,9 +68,10 @@
 .splash-body-content {
   position: relative;
   display: inline-block;
-  width: 480px;
+  width: 400px;
   vertical-align: top;
   margin-top: 80px;
+  margin-right: 80px;
   box-sizing: border-box;
 }
 
@@ -83,8 +84,9 @@
 .splash-body-content-description {
   font-family: "Raleway";
   font-weight: 300;
-  font-size: 24px;
+  font-size: 20px;
   color: #306088;
+  line-height: 150%;
 }
 
 .splash-body-forms {
