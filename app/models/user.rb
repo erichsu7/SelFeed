@@ -73,6 +73,16 @@ class User < ActiveRecord::Base
     self.followed_users.include?(user)
   end
 
+  def randomize_picture_coords(lat, long)
+    self.authored_pictures.each do |picture|
+      randomLat = (rand(10) - 10) / 1000.0
+      randomLong = (rand(10) - 10) / 1000.0
+      picture.latitude = lat + randomLat
+      picture.longitude = long + randomLong
+      picture.save
+    end
+  end
+
   private
     def ensure_session_token
       self.session_token ||= self.class.generate_session_token
