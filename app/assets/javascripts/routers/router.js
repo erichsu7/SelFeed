@@ -50,5 +50,6 @@ SelFeed.Routers.Router = Backbone.Router.extend({
     this._currentView = view;
     this.$rootEl.html(view.$el);
     view.render();
+    view.$el.show("fade", 1000);
   }
 })
