@@ -1,4 +1,10 @@
 <div class="form-page-container">
+  <% if flash[:errors] %>
+    <%= render "layouts/errors" %>
+  <% else %>
+    <h1 class="new-user-page-header">Sign in to SelFeed</h1>
+  <% end %>
+
   <div class="user-form">
     <header class="user-form-header">SelFeed</header>
     <form action='<%= session_url %>' method="post">

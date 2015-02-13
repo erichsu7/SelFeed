@@ -13,7 +13,7 @@
   max-width: 1000px;
   height: 100%;
   margin: auto;
-  color: #fff;
+  color: #f6f9fc;
 }
 
 .root-header-nav-link {
@@ -24,6 +24,8 @@
   display: block;
   font-size: 32px;
   border-left: 1px solid #6892b4;
+  transition: all 250ms;
+
 }
 
 #explore-container {
@@ -33,6 +35,8 @@
 .root-header-nav-link:hover {
   cursor: pointer;
   background-color: #517fa4;
+  text-shadow: 0 0 5px #333;
+  transition: all 250ms;
 }
 
 .root-header-nav-link > i {
@@ -49,6 +53,12 @@
   border-right: 1px solid #6892b4;
   border-left: 1px solid #6892b4;
   right: 0;
+  transition: all 250ms;
+}
+
+.user-container:hover {
+  background-color: #517fa4;
+  transition: all 250ms;
 }
 
 .header-user-details-container {
@@ -95,9 +105,13 @@ li:hover .user-options-list {
   transition: opacity 500ms, visibility 500ms;
 }
 
+.user-options-list > li {
+  transition: all 250ms;
+}
 .user-options-list > li:hover {
   background-color: #eaeaea;
   cursor: pointer;
+  transition: all 250ms;
 }
 
 .user-options-list:last-child {
@@ -132,6 +146,15 @@ li:hover .user-options-list {
   transform: translateX(-50%) translateY(-50%);
   font-family: "Rochester";
   font-size: 24px;
-  color: #fafafa;
-  text-shadow: 0 0 3px #333;
+}
+
+.logo-link {
+  color: #f6f9fc;
+  text-shadow: 0 0 3px #000;
+  transition: all 500ms;
+}
+
+.logo-link:hover {
+  text-shadow: 0 0 10px #517fa4;
+  transition: all 500ms;
 }

@@ -1,0 +1,9 @@
+<ul class="flash-errors-list">
+  <% flash[:errors].each do |error_message| %>
+  <% error_message = error_message.flatten %>
+    <li class="flash-errors-item">
+      <span class="error-type"><%= error_message[0].capitalize %> </span>
+      <span class="error-description"><%= error_message[1] %></span>
+    </li>
+  <% end %>
+</ul>

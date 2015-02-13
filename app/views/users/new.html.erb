@@ -1,39 +1,33 @@
-<% if flash[:errors] %>
-  <ul class="flash-errors-list">
-    <% flash[:errors].each do |error_message| %>
-    <% error_message = error_message.flatten %>
-      <li class="flash-errors-item">
-        <span class="error-type"><%= error_message[0].capitalize %> </span>
-        <span class="error-description"><%= error_message[1] %></span>
-      </li>
+<div class="form-page-container">
+    <% if flash[:errors] %>
+      <%= render "layouts/errors" %>
+    <% else %>
+      <h1 class="new-user-page-header">Sign up for SelFeed</h1>
     <% end %>
-  </ul>
-<% else %>
-  <h1 class="new-user-page-header">Sign up for SelFeed</h1>
-<% end %>
 
-<div class="user-form">
-  <header class="user-form-header">SelFeed</header>
+    <div class="user-form">
+      <header class="user-form-header">SelFeed</header>
 
-  <form action="<%= users_url %>" method="post">
-    <%= include_form_auth_token %>
+      <form action="<%= users_url %>" method="post">
+        <%= include_form_auth_token %>
 
-    <div class="input-field clearfix">
-      <label for="user_username">Username:</label>
-      <input type="text" name="user[username]" value="<%= @user.username %>">
+        <div class="input-field clearfix">
+          <label for="user_username">Username:</label>
+          <input type="text" name="user[username]" value="<%= @user.username %>">
+        </div>
+
+        <div class="input-field clearfix">
+          <label for="user_password">Password:</label>
+          <input type="password" name="user[password]" value="">
+        </div>
+
+        <input type="submit" class="submit-button" value="Confirm user">
+      </form>
+
     </div>
 
-    <div class="input-field clearfix">
-      <label for="user_password">Password:</label>
-      <input type="password" name="user[password]" value="">
+    <div class="user-redirect">
+      <span>Already have an account?</span>
+      <a href="/session/new">Click here to sign in.</a>
     </div>
-
-    <input type="submit" class="submit-button" value="Confirm user">
-  </form>
-
-</div>
-
-<div class="user-redirect">
-  <span>Already have an account?</span>
-  <a href="/session/new">Click here to sign in.</a>
 </div>
