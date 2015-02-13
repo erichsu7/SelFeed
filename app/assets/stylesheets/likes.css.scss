@@ -22,15 +22,19 @@
   height: 40px;
   border-right: 1px solid #ddd;
   color: #bbb;
+  transition: all 250ms;
+
 }
 
 .picture-likes-button:hover {
   cursor: pointer;
   color: #dd7070;
+  transition: all 250ms;
 }
 
 .picture-likes-button.liked {
   color: #d14141;
+  transition: all 250ms;
 }
 
 .picture-likes-count {
