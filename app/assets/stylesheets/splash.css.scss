@@ -110,6 +110,11 @@
 
 .splash-form-input {
   width: 100%;
+  color: #aaa;
+}
+
+.splash-form-input:active {
+  color: #333;
 }
 
 #splash-form-log-in-username {
@@ -120,12 +125,49 @@
   width: calc(100% - 74px);
 }
 
-.splash-form-log-in .submit-button {
+#splash-log-in-button {
   position: absolute;
   right: 10px;
   margin: 0;
   bottom: 10px;
+  background-color: #517fa4;
+  background-image: none;
+  color: #fff;
+  border: 1px solid #234562;
+  transition: all 250ms;
+}
+
+#splash-log-in-button:hover {
   background-image: -webkit-linear-gradient(top,#517fa4,#306088);
+  transition: all 250ms;
+}
+
+#splash-log-in-button:active {
+  background-color: #306088;
+  background-image: none;
+  box-shadow: 0 0 10px 1px #234562 inset;
+  transition: all 250ms;
+}
+
+#splash-sign-up-button {
+  transform: translateX(140px);
+  margin: 0;
+  margin-top: 10px;
+  width: 160px;
+}
+
+#splash-sign-up-button:hover {
+  background-image: -webkit-linear-gradient(top,#6bb38a,#31704c);
+}
+
+#splash-sign-up-button:active {
+  background-color: #31704c;
+  background-image: none;
+  box-shadow: 0 0 10px 1px #214d34 inset;
+}
+
+.hidden-submit {
+  display: none;
 }
 
 .new-user-form-header {
@@ -144,13 +186,6 @@
 
 .splash-form-new-user > .splash-form-input {
   margin-top: 10px;
-}
-
-.splash-form-new-user > .submit-button {
-  transform: translateX(140px);
-  margin: 0;
-  margin-top: 10px;
-
 }
 
 .splash-form-new-user > .submit-button:focus {
