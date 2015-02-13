@@ -1,0 +1,49 @@
+<header class="splash-header">
+  <div class="splash-header-content"><i class="fa fa-camera-retro"></i></div>
+</header>
+
+<div class="splash-body">
+  <div class="splash-body-content">
+    <h1 class="splash-body-content-header">Welcome to SelFeed</h1>
+    <p class="splash-body-content-description">Share pictures of yourself desperately in search of validation from random people across the world.</p>
+  </div>
+  <div class="splash-body-forms">
+    <form class="splash-form-log-in" action="<%= session_url %>" method="post">
+      <%= include_form_auth_token %>
+      <input class="splash-form-input"
+        id="splash-form-log-in-username"
+        type="text"
+        name="user[username]">
+      </input>
+      <input class="splash-form-input"
+        id="splash-form-log-in-password"
+        type="password"
+        name="user[password]">
+      </input>
+      <input type="submit" class="submit-button" value="Log in"></input>
+    </form>
+
+    <form class="splash-form-new-user" action="<%= users_url %>" method="post">
+      <%= include_form_auth_token %>
+      <form class="splash-form-new-user">
+        <%= include_form_auth_token %>
+        <input class="splash-form-input"
+          id="splash-form-new-user-username"
+          type="text"
+          name="user[username]">
+        </input>
+        <input class="splash-form-input"
+          id="splash-form-new-user-display-name"
+          type="text"
+          name="user[display_name]">
+        </input>
+        <input class="splash-form-input"
+          id="splash-form-new-user-password"
+          type="password"
+          name="user[password]">
+        </input>
+        <input type="submit" class="submit-button" value="Sign up for SelFeed"></input>
+      </form>
+    </form>
+  </div>
+</div>

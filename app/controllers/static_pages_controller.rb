@@ -1,9 +1,11 @@
 class StaticPagesController < ApplicationController
-  before_action :redirect_if_logged_out
 
   def root
-    @current_user = current_user
-
-    render :root
+    if logged_in?
+      @current_user = current_user
+      render :root
+    else
+      render :splash
+    end
   end
 end
