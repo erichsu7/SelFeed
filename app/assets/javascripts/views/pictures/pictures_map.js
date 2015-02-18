@@ -9,6 +9,7 @@ SelFeed.Views.PicturesMap = Backbone.CompositeView.extend({
     this._markers = {};
     this.listenTo(this.collection, "add", this.addMarker);
     this.listenTo(this.collection, "remove", this.removeMarker);
+    this.listenTo(SelFeed.Events.event_bus, "savePicture", this.addMarker);
   },
 
   render: function () {

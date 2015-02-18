@@ -13,8 +13,8 @@ SelFeed.Views.PictureForm = Backbone.CompositeView.extend({
   },
 
   storeCoords: function (position) {
-    this.latitude = position.coords.latitude;
-    this.longitude = position.coords.longitude;
+    this.latitude = position.coords.latitude === 0 ? null : position.coords.latitude;
+    this.longitude = position.coords.longitude === 0 ? null : position.coords.longitude;
   },
 
   render: function () {
@@ -76,7 +76,7 @@ SelFeed.Views.PictureForm = Backbone.CompositeView.extend({
     this.$(".modal-form-links").append($("<i class=\"fa fa-spinner fa-spin\" id=\"save-progress-tracker\"></i>"));
     var that = this;
     var params = this.$("form").serializeJSON();
-    
+
     params.picture.url = this.pictureUrl;
     params.picture.filter = this.currentFilter;
     params.picture.latitude = this.latitude;
