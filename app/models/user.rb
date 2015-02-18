@@ -12,7 +12,6 @@ class User < ActiveRecord::Base
     class_name: "Picture",
     foreign_key: :author_id
 
-
   has_many :likes,
     foreign_key: :liker_id
 
@@ -81,6 +80,14 @@ class User < ActiveRecord::Base
       picture.longitude = long + randomLong
       picture.save
     end
+  end
+
+  def followed_pictures
+    followed_user_ids = [self.id]
+    self.followed_users.each do |user|
+      followed_user_ids << user.id
+    end
+    Picture.includes(:likes, :comments).where("author_id IN (?)", followed_user_ids).order("created_at DESC")
   end
 
   private
