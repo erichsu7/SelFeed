@@ -17,6 +17,7 @@ SelFeed.Views.PicturesFeed = Backbone.CompositeView.extend({
     var renderedContent = this.template();
     this.$el.html(renderedContent);
     this.attachSubviews();
+    this.listenForScroll();
 
     return this;
   },
@@ -35,5 +36,24 @@ SelFeed.Views.PicturesFeed = Backbone.CompositeView.extend({
         that.removeSubview(".pictures-list", showView);
       }
     })
+  },
+
+  listenForScroll: function () {
+    var that = this;
+    $(window).off("scroll");
+    var throttledCallback = _.throttle(this.nextPage.bind(this), 200);
+    $(window).on("scroll", throttledCallback);
+  },
+
+  nextPage: function () {
+    var that = this;
+    if ($(window).scrollTop() > $(document).height() - $(window).height() - 50) {
+      if (this.collection.page_number < this.collection.total_pages) {
+        this.collection.fetch({
+          data: { page: this.collection.page_number + 1 },
+          remove: false
+        });
+      }
+    }
   }
 })

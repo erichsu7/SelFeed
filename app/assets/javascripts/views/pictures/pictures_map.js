@@ -17,8 +17,9 @@ SelFeed.Views.PicturesMap = Backbone.CompositeView.extend({
 
     var that = this;
     var mapOptions = {
-      center: { lat: 37.7833, lng: -122.4167},
-      zoom: 12
+      // center: { lat: 37.7833, lng: -122.4167},
+      center: {lat: 0, lng: 0 },
+      zoom: 2
     };
 
     this.collection.each(function (picture) {

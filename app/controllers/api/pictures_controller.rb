@@ -2,10 +2,10 @@ module Api
   class PicturesController < ApiController
 
     def index
-      if(params[:all_pictures])
+      if params[:all_pictures]
         @pictures = Picture.last(100)
       else
-        @pictures = current_user.followed_pictures.page(1).per(10)
+        @pictures = current_user.followed_pictures.page(params[:page]).per(5)
       end
 
       render "index"

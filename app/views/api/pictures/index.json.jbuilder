@@ -1,5 +1,7 @@
-json.page_number params[:page]
-json.total_pages @pictures.total_pages
+unless params[:all_pictures]
+  json.page_number params[:page]
+  json.total_pages @pictures.total_pages
+end
 
 json.pictures do
   json.array! @pictures do |picture|
