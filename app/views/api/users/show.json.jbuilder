@@ -5,6 +5,7 @@ end
 json.followers_count @user.followers.length
 json.followed_users_count @user.followed_users.length
 
+
 json.pictures @user.authored_pictures do |picture|
   json.extract! picture, :id, :url, :author_id, :caption, :filter, :created_at, :updated_at
   json.author_username @user.username

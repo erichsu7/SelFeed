@@ -5,5 +5,13 @@ SelFeed.Collections.Pictures = Backbone.Collection.extend({
   comparator: function (picture) {
     var date = new Date(picture.get("created_at"));
     return -date.getTime();
+  },
+
+  parse: function (response) {
+    if (response.pictures) {
+      return response.pictures;
+    } else {
+      return response
+    }
   }
 })
