@@ -38,6 +38,7 @@ gem 'backbone-on-rails'
 gem 'newrelic_rpm'
 gem 'font-awesome-sass'
 gem 'rails_12factor', group: :production
+gem 'kaminari'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

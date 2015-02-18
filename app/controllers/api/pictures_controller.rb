@@ -5,10 +5,13 @@ module Api
       if(params[:all_pictures])
         @pictures = Picture.last(100)
       else
-        @pictures = current_user.authored_pictures
+        @user = User.includes(authored_pictures: [:likes, :comments], followed_users: [authored_pictures: [:likes, :comments]]).find(current_user.id)
+        @pictures = @user.authored_pictures
         current_user.followed_users.each do |followed_user|
-          @pictures += followed_user.authored_pictures
+          @pictures << followed_user.authored_pictures
         end
+
+        @pictures = @pictures.page(1).per(10)
       end
 
       render "index"
