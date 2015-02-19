@@ -35,12 +35,6 @@ SelFeed.Views.PicturesFeedTutorial = Backbone.View.extend({
     this.currentStepId = this.tour.getCurrentStep().id;
   },
 
-  restartTour: function () {
-    this.currentStepId = null;
-    this.tour.next();
-    this.startTour();
-  },
-
   generateTour: function () {
     this.tour = new Shepherd.Tour({
       defaults: {
@@ -52,7 +46,10 @@ SelFeed.Views.PicturesFeedTutorial = Backbone.View.extend({
 
     this.tour.addStep({
       title: "Welcome to SelFeed!",
-      text: "SelFeed is a social picture sharing platform, allowing users to like and comment on posted content from people they're following. If you've used Instagram before, you'll feel right at home."
+      text: "SelFeed is a social picture sharing platform, allowing users to like and comment on posted content from people they're following. If you've used Instagram before, you'll feel right at home.",
+      buttons: [
+        { text: "Next", action: this.nextAndBookmark.bind(this) }
+      ]
     });
 
     this.tour.addStep({
@@ -116,7 +113,7 @@ SelFeed.Views.PicturesFeedTutorial = Backbone.View.extend({
       },
       buttons: [
         { text: "Back", action: this.backAndBookmark.bind(this) },
-        { text: "Start over", action: this.restartTour.bind(this) }
+        { text: "Hide", action: this.tour.hide }
       ]
     });
   }

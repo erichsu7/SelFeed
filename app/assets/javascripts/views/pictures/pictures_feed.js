@@ -62,7 +62,7 @@ SelFeed.Views.PicturesFeed = Backbone.CompositeView.extend({
 
   addTutorial: function () {
     var tutorialView = new SelFeed.Views.PicturesFeedTutorial();
-    this.addSubview(".pictures-feed-tutorial-container", tutorialView);
+    this.addSubview(".tutorial-container", tutorialView);
   },
 
   addClassesForTutorial: function () {

@@ -41,4 +41,5 @@ SelFeed.Views.PicturesGrid = Backbone.CompositeView.extend({
       }
     })
   }
+
 })

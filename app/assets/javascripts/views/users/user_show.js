@@ -8,6 +8,7 @@ SelFeed.Views.UserShow = Backbone.CompositeView.extend({
     this.listenTo(SelFeed.Events.event_bus, "showPictureModal", this.showPictureModal);
     this.listenTo(SelFeed.Events.event_bus, "closePictureModal", this.closePictureModal);
     this.listenTo(SelFeed.Events.event_bus, "switchPictureModal", this.switchPictureModal);
+    this.addTutorial();
   },
 
   render: function () {
@@ -78,6 +79,11 @@ SelFeed.Views.UserShow = Backbone.CompositeView.extend({
     this.$(".picture-show-comments-container").css({
       "max-height": maxHeightString
     });
+  },
+
+  addTutorial: function () {
+    var tutorialView = new SelFeed.Views.UserShowTutorial();
+    this.addSubview(".tutorial-container", tutorialView);
   }
 
 });
