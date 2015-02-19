@@ -19,7 +19,6 @@ SelFeed.Views.RootHeader = Backbone.CompositeView.extend({
     this.model.fetch();
     this.listenTo(this.model, "sync", this.render);
     this.listenTo(SelFeed.Events.event_bus, "cancelForm", this.removeForm);
-    this.addRootTutorial();
   },
 
   render: function () {
@@ -79,10 +78,5 @@ SelFeed.Views.RootHeader = Backbone.CompositeView.extend({
   showRoot: function (event) {
     event.preventDefault();
     Backbone.history.navigate("", { trigger: true });
-  },
-
-  addRootTutorial: function () {
-    var rootTutorial = new SelFeed.Views.RootTutorial();
-    this.addSubview(".root-tutorial-container", rootTutorial);
   }
 })

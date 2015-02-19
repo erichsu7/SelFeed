@@ -11,6 +11,7 @@ SelFeed.Views.PicturesFeed = Backbone.CompositeView.extend({
     this.collection.each( function (picture) {
       that.addPicture(picture);
     });
+    this.addTutorial();
   },
 
   render: function (event) {
@@ -18,6 +19,7 @@ SelFeed.Views.PicturesFeed = Backbone.CompositeView.extend({
     this.$el.html(renderedContent);
     this.attachSubviews();
     this.listenForScroll();
+    this.addClassesForTutorial();
 
     return this;
   },
@@ -55,5 +57,17 @@ SelFeed.Views.PicturesFeed = Backbone.CompositeView.extend({
         });
       }
     }
+  },
+
+  addTutorial: function () {
+    var tutorialView = new SelFeed.Views.PicturesFeedTutorial();
+    this.addSubview(".pictures-feed-tutorial-container", tutorialView);
+  },
+
+  addClassesForTutorial: function () {
+    this.$(".pictures-feed-item-container:first-child .picture-details-container")
+      .attr("id", "first-details-container");
+    this.$(".pictures-feed-item-container:first-child .picture-show-picture")
+      .attr("id", "first-picture");
   }
 })

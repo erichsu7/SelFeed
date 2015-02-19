@@ -1,10 +1,10 @@
-.root-tutorial-container {
+.pictures-feed-tutorial-container {
   position: fixed;
   right: 20px;
   bottom: 20px;
 }
 
-.root-tutorial-view {
+.pictures-feed-tutorial-view {
   position: relative;
   box-sizing: border-box;
   font-size: 36px;
@@ -17,13 +17,13 @@
   transition: all 250ms;
 }
 
-.root-tutorial-view:hover {
+.pictures-feed-tutorial-view:hover {
   cursor: pointer;
   background-color: #306088;
   transition: all 250ms;
 }
 
-.root-tutorial-view > i {
+.pictures-feed-tutorial-view > i {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -33,6 +33,7 @@
 .shepherd-step {
   width: 330px;
   text-align: center;
+  z-index: 2;
 }
 
 .shepherd-text > p {
