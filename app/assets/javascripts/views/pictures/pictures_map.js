@@ -15,6 +15,8 @@ SelFeed.Views.PicturesMap = Backbone.CompositeView.extend({
   render: function () {
     var renderedContent = this.template();
     this.$el.html(renderedContent);
+    this.addTutorial();
+    this.attachSubviews();
 
     var that = this;
     var mapOptions = {
@@ -76,5 +78,10 @@ SelFeed.Views.PicturesMap = Backbone.CompositeView.extend({
     });
 
     infoWindow.open(this._map, marker);
+  },
+
+  addTutorial: function () {
+    var tutorialView = new SelFeed.Views.PicturesMapTutorial();
+    this.addSubview(".tutorial-container", tutorialView);
   }
 });
