@@ -95,17 +95,15 @@ SelFeed.Views.PicturesFeedTutorial = Backbone.View.extend({
     this.tour.addStep({
       title: "Infinite Scrolling",
       text: "Scrolling to the bottom of the feed loads more pictures on demand.",
-      attachTo: ".pictures-feed-tutorial-container",
       tetherOptions: {
-        attachment: "top right",
-        targetAttachment: "bottom right",
-        offset: "-65px 100px"
+        target: document.body,
+        attachment: 'bottom right',
+        targetModifier: 'scroll-handle'
       },
       buttons: [
         { text: "Back", action: this.backAndBookmark.bind(this) },
         { text: "Next", action: this.nextAndBookmark.bind(this) }
-      ],
-      scrollTo: false
+      ]
     });
 
     this.tour.addStep({

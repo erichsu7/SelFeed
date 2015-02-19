@@ -1,5 +1,6 @@
 SelFeed.Views.PicturesFeed = Backbone.CompositeView.extend({
   template: JST["pictures/pictures_feed"],
+
   className: "pictures-feed",
 
   initialize: function (object) {
