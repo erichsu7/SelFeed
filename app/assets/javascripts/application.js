@@ -21,6 +21,7 @@
 //= require jquery.Jcrop
 //= require imagesloaded.pkgd
 //= require moment
+//= require shepherd
 //= require underscore
 //= require backbone
 //= require backbone.composite_view

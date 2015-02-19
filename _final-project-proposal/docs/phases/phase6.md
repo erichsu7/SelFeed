@@ -23,3 +23,4 @@
 ## Gems/Libraries
 * FontAwesome
 * jQuery UI
+* Shepherd

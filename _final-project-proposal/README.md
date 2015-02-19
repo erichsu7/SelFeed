@@ -56,13 +56,13 @@ If I have time, I'd like to implement hashtagging photos and implementing search
 - [x] User avatars
 - [x] Profile page cover photo
 - [x] Transitioning cover photo collage
-- [] Feed infinite scrolling
+- [x] Feed infinite scrolling
 - [x] Picture filter on upload
-- [] Splash page (Bootstrap)
+- [x] Splash page
 - [] Hashtag pictures
 - [] Search pictures by hashtag
 - [] Show most popular pictures
-- [] Geographic display of pictures
+- [x] Geographic display of pictures
 - [] Activity history for pictures (e.g. likes, comments, tags)
 - [] Activity history for followed users
 - [] Video upload
