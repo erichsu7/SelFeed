@@ -8,11 +8,13 @@ class User < ActiveRecord::Base
   after_initialize :ensure_session_token
 
   has_many :authored_pictures,
-  -> { order "created_at DESC" },
+    -> { order "created_at DESC" },
+    dependent: :destroy,
     class_name: "Picture",
     foreign_key: :author_id
 
   has_many :likes,
+    dependent: :destroy,
     foreign_key: :liker_id
 
   has_many :liked_pictures,
@@ -20,13 +22,16 @@ class User < ActiveRecord::Base
     source: :picture
 
   has_many :comments,
+    dependent: :destroy,
     foreign_key: :commenter_id
 
   has_many :follows,
+    dependent: :destroy,
     class_name: "Follow",
     foreign_key: :follower_id
 
   has_many :followings,
+    dependent: :destroy,
     class_name: "Follow",
     foreign_key: :followee_id
 

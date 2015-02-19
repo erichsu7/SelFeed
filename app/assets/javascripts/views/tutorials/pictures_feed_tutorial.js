@@ -38,6 +38,7 @@ SelFeed.Views.PicturesFeedTutorial = Backbone.View.extend({
   restartTour: function () {
     this.currentStepId = null;
     this.tour.next();
+    this.startTour();
   },
 
   generateTour: function () {
@@ -109,7 +110,7 @@ SelFeed.Views.PicturesFeedTutorial = Backbone.View.extend({
 
     this.tour.addStep({
       title: "Go to User Page",
-      text: "Click on the username to navigate to the user's profile page. You will be able to see their picture collection in more detail.",
+      text: "Click on the username to navigate to the user's profile page. You will be able to see their picture collection in more detail. The tutorial will continue there.",
       attachTo: "#first-details-container",
       tetherOptions: {
         attachment: "top left",
