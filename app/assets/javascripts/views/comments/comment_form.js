@@ -30,7 +30,6 @@ SelFeed.Views.CommentForm = Backbone.View.extend({
     this.$(".comment-body").val("");
     var currentUserAvatarUrl = $(".current-user-data").data("current-user-avatar-url");
     comment.set("commenter_avatar_url", currentUserAvatarUrl);
-    debugger;
-    this.collection.add(comment, {merge: true});
+    this.collection.add(comment, { merge: true });
   }
 })

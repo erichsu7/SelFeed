@@ -7,10 +7,10 @@ SelFeed.Views.PicturesMapTutorial = SelFeed.Views.PicturesFeedTutorial.extend({
         showCancelLink: true
       }
     });
-    
+
     this.tour.addStep({
       title: "Exploring SelFeed",
-      text: "Pictures uploaded to SelFeed are geolocated based on the browser location. This map displays recently added pictures by their coordinates.",
+      text: "Pictures uploaded to SelFeed are geolocated based on the browser location. This map plots recently added pictures.",
       buttons: [
         { text: "Next", action: this.nextAndBookmark.bind(this) }
       ]

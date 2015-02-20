@@ -115,6 +115,30 @@
   width: 100%;
 }
 
+#splash-guest-log-in-button {
+  font-size: 24px;
+  width: auto;
+  display: block;
+  position: absolute;
+  padding: 20px 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-image: -webkit-linear-gradient(top,#fafafa,#eee);
+  color: #333;
+  border: 1px solid #ddd;
+}
+
+#splash-guest-log-in-button:hover {
+  background-image: -webkit-linear-gradient(top,#fafafa,#ddd);
+}
+
+#splash-guest-log-in-button:active {
+  background-color: #ddd;
+  background-image: none;
+  box-shadow: 0 0 10px 1px #aaa inset;
+}
+
+
 #splash-form-log-in-username {
   margin-bottom: 10px;
 }

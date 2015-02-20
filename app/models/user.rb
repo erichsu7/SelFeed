@@ -79,10 +79,19 @@ class User < ActiveRecord::Base
 
   def randomize_picture_coords(lat, long)
     self.authored_pictures.each do |picture|
-      randomLat = (rand(10) - 10) / 1000.0
-      randomLong = (rand(10) - 10) / 1000.0
-      picture.latitude = lat + randomLat
-      picture.longitude = long + randomLong
+      random_lat = (5 - rand(10)) / 500.0
+      random_long = (5 - rand(10)) / 500.0
+      picture.latitude = lat + random_lat
+      picture.longitude = long + random_long
+      picture.save
+    end
+  end
+
+  def randomize_picture_timestamps(time)
+    self.authored_pictures.each do |picture|
+      random_min = (10 - rand(20)) * 6
+      time += random_min * 60
+      picture.created_at, picture.updated_at = time, time
       picture.save
     end
   end

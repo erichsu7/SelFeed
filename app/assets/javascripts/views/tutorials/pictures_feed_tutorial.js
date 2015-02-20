@@ -104,6 +104,20 @@ SelFeed.Views.PicturesFeedTutorial = Backbone.View.extend({
     });
 
     this.tour.addStep({
+      title: "Picture Upload",
+      text: "SelFeed allows users to edit and share their local pictures. Go ahead and try uploading a picture of your own (don't worry, it will be removed when you log out). Make sure to check out the filters!",
+      attachTo: "#add-picture-container",
+      tetherOptions: {
+        attachment: "bottom left",
+        targetAttachment: "top left",
+      },
+      buttons: [
+        { text: "Back", action: this.backAndBookmark.bind(this) },
+        { text: "Next", action: this.nextAndBookmark.bind(this) }
+      ]
+    });
+
+    this.tour.addStep({
       title: "Go to User Page",
       text: "Click on the username to navigate to the user's profile page. You will be able to see their picture collection in more detail. The tutorial will continue there.",
       attachTo: "#first-details-container",

@@ -13,10 +13,23 @@
   <div class="splash-body-content">
     <h1 class="splash-body-content-header">Welcome to SelFeed.</h1>
     <p class="splash-body-content-description">
-      Share pictures of yourself desperately in search of validation from
-      strangers across the world. Apply endless filters on strategically angled
-      selfies to advertise the real you. Tirelessly craft your own personal brand
-      then realize that Ariana Grande has 25 million more followers than you.</p>
+      Share your pictures with people across the world. Apply one of many
+      filters to give your moment a new look. Turn your life into a storybook.</p>
+    <form class="splash-form-guest-log-in" action="<%= session_url %>" method="post">
+      <%= include_form_auth_token %>
+      <input
+        type="hidden"
+        name="user[username]"
+        value="shutterbug">
+      </input>
+      <input
+        type="hidden"
+        name="user[password]"
+        value="password">
+      </input>
+      <input type="submit" class="hidden-submit"></input>
+      <a href="" class="submit-button" id="splash-guest-log-in-button">Take a tour</a>
+    </form>
   </div>
   <div class="splash-body-forms">
     <form class="splash-form-log-in" action="<%= session_url %>" method="post">
@@ -69,6 +82,11 @@
 </div>
 
 <script>
+$("#splash-guest-log-in-button").on("click", function (event) {
+  event.preventDefault();
+  $(".splash-form-guest-log-in").submit();
+});
+
 $("#splash-log-in-button").on("click", function (event) {
   event.preventDefault();
   $(".splash-form-log-in").submit();
