@@ -5,7 +5,8 @@ SelFeed.Views.PicturesMap = Backbone.CompositeView.extend({
     class: "map-canvas-container"
   },
 
-  initialize: function () {
+  initialize: function (options) {
+    this.tutorialOn = options.tutorialOn;
     this._markers = {};
     this.listenTo(this.collection, "add", this.addMarker);
     this.listenTo(this.collection, "remove", this.removeMarker);
@@ -15,7 +16,7 @@ SelFeed.Views.PicturesMap = Backbone.CompositeView.extend({
   render: function () {
     var renderedContent = this.template();
     this.$el.html(renderedContent);
-    this.addTutorial();
+    this.tutorialOn && this.addTutorial();
     this.attachSubviews();
 
     var that = this;

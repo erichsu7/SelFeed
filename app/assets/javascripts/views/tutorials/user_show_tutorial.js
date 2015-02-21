@@ -1,14 +1,6 @@
 SelFeed.Views.UserShowTutorial = SelFeed.Views.PicturesFeedTutorial.extend({
 
   generateTour: function () {
-    this.tour = new Shepherd.Tour({
-      defaults: {
-        classes: "shepherd-theme-arrows",
-        scrollTo: true,
-        showCancelLink: true
-      }
-    });
-
     this.tour.addStep({
       title: "User Profile Page",
       text: "The profile page gives a more detailed look at a user.",

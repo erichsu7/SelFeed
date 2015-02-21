@@ -7,8 +7,10 @@ SelFeed.Views.PicturesFeedTutorial = Backbone.View.extend({
 
   initialize: function () {
     this.currentStepId;
+    this.initializeTour();
     this.generateTour();
-    this.listenTo(SelFeed.Events.event_bus, "closeTutorial", this.tour.hide)
+    this.listenTo(SelFeed.Events.event_bus, "triggerTutorial", this.startTour);
+    this.listenTo(SelFeed.Events.event_bus, "closeTutorial", this.tour.hide);
   },
 
   render: function () {
@@ -18,6 +20,9 @@ SelFeed.Views.PicturesFeedTutorial = Backbone.View.extend({
   },
 
   startTour: function (event) {
+    if (event.type === "click") {
+      SelFeed.Events.event_bus.trigger("toggleTutorialAuto", true);
+    }
     if (this.currentStepId) {
       this.tour.show(this.currentStepId);
     } else {
@@ -35,7 +40,7 @@ SelFeed.Views.PicturesFeedTutorial = Backbone.View.extend({
     this.currentStepId = this.tour.getCurrentStep().id;
   },
 
-  generateTour: function () {
+  initializeTour: function () {
     this.tour = new Shepherd.Tour({
       defaults: {
         classes: "shepherd-theme-arrows",
@@ -44,6 +49,12 @@ SelFeed.Views.PicturesFeedTutorial = Backbone.View.extend({
       }
     });
 
+    this.listenTo(this.tour, "cancel", function () {
+      SelFeed.Events.event_bus.trigger("toggleTutorialAuto", false);
+    });
+  },
+
+  generateTour: function () {
     this.tour.addStep({
       title: "Welcome to SelFeed!",
       text: "SelFeed is a social picture sharing platform, allowing users to like and comment on posted content from people they're following. If you've used Instagram before, you'll feel right at home.",
@@ -54,7 +65,7 @@ SelFeed.Views.PicturesFeedTutorial = Backbone.View.extend({
 
     this.tour.addStep({
       title: "Tutorial Instructions",
-      text: "This tutorial will highlight some of the main features of SelFeed. If you ever feel like exploring on your own, simply click <i class=\"fa fa-times\"></i>. You can pick up where you left off by clicking on the <i class=\"fa fa-question\"></i> button.",
+      text: "This tutorial will highlight some of the main features of SelFeed. If you ever feel like exploring on your own, simply click <i class=\"fa fa-times\"></i>. You can resume by clicking on the <i class=\"fa fa-question\"></i> button in the lower right corner.",
       buttons: [
         { text: "Back", action: this.backAndBookmark.bind(this) },
         { text: "Next", action: this.nextAndBookmark.bind(this) }
@@ -118,12 +129,26 @@ SelFeed.Views.PicturesFeedTutorial = Backbone.View.extend({
     });
 
     this.tour.addStep({
-      title: "Go to User Page",
-      text: "Click on the username to navigate to the user's profile page. You will be able to see their picture collection in more detail. The tutorial will continue there.",
+      title: "Either Go to User Profile...",
+      text: "You may click on the username to navigate to the user's profile page. You will be able to see their picture collection in more detail. Or...",
       attachTo: "#first-details-container",
       tetherOptions: {
         attachment: "top left",
         targetAttachment: "bottom middle"
+      },
+      buttons: [
+        { text: "Back", action: this.backAndBookmark.bind(this) },
+        { text: "Next", action: this.nextAndBookmark.bind(this) }
+      ]
+    });
+
+    this.tour.addStep({
+      title: "...Or Go to Your Profile",
+      text: "You can also try browsing to your own profile page by hovering over your avatar and choosing \"View Profile \" from the dropdown.",
+      attachTo: ".user-container",
+      tetherOptions: {
+        attachment: "top right",
+        targetAttachment: "top left"
       },
       buttons: [
         { text: "Back", action: this.backAndBookmark.bind(this) },

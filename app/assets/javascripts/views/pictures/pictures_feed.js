@@ -3,8 +3,10 @@ SelFeed.Views.PicturesFeed = Backbone.CompositeView.extend({
 
   className: "pictures-feed",
 
-  initialize: function (object) {
+  initialize: function (options) {
     var that = this;
+    this.tutorialOn = options.tutorialOn;
+    this.tutorialOn && this.addTutorial();
     this.listenTo(this.collection, "sync", this.render);
     this.listenTo(this.collection, "add", this.addPicture);
     this.listenTo(this.collection, "remove", this.removePicture);
@@ -12,7 +14,6 @@ SelFeed.Views.PicturesFeed = Backbone.CompositeView.extend({
     this.collection.each( function (picture) {
       that.addPicture(picture);
     });
-    this.addTutorial();
   },
 
   render: function (event) {
@@ -20,7 +21,7 @@ SelFeed.Views.PicturesFeed = Backbone.CompositeView.extend({
     this.$el.html(renderedContent);
     this.attachSubviews();
     this.listenForScroll();
-    this.addClassesForTutorial();
+    this.tutorialOn && this.addClassesForTutorial();
 
     return this;
   },

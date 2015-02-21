@@ -2,18 +2,19 @@ SelFeed.Views.UserShow = Backbone.CompositeView.extend({
   template: JST["users/user_show"],
   className: "user-show-view",
 
-  initialize: function () {
-    this.addUserHeader();
-    this.addPicturesGrid();
+  initialize: function (options) {
+    this.tutorialOn = options.tutorialOn;
     this.listenTo(SelFeed.Events.event_bus, "showPictureModal", this.showPictureModal);
     this.listenTo(SelFeed.Events.event_bus, "closePictureModal", this.closePictureModal);
     this.listenTo(SelFeed.Events.event_bus, "switchPictureModal", this.switchPictureModal);
-    this.addTutorial();
   },
 
   render: function () {
     var renderedContent = this.template();
     this.$el.html(renderedContent);
+    this.addUserHeader();
+    this.addPicturesGrid();
+    this.tutorialOn && this.addTutorial();
     this.attachSubviews();
 
     return this;

@@ -88,9 +88,8 @@ class User < ActiveRecord::Base
   end
 
   def randomize_picture_timestamps(time)
-    self.authored_pictures.each do |picture|
-      random_min = (10 - rand(20)) * 6
-      time += random_min * 60
+    self.authored_pictures.sort.each do |picture|
+      time += rand(10) * 60
       picture.created_at, picture.updated_at = time, time
       picture.save
     end

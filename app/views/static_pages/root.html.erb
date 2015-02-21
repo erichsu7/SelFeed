@@ -2,7 +2,8 @@
   class="current-user-data"
   data-current-user-id="<%= @current_user.id %>"
   data-current-user-username="<%= @current_user.username %>"
-  data-current-user-avatar-url="<%= @current_user.avatar_url %>">
+  data-current-user-avatar-url="<%= @current_user.avatar_url %>"
+  data-tutorial-on="<%= @current_user.username == 'shutterbug' %>">
 </div>
 
 <header class="root-header clearfix">
