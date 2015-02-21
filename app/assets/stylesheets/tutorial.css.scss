@@ -5,6 +5,10 @@
   z-index: 0;
 }
 
+.map-canvas-container > .tutorial-container {
+  z-index: 1;
+}
+
 .pictures-feed-tutorial-view {
   position: relative;
   box-sizing: border-box;
