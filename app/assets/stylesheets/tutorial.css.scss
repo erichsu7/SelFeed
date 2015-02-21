@@ -2,7 +2,7 @@
   position: fixed;
   right: 20px;
   bottom: 20px;
-  z-index: 1;
+  z-index: 0;
 }
 
 .pictures-feed-tutorial-view {
@@ -49,4 +49,8 @@
   right: 80px !important;
   bottom: 20px !important;
   transform: none !important;
+}
+
+.shepherd-step.shepherd-step-hidden {
+  z-index: 0 !important;
 }

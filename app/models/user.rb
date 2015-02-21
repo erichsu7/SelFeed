@@ -103,6 +103,26 @@ class User < ActiveRecord::Base
     Picture.includes(:likes, :comments).where("author_id IN (?)", followed_user_ids).order("created_at DESC")
   end
 
+  def is_guest?
+    self.username == "shutterbug"
+  end
+
+  def destroy_content_since(datetime)
+    return unless self.is_guest?
+
+    self.authored_pictures
+      .where(created_at: (datetime..Time.now))
+      .destroy_all
+
+    self.likes
+      .where(created_at: (datetime..Time.now))
+      .destroy_all
+
+    self.comments
+      .where(created_at: (datetime..Time.now))
+      .destroy_all
+  end
+
   private
     def ensure_session_token
       self.session_token ||= self.class.generate_session_token

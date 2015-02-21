@@ -130,7 +130,7 @@ SelFeed.Views.PicturesFeedTutorial = Backbone.View.extend({
 
     this.tour.addStep({
       title: "Either Go to User Profile...",
-      text: "You may click on the username to navigate to the user's profile page. You will be able to see their picture collection in more detail. Or...",
+      text: "You may click on the username to navigate to the user's profile page. You will be able to see the user's picture collection in more detail. Or...",
       attachTo: "#first-details-container",
       tetherOptions: {
         attachment: "top left",

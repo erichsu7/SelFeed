@@ -33,6 +33,7 @@ SelFeed.Views.RootHeader = Backbone.CompositeView.extend({
     event.preventDefault();
     var pictureForm = new SelFeed.Views.PictureForm();
     this.addSubview(".picture-form-modal", pictureForm);
+    $("[data-id*=\"step\"]").addClass("shepherd-step-hidden");
     $(".picture-form-modal").show("fade", 500);
   },
 
@@ -60,6 +61,7 @@ SelFeed.Views.RootHeader = Backbone.CompositeView.extend({
     event.preventDefault();
     var avatarForm = new SelFeed.Views.AvatarForm({ model: this.model });
     this.addSubview(".picture-form-modal", avatarForm);
+    $("[data-id*=\"step\"]").addClass("shepherd-step-hidden");
     $(".picture-form-modal").show("fade", 500);
   },
 
@@ -67,6 +69,7 @@ SelFeed.Views.RootHeader = Backbone.CompositeView.extend({
     var that = this;
     $(".picture-form-modal").hide("fade", 500, function () {
       that.removeSubview(".picture-form-modal", formView);
+      $("[data-id*=\"step\"]").removeClass("shepherd-step-hidden");
     });
   },
 

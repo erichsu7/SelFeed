@@ -15,9 +15,13 @@ class ApplicationController < ActionController::Base
 
   def log_in!(user)
     session[:session_token] = user.reset_session_token!
+    current_user.update({ last_log_in: Time.now })
   end
 
   def log_out!
+    if current_user.is_guest?
+      current_user.destroy_content_since(current_user.last_log_in)
+    end
     current_user.reset_session_token!
     session[:session_token] = nil
   end
