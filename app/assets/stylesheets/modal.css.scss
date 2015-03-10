@@ -1,20 +1,16 @@
 .picture-form-modal {
+  position: relative;
   display: none;
+}
+
+.modal-screen {
   position: fixed;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
-  z-index: 3;
-}
-
-.modal-screen {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
   background: rgba(0, 0, 0, 0.7);
+  z-index: 3;
 }
 
 .modal-form,
@@ -27,6 +23,7 @@
   border-radius: 5px;
   border: 1px solid #333;
   box-shadow: 0 0 10px 1px #000;
+  z-index: 4;
 }
 
 textarea.caption-input {
