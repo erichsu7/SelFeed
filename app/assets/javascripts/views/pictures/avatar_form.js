@@ -1,6 +1,8 @@
 SelFeed.Views.AvatarForm = Backbone.View.extend({
   template: JST["pictures/avatar_form"],
 
+  className: "picture-form-modal",
+
   events: {
     "click #save-picture": "saveAvatar",
     "click #crop-picture": "updatePicture",
