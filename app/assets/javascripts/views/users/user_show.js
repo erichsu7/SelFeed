@@ -41,6 +41,7 @@ SelFeed.Views.UserShow = Backbone.CompositeView.extend({
     })
     time = time ? time : 500;
     this.addSubview(".picture-show-modal", showView);
+    $("[data-id*=\"step\"]").addClass("shepherd-step-hidden");
     $(".picture-show-modal").show("fade", time);
     this.resizeCommentsFeed();
   },
@@ -48,6 +49,7 @@ SelFeed.Views.UserShow = Backbone.CompositeView.extend({
   closePictureModal: function (subview, time,  callback) {
     var that = this;
     time = time ? time : 500;
+    $("[data-id*=\"step\"]").removeClass("shepherd-step-hidden");
     $(".picture-show-modal").hide("fade", time, function () {
       that.removeSubview(".picture-show-modal", subview);
       if (callback) {

@@ -31,11 +31,21 @@ form an API from which the front-end can create pictures, likes, and comments.
 ### Front-end
 
 Backbone and jQuery combine to make SelFeed a fast, responsive one-page app.
+Employing the composite view pattern integrates disparate Backbone views, and
+a global event bus triggers event handlers across the multiple layers of views.
+The entire user interface was built from scratch using CSS, HTML, and JavaScript.
 
 ### Upload Widget
 
+### Explore page
+
+### Picture Collage
+
+### Picture Carousel
+
 ### Infinite Scrolling
 
+### Tutorial
 
 # Implementation
 ----------------
