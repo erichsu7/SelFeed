@@ -36,7 +36,7 @@ Filter effects are handled with CSS, as described [here](http://designpieces.com
 
 ### Explore Page
 
-The Google Maps API plots recently uploaded pictures according to their coordinates, which are scraped and saved upon upload using 'navigator.geolocation.getCurrentPosition'.
+The Google Maps API plots recently uploaded pictures according to their coordinates, which are scraped and saved upon upload using `navigator.geolocation.getCurrentPosition`.
 
 ### Picture Collage
 
