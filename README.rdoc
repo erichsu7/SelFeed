@@ -1,28 +1,43 @@
-== README
+# SelFeed
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+SelFeed is a clone of the popular mobile social picture-sharing platform, Instagram,
+built for the web using Rails and Backbone. Users upload pictures with a custom
+widget that allows for cropping and filter effects. Pictures can be viewed several
+ways: in your personal feed of followed users, on a user's profile page, or through the
+"explore" feature, which displays recent uploads geographically. The app also includes
+full social functionality, including following users, likes, and commenting.
 
-Things you may want to cover:
+[Click here to see it live!][sitelink]
+[sitelink]: http://www.selfeed.io/
 
-* Ruby version
+## Technological Highlights
 
-* System dependencies
+### Overview
 
-* Configuration
+SelFeed is built mainly from these technologies:
+- [X] Rails back-end
+- [X] Backbone front-end
+- [X] Ruby
+- [X] JavaScript
+- [X] jQuery
+- [X] HTML
+- [X] CSS
 
-* Database creation
+### Back-end
 
-* Database initialization
+User authentication is handled through Rails, and controllers serving JSON responses
+form an API from which the front-end can create pictures, likes, and comments.
 
-* How to run the test suite
+### Front-end
 
-* Services (job queues, cache servers, search engines, etc.)
+Backbone and jQuery combine to make SelFeed a fast, responsive one-page app.
 
-* Deployment instructions
+### Upload Widget
 
-* ...
+### Infinite Scrolling
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+# Implementation
+----------------
+[See the implementation roadmap here.][implementationlink]
+[implementationlink]: ./_final-project-proposal
