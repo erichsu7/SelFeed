@@ -34,7 +34,7 @@ I knew going into this project this would be the most challenging part of develo
 
 Filter effects are handled with CSS, as described [here](http://designpieces.com/2014/09/instagram-filters-css3-effects/). The filter name is stored in the DB along with the picture URL, so when the image tag is created, the filter name is bootstrapped in and the CSS stylesheet handles the rest.
 
-### Explore page
+### Explore Page
 
 The Google Maps API plots recently uploaded pictures according to their coordinates, which are scraped and saved upon upload using 'navigator.geolocation.getCurrentPosition'.
 
