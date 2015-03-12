@@ -50,7 +50,7 @@ The carousel was built using Backbone views and the global event bus. Because th
 
 ### Infinite Scrolling
 
-PicturesController#index utilizes the Kaminari gem to serve paginated pictures, and the Collection#parse function is overridden to accommodate this. Scrolling to the bottom of the page triggers the fetching of the next page, and upon success these new pictures are added to the feed.
+`PicturesController#index` utilizes the Kaminari gem to serve paginated pictures, and the `Collection#parse` function is overridden to accommodate this. Scrolling to the bottom of the page triggers the fetching of the next page, and upon success these new pictures are added to the feed.
 
 ### Tutorial
 
