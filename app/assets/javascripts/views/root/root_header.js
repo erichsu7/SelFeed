@@ -32,7 +32,7 @@ SelFeed.Views.RootHeader = Backbone.CompositeView.extend({
   addPictureForm: function (event) {
     event.preventDefault();
     var pictureForm = new SelFeed.Views.PictureForm();
-    this.addSubview(".picture-form-modal", pictureForm);
+    this.addSubview(".picture-form-modal-container", pictureForm);
     $("[data-id*=\"step\"]").addClass("shepherd-step-hidden");
     $(".picture-form-modal").show("fade", 500);
   },

@@ -1,16 +1,18 @@
 .picture-form-modal {
-  position: relative;
-  display: none;
-}
-
-.modal-screen {
   position: fixed;
+  display: none;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
-  background: rgba(0, 0, 0, 0.7);
   z-index: 3;
+}
+
+.modal-screen {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
 }
 
 .modal-form,

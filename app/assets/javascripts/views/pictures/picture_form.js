@@ -1,6 +1,8 @@
 SelFeed.Views.PictureForm = Backbone.CompositeView.extend({
   template: JST["pictures/picture_form"],
 
+  className: "picture-form-modal",
+
   events: {
     "click #save-picture": "createPicture",
     "click #crop-picture": "updatePicture",
