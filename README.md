@@ -28,11 +28,11 @@ Backbone and jQuery combine to make SelFeed a fast, responsive one-page app. Emp
 
 ### Upload Widget
 
-I knew going into this project this would be the most challenging part of developing SelFeed, but I also had the most fun building it. After experimenting with a few free picture upload widgets, I decided I'd need to craft my own to achieve the level of control and design I wanted. The widget uses the Cloudinary API to load a local image file, then jQuery inserts the preview back on the page. Next, the [jCrop plugin][https://github.com/tapmodo/Jcrop] allows the user to select a square area to upload. Behind the scenes, SelFeed calculates the crop coordinates, then renders that on the page where a filter may be applied before upload.
+I knew going into this project this would be the most challenging part of developing SelFeed, but I also had the most fun building it. After experimenting with a few free picture upload widgets, I decided I'd need to craft my own to achieve the level of control and design I wanted. The widget uses the Cloudinary API to load a local image file, then jQuery inserts the preview back on the page. Next, the [jCrop plugin](https://github.com/tapmodo/Jcrop) allows the user to select a square area to upload. Behind the scenes, SelFeed calculates the crop coordinates, then renders that on the page where a filter may be applied before upload.
 
 ### Filter Effects
 
-Filter effects are handled with CSS, as described [here][http://designpieces.com/2014/09/instagram-filters-css3-effects/]. The filter name is stored in the DB along with the picture URL, so when the image tag is created, the filter name is bootstrapped in and the CSS stylesheet handles the rest.
+Filter effects are handled with CSS, as described [here](http://designpieces.com/2014/09/instagram-filters-css3-effects/). The filter name is stored in the DB along with the picture URL, so when the image tag is created, the filter name is bootstrapped in and the CSS stylesheet handles the rest.
 
 ### Explore page
 
