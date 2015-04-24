@@ -22,6 +22,7 @@ SelFeed.Views.CommentForm = Backbone.View.extend({
     event.preventDefault();
     var that = this;
     var params = this.$el.serializeJSON();
+    if (params.comment.body === "") {return};
     var currentUserUsername = $(".current-user-data").data("current-user-username");
     params.comment.picture_id = this.picture.id;
     params.comment.commenter_username = currentUserUsername;
